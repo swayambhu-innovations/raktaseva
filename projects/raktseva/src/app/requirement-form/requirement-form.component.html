@@ -1,0 +1,93 @@
+<div class="container">
+  <!-- Reactive Form Start-->
+  <form [formGroup]="requirementForm" (ngSubmit)="onSubmit()">
+    <!-- Patient Name -->
+    <div class="patient-container">
+      <input
+        class="patient-name"
+        type="text"
+        id="patientname"
+        name="patientname"
+        placeholder="Patient Name"
+      />
+    </div>
+
+    <!-- Gender -->
+    <div class="gender-container">
+      <select class="gender" name="gender" id="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <!-- Aadhar Number -->
+    <div class="aadhar-container">
+      <input
+        class="aadhar-number"
+        type="phone"
+        id="aadharnumber"
+        name="aadharnumber"
+        placeholder="Aadhar Number"
+      />
+    </div>
+
+    <!-- Hospital Name -->
+    <div class="hospital-container">
+      <input
+        class="hospital-name"
+        type="text"
+        id="hospitalname"
+        name="hospitalname"
+        placeholder="Hospital Name"
+      />
+    </div>
+
+    <!-- City -->
+    <div class="city-container">
+      <input
+        class="city-name"
+        type="text"
+        id="cityname"
+        name="cityname"
+        placeholder="City Name"
+      />
+    </div>
+
+    <!-- Unit of Blood Required -->
+    <div class="blood-container">
+      <input
+        class="blood-count"
+        type="phone"
+        id="bloodcount"
+        name="bloodcount"
+        placeholder="Unit of Blood Required"
+      />
+    </div>
+
+    <!-- Bed Number -->
+    <div class="bed-container">
+      <input
+        class="bed-number"
+        type="text"
+        id="bednumber"
+        name="bednumber"
+        placeholder="Patient Bed Number"
+      />
+    </div>
+
+    <!-- Report -->
+    <div class="report-container">
+      <button class="report-btn">
+        Report Image
+        <img class="download-img" src="RequirementForm/download.svg" />
+      </button>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="submit-container">
+      <button class="submit-btn">Submit</button>
+    </div>
+  </form>
+  <!-- Reactive Form Ends -->
+</div>

@@ -1,0 +1,151 @@
+.container {
+  //   background-color: red;
+  height: auto;
+  width: auto;
+}
+
+// Patient Name
+.patient-name {
+  width: 270px;
+  height: 48px;
+  flex-shrink: 0;
+  padding-left: 23px;
+  border-radius: var(--CR-10, 10px);
+  border: 1px solid var(--Blue-linear, #003049);
+  color: linear-gradient(180deg, #003049 0%, #005079 99.99%);
+  margin-top: 30%;
+  
+}
+
+::placeholder {
+  background: var(
+    --Blue-linear,
+    linear-gradient(180deg, #003049 0%, #005079 99.99%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Overall Container Css
+.patient-container,
+.gender-container,
+.aadhar-container,
+.hospital-container,
+.city-container,
+.blood-container,
+.bed-container,
+.report-container,
+.submit-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 37px;
+}
+
+// Gender
+.gender {
+  width: 295px;
+  height: 48px;
+  flex-shrink: 0;
+  padding-left: 18.5px;
+  border-radius: var(--CR-10, 10px);
+  border: 1px solid var(--Blue-linear, #003049);
+  color: linear-gradient(180deg, #003049 0%, #005079 99.99%);
+}
+
+// Aadhar Number
+.aadhar-number {
+  width: 270px;
+  height: 48px;
+  flex-shrink: 0;
+  padding-left: 23px;
+  border-radius: var(--CR-10, 10px);
+  border: 1px solid var(--Blue-linear, #003049);
+  color: linear-gradient(180deg, #003049 0%, #005079 99.99%);
+}
+
+// Hospital Name
+.hospital-name {
+  width: 270px;
+  height: 48px;
+  flex-shrink: 0;
+  padding-left: 23px;
+  border-radius: var(--CR-10, 10px);
+  border: 1px solid var(--Blue-linear, #003049);
+  color: linear-gradient(180deg, #003049 0%, #005079 99.99%);
+}
+
+// City 
+.city-name {
+  width: 270px;
+  height: 48px;
+  flex-shrink: 0;
+  padding-left: 23px;
+  border-radius: var(--CR-10, 10px);
+  border: 1px solid var(--Blue-linear, #003049);
+  color: linear-gradient(180deg, #003049 0%, #005079 99.99%);
+}
+
+// Unit of Blood Required
+.blood-count {
+  width: 270px;
+  height: 48px;
+  flex-shrink: 0;
+  padding-left: 23px;
+  border-radius: var(--CR-10, 10px);
+  border: 1px solid var(--Blue-linear, #003049);
+  color: linear-gradient(180deg, #003049 0%, #005079 99.99%);
+}
+
+// Patient Bed Number
+.bed-number {
+  width: 270px;
+  height: 48px;
+  flex-shrink: 0;
+  padding-left: 23px;
+  border-radius: var(--CR-10, 10px);
+  border: 1px solid var(--Blue-linear, #003049);
+  color: linear-gradient(180deg, #003049 0%, #005079 99.99%);
+}
+
+// Report Upload Button
+.report-btn {
+  width: 293px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: var(--CR-10, 10px);
+  border: 1px solid var(--Blue-linear, #003049);
+  color: linear-gradient(180deg, #003049 0%, #005079 99.99%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding-left:23px
+}
+
+// Image Section
+.download-img{
+    padding-right:10px;
+}
+
+// Submit Button
+.submit-btn {
+  width: 270px;
+  height: 48px;
+  color: white;
+  flex-shrink: 0;
+  border-radius: var(--CR-10, 10px);
+  border: 1px solid var(--Blue-linear, #003049);
+  color: linear-gradient(180deg, #003049 0%, #005079 99.99%);
+  background: var(
+    --Red-linear,
+    linear-gradient(
+      180deg,
+      #d62828 0%,
+      rgba(188, 35, 35, 0.95) 30.57%,
+      rgba(165, 31, 31, 0.9) 53.9%,
+      rgba(138, 26, 26, 0.85) 80.19%,
+      rgba(112, 21, 21, 0.8) 100%
+    )
+  );
+}
