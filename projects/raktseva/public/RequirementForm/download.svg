@@ -1,0 +1,11 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="file-upload-line">
+<path id="Vector" d="M16 4H6V20H20V8H16V4ZM4 2.9918C4 2.44405 4.44749 2 4.9985 2H17L21.9997 7L22 20.9925C22 21.5489 21.5551 22 21.0066 22H4.9934C4.44476 22 4 21.5447 4 21.0082V2.9918ZM14 12V16H12V12H9L13 8L17 12H14Z" fill="url(#paint0_linear_157_446)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_157_446" x1="13" y1="2" x2="13" y2="22" gradientUnits="userSpaceOnUse">
+<stop stop-color="#003049"/>
+<stop offset="0.9999" stop-color="#005079"/>
+</linearGradient>
+</defs>
+</svg>
