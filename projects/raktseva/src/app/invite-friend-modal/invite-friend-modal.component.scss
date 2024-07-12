@@ -1,0 +1,88 @@
+// ::ng-deep .custom-dialog-container {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     padding: 20px;
+//     border-radius: 100px;
+//     max-width: 100vh;
+//     justify-content: space-between;
+//   }
+  
+//   h2 {
+//     text-align: center;
+//     margin-bottom: 20px;
+//     font-family: Arial, sans-serif;
+//   }
+  
+//   .invite-options {
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
+//     padding-left: 20px;
+    
+//     .whatsapp {
+//       height: 30px;
+//       width: auto;
+//     }
+    
+//     .telegram {
+//       margin-left: 20px;
+//       height: 30px;
+//       width: auto;
+//     }
+//   }
+  
+//   button {
+//     margin: 10px 0;
+//   }
+  
+//   .mat-dialog-actions {
+//     display: flex;
+//     justify-content: center;
+//     margin-top: 20px;
+//   }
+  
+::ng-deep .custom-bottom-sheet-container {
+    height: 50vh; // Half the screen height
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .invite-options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 20px;
+    
+    .whatsapp {
+      height: 30px;
+      width: auto;
+    }
+    
+    .telegram {
+      margin-left: 20px;
+      height: 30px;
+      width: auto;
+    }
+  }
+  
+  button {
+    margin: 10px 0;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
