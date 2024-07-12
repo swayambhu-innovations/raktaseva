@@ -1,5 +1,5 @@
 .container {
-  //   background-color: red;
+    // background-color: rgb(36, 28, 61);
   height: auto;
   width: auto;
 }
@@ -14,7 +14,6 @@
   border: 1px solid var(--Blue-linear, #003049);
   color: linear-gradient(180deg, #003049 0%, #005079 99.99%);
   margin-top: 30%;
-  
 }
 
 ::placeholder {
@@ -39,7 +38,7 @@
 .submit-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 37px;
+  margin-bottom: 18px;
 }
 
 // Gender
@@ -75,7 +74,7 @@
   color: linear-gradient(180deg, #003049 0%, #005079 99.99%);
 }
 
-// City 
+// City
 .city-name {
   width: 270px;
   height: 48px;
@@ -110,27 +109,30 @@
 
 // Report Upload Button
 .report-btn {
-  width: 293px;
+  width: 270px;
   height: 48px;
   flex-shrink: 0;
   border-radius: var(--CR-10, 10px);
   border: 1px solid var(--Blue-linear, #003049);
-  color: linear-gradient(180deg, #003049 0%, #005079 99.99%);
+  background: linear-gradient(180deg, #003049 0%, #005079 99.99%);
+  -webkit-background-clip: text;
+  color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: space-between;
-  padding-left:23px
+  padding-left: 23px;
+  margin-bottom:17px
 }
 
 // Image Section
-.download-img{
-    padding-right:10px;
+.download-img {
+  padding-right: 10px;
 }
 
 // Submit Button
 .submit-btn {
-  width: 270px;
+  width: 294px;
   height: 48px;
   color: white;
   flex-shrink: 0;
@@ -148,4 +150,21 @@
       rgba(112, 21, 21, 0.8) 100%
     )
   );
+}
+
+// Disable Button Styling
+.blue-button {
+  border-radius: var(--CR-10, 10px);
+opacity: 0.4;
+background: var(--Red-linear, linear-gradient(180deg, #D62828 0%, rgba(188, 35, 35, 0.95) 30.57%, rgba(165, 31, 31, 0.90) 53.9%, rgba(138, 26, 26, 0.85) 80.19%, rgba(112, 21, 21, 0.80) 100%));
+}
+
+// Image Uploading Styling
+.profile_section {
+  width: 40px;
+  height: 40px;
+ display: flex;
+ align-items: center;
+ margin-left:100%;
+  border-radius:20px
 }
