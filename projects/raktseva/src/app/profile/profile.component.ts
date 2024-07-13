@@ -26,8 +26,8 @@ export class ProfileComponent {
 
   openInviteFriendModal() {
     this.dialog.open(InviteFriendModalComponent, {
-      width: '500px', 
-      // height:' 500px',
+      width: '100%', 
+      height:' 100vh',
       panelClass: 'custom-dialog-container',
       disableClose: true
     });

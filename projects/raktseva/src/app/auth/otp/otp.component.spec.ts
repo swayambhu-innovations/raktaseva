@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SurveySubmitComponent } from './survey-submit.component';
+import { OtpComponent } from './otp.component';
 
-describe('SurveySubmitComponent', () => {
-  let component: SurveySubmitComponent;
-  let fixture: ComponentFixture<SurveySubmitComponent>;
+describe('OtpComponent', () => {
+  let component: OtpComponent;
+  let fixture: ComponentFixture<OtpComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SurveySubmitComponent]
+      imports: [OtpComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SurveySubmitComponent);
+    fixture = TestBed.createComponent(OtpComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

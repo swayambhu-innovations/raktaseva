@@ -1,0 +1,25 @@
+<div class="container">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <!-- Logo -->
+    <div class="logo-container">
+      <img src="editProfile-img/logo.png" alt="Logo">
+    </div>
+    
+    <h1>Welcome</h1>
+    <p>Enter your mobile number for login</p>
+    
+    <!-- Mobile Number -->
+    <div class="input-group">
+      <i class="fas fa-phone"></i>
+      <input
+        type="text"
+        placeholder="Mobile Number"
+        formControlName="mobileNumber"
+        required
+      />
+    </div>
+    
+    <button type="submit" [disabled]="!loginForm.valid">Send OTP</button>
+  </form>
+  <!-- Reactive Form Ends -->
+</div>

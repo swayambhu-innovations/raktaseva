@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SurveyFormComponent } from './survey-form.component';
+import { LoginWithPhoneComponent } from './login-with-phone.component';
 
-describe('SurveyFormComponent', () => {
-  let component: SurveyFormComponent;
-  let fixture: ComponentFixture<SurveyFormComponent>;
+describe('LoginWithPhoneComponent', () => {
+  let component: LoginWithPhoneComponent;
+  let fixture: ComponentFixture<LoginWithPhoneComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SurveyFormComponent]
+      imports: [LoginWithPhoneComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SurveyFormComponent);
+    fixture = TestBed.createComponent(LoginWithPhoneComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
