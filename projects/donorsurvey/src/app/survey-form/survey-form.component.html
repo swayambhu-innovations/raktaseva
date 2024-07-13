@@ -1,80 +1,72 @@
 <div class="container">
-<div class="img">
-    <img src="surveyForm/1.svg">
-    
-    </div>
-<div>
-<h1 class="para1"> Full Name</h1>
+  <div class="img">
+    <img src="surveyForm/1.svg" />
+  </div>
+  <div>
+    <h1 class="para1">Full Name</h1>
     <div class="fullname">
-        <input type="text" placeholder="Enter Your Full Name" class="input1" >
+      <input type="text" placeholder="Enter Your Full Name" class="input1" />
     </div>
-</div>
+  </div>
 
-  <div >
+  <div>
     <h1 class="para2">Date of Birth</h1>
     <div class="birth">
-    <input type="date" class="dob"> </div>
-    </div> 
+      <input type="date" class="dob" />
+    </div>
+  </div>
 
- <div class="radiobtn">
+  <div class="radiobtn">
     <h1 class="para3">Gender</h1>
     <div class="radio">
-
-        <div class>
+      <div class>
         <input type="radio" id="value1" value="value1" checked />
-        <label for="value1">Male</label></div>
+        <label for="value1">Male</label>
+      </div>
 
-        <div>
-            <input type="radio" id="value1" value="value1" />
-            <label for="value1">Female</label></div>
+      <div>
+        <input type="radio" id="value1" value="value1" />
+        <label for="value1">Female</label>
+      </div>
 
-            <div>
-                <input type="radio" id="value1" value="value1"  />
-                <label for="value1">Other</label></div>
+      <div>
+        <input type="radio" id="value1" value="value1" />
+        <label for="value1">Other</label>
+      </div>
     </div>
- </div>
+  </div>
 
+  <div>
+    <h1 class="para4">Mobile Number</h1>
 
+    <div class="input-container">
+      <input type="text" class="mobile" placeholder="mobile no " />
+      <img src="surveyForm/Vector.svg" class="icon" />
+    </div>
+  </div>
 
+  <div>
+    <h1 class="para5">Email</h1>
+
+    <div class="input-container2">
+      <input type="text" class="mobile2" />
+      <img src="surveyForm/Frame (3).svg" class="icon2" />
+    </div>
+  </div>
+
+  <div>
     <div>
-        <h1 class="para4">Mobile Number</h1>
- 
-        <div class="input-container">
-             <input type="text" class="mobile">
-            <img src="surveyForm/Vector.svg" class="icon"> 
-        </div> 
-
-    </div> 
-
-
-     <div>
-        <h1 class="para5">Email</h1>
- 
-         <div class="input-container2">
-            
-            <input type="text" class="mobile2">
-            <img src="surveyForm/Frame (3).svg" class="icon2">
-        </div>  
-        </div> 
-    
-     <div >
-        <div>
-        <h1 class="para6"> Address</h1>
-            <input type="text" class="input2" >
-        </div>
-
-        <div class="Address">
-            <input type="text" class="adres1" >
-            <input type="text" class="adres2" > 
-        </div>  
-         </div>
-    
-
-       <div class="button">
-        <button class="report-btn" (click)="submit()">NEXT</button>
+      <h1 class="para6">Address</h1>
+      <input type="text" class="input2" placeholder="streat" />
     </div>
 
+    <div class="Address">
+      <input type="text" class="adres1" placeholder="city" />
+      <input type="text" class="adres2" placeholder="state" />
     </div>
+  </div>
 
-
-    
+  <div class="btn">
+    <button  class="report-btn" (click)="submit()">NEXT</button>
+  </div>
+</div>
