@@ -1,0 +1,30 @@
+<div class="container">
+  
+    <!-- Logo -->
+    <div class="logo-container">
+      <img src="editProfile-img/logo.png" alt="Logo">
+    </div>
+    
+    <h1>Enter Verification code</h1>
+    <p>We have send you a 6 digit verification code</p>
+
+    <form [formGroup]="otp"  (ngSubmit)="onSubmit()">>
+
+        <div class="input-text" id="otpInputContainer">
+            <input type="text" maxlength="1" class="otp-input" />
+            <input type="text" maxlength="1" class="otp-input" />
+            <input type="text" maxlength="1" class="otp-input" />
+            <input type="text" maxlength="1" class="otp-input" />
+            <input type="text" maxlength="1" class="otp-input" />
+            <input type="text" maxlength="1" class="otp-input" />
+          </div>
+         
+          <div class="receive">
+          <p class="dont">Don't receive code?</p><span class="resend">Resend OTP</span>
+        </div>
+        
+    
+    <button type="submit"[disabled]="!otp.valid">Next</button>
+  </form>
+
+</div>
