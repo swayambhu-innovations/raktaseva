@@ -612,6 +612,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/cyan-orange.css",
               "projects/donorsurvey/src/styles.scss"
             ],
             "scripts": []
@@ -671,6 +672,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/cyan-orange.css",
               "projects/donorsurvey/src/styles.scss"
             ],
             "scripts": []
