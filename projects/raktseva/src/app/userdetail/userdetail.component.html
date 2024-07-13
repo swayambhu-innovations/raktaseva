@@ -1,0 +1,97 @@
+<div class="container">
+  <!-- Reactive Form Start-->
+  <form [formGroup]="requirementForm" (ngSubmit)="onSubmit()">
+    <!-- User Detail Page Image -->
+    <div class="user-img">
+      <img src="userdetail/user.svg" />
+    </div>
+
+    <!-- User Detail Heading -->
+    <div class="heading">
+      <h1>User Details</h1>
+    </div>
+
+    <!-- Paragraph -->
+    <div class="paragraph">
+      <p>Please fill the required details</p>
+    </div>
+
+    <!-- User Name -->
+    <div class="patient-container">
+      <input
+        class="patient-name"
+        type="text"
+        id="patientname"
+        name="patientname"
+        placeholder="Name"
+        formControlName="patientname"
+        required
+      />
+    </div>
+
+    <!-- Gender -->
+    <div class="gender-container">
+        <div class="select-container">
+      <select class="gender" name="gender" id="gender" formControlName="gender">
+        <option value="" disabled selected>Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    </div>
+
+    <!-- Blood Group -->
+    <div class="blood-container">
+        <div class="select-container">
+            <select class="blood-group" name="blood" id="blood" >
+                <option value="" disabled selected>Blood Group</option>
+                <option value="O+">O+</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+              </select>
+        </div>
+      </div>
+
+    <!-- Aadhar Number -->
+    <div class="aadhar-container">
+      <input
+        class="aadhar-number"
+        type="number"
+        id="aadharnumber"
+        name="aadharnumber"
+        placeholder="Aadhar Number"
+        formControlName="aadharnumber"
+        minlength="12"
+        maxlength="12"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 12)"
+        required
+      />
+    </div>
+
+    <!-- City -->
+    <div class="city-container">
+      <input
+        class="city-name"
+        type="text"
+        id="cityname"
+        name="cityname"
+        formControlName="cityname"
+        placeholder="City Name"
+        required
+      />
+    </div>
+
+    <!-- Submit Button -->
+    <div class="submit-container">
+      <button
+        class="submit-btn"
+        [disabled]="!requirementForm.valid"
+        [ngClass]="{ 'blue-button': !requirementForm.valid }"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+  <!-- Reactive Form Ends -->
+</div>
