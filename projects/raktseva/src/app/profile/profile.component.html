@@ -1,31 +1,41 @@
 <mat-card class="profile-card">
-    <div class="profile-header">
+  <div class="profile-header">
       <div class="profile-image-container">
-        <img class="prof" src="editProfile-img/Ellipse 31.png" alt="Profile Picture" />
+          <img class="prof" src="editProfile-img/Ellipse 31.png" alt="Profile Picture" />
       </div>
       <h2>Kriti Prasad</h2>
-    </div>
-    <div class="edit-list">
-    <mat-list>
-      <mat-list-item>
-        <h4>Edit Profile</h4>
-      </mat-list-item>
-      <mat-list-item>
-        <h4>Contact Us</h4>
-      </mat-list-item>
-      <mat-list-item>
-        <h4>Help & FAQ</h4>
-      </mat-list-item>
-      <mat-list-item>
-        <h4>Invite Friend</h4>
-      </mat-list-item>
-      <mat-list-item>
-        <h4>Log Out</h4>
-      </mat-list-item>
-    </mat-list>
-    <div class="footer">
-      <span>Powered By Shreeva</span>
-    </div>
-</div>
-  </mat-card>
-  
+  </div>
+  <div class="edit-list">
+      <mat-list>
+          <mat-list-item>
+              <img src="editProfile-img/Vector (2).png" class="profile-icon" alt="Edit Profile Icon">
+              <h4 (click)="routing()">Edit Profile </h4>
+          </mat-list-item>
+          <mat-list-item>
+            <img src="editProfile-img/Call.png" class="profile-icon" alt="Edit Profile Icon">
+              <h4 >Contact Us</h4>
+          </mat-list-item>
+          <mat-list-item>
+            <img src="editProfile-img/Vector (3).png" class="profile-icon" alt="Edit Profile Icon">
+              <h4>Help & FAQ</h4>
+          </mat-list-item>
+          <mat-list-item>
+            <img src="editProfile-img/profile-2user.png" class="profile-icon" alt="Edit Profile Icon">
+              <h4  (click)="openInviteFriendModal()">Invite Friend</h4>
+          </mat-list-item>
+          <mat-list-item>
+            <img src="editProfile-img/Frame (1).png" class="profile-icon" alt="Edit Profile Icon">
+              <h4>Testimonial</h4>
+          </mat-list-item>
+          <mat-list-item>
+            <img src="editProfile-img/Group 10149.png" class="profile-icon" alt="Edit Profile Icon">
+              <h4>Log Out</h4>
+          </mat-list-item>
+      </mat-list>
+      <div class="footer">
+         <img src="editProfile-img/Shreeva-logo-transparent 1.png" class="span-profile-icon" alt="Edit Profile Icon"> 
+          <span>Powered By Shreeva</span>
+      </div>
+  </div>
+
+</mat-card>

@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -22,5 +23,11 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './edit-profile.component.scss'
 })
 export class EditProfileComponent {
+
+  constructor(private location: Location){}
+
+  goBack() {
+    this.location.back();
+  }
 
 }

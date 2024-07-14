@@ -20,13 +20,13 @@ import {
 } from '@angular/fire/storage';
 
 @Component({
-  selector: 'app-requirement-form',
+  selector: 'app-userdetail',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './requirement-form.component.html',
-  styleUrls: ['./requirement-form.component.scss'],
+  templateUrl: './userdetail.component.html',
+  styleUrl: './userdetail.component.scss',
 })
-export class RequirementFormComponent implements OnInit {
+export class UserdetailComponent implements OnInit {
   requirementForm: FormGroup;
 
   constructor(
@@ -42,10 +42,10 @@ export class RequirementFormComponent implements OnInit {
       cityname: [''],
       bloodcount: [''],
       bednumber: [''],
-      report: ['',Validators.required],
+      report: ['', Validators.required],
     });
   }
-  isImgSizeValid: boolean = false;
+
   ngOnInit(): void {}
 
   async onSubmit(): Promise<void> {
@@ -68,42 +68,6 @@ export class RequirementFormComponent implements OnInit {
       }
     } else {
       console.log('Form is invalid');
-    }
-  }
-
-  // Photo changing TS file
-  async changePhoto(e: any) {
-    const file = e.target.files[0];
-    const fileSizeKB = file.size / 1024;
-    const maxSizeKB = 500;
-
-    if (fileSizeKB > maxSizeKB) {
-      this.isImgSizeValid = true;
-      return;
-    } else {
-      this.isImgSizeValid = false;
-      try {
-        const fileName = `${this.requirementForm.value.report}.${file.name
-          .split('.')
-          .pop()}`;
-        const filePath = `userAvatar/${fileName}`;
-
-        // Upload file to storage
-        const storageRef = ref(this.storage, filePath);
-        const uploadTask = uploadBytesResumable(storageRef, file);
-
-        // Get download URL and update form value
-        const snapshot = await uploadTask;
-        const downloadURL = await getDownloadURL(snapshot.ref);
-
-        this.requirementForm.patchValue({
-          report: downloadURL,
-        });
-
-        console.log('File uploaded successfully:', downloadURL);
-      } catch (error) {
-        console.error('Error uploading file:', error);
-      }
     }
   }
 }

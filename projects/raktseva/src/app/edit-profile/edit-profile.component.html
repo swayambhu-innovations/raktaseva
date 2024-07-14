@@ -1,51 +1,49 @@
-<mat-card class="profile-card">
-    <div class="profile-header">
-      <div class="profile-image-container">
-        <img class="profile-image" src="editProfile-img/Ellipse 31.png" alt="Profile Picture" />
-        <button class="edit-icon">
-          <!-- <mat-icon>photo_camera</mat-icon> -->
-        </button>
-      </div>
-      <!-- <h2 class="profile-title">Profile</h2> -->
+<div class="profile-container">
+  <div class="header">
+    <button class="back-button"(click)="goBack()">
+      <span class="material-icons">arrow_back</span>
+    </button>
+    <h2>Profile</h2>
+  </div>
+  <div class="profile-picture">
+    <img src="editProfile-img/Ellipse 31.png" alt="Profile Picture">
+    <button class="edit-picture-button">
+      <span class="material-icons">camera_alt</span>
+    </button>
+  </div>
+  <form>
+    <div class="form-group">
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" name="fullName" placeholder="Enter your Name">
     </div>
-    <form class="profile-form">
-      <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Full Name</mat-label>
-        <input matInput placeholder="Kirti Prasad" />
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Gender</mat-label>
-        <mat-select>
-          <mat-option value="male">Male</mat-option>
-          <mat-option value="female">Female</mat-option>
-          <mat-option value="other">Other</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Blood Group</mat-label>
-        <mat-select>
-          <mat-option value="A+">A+</mat-option>
-          <mat-option value="A-">A-</mat-option>
-          <mat-option value="B+">B+</mat-option>
-          <mat-option value="B-">B-</mat-option>
-          <mat-option value="AB+">AB+</mat-option>
-          <mat-option value="AB-">AB-</mat-option>
-          <mat-option value="O+">O+</mat-option>
-          <mat-option value="O-">O-</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Aadhar Number</mat-label>
-        <input matInput placeholder="8778 5468 1238" />
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="full-width">
-        <mat-label>City</mat-label>
-        <input matInput placeholder="Prayagraj" />
-      </mat-form-field>
-      <div class="button-group">
-        <button mat-button class="cancel-button">Cancel</button>
-        <button mat-flat-button color="primary" class="save-button">Save</button>
-      </div>
-    </form>
-  </mat-card>
-  
+    <div class="form-group">
+      <label for="gender">Gender</label>
+      <select id="gender" name="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="bloodGroup">Blood Group</label>
+      <select id="bloodGroup" name="bloodGroup">
+        <option value="b+">B+</option>
+        <option value="a+">A+</option>
+        <option value="ab+">AB+</option>
+        <option value="o+">O+</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="aadharNumber">Aadhar Number</label>
+      <input type="text" id="aadharNumber" name="aadharNumber" minlength="12" maxlength="12">
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" id="city" name="city">
+    </div>
+    <div class="form-actions">
+      <button type="button" class="cancel-button">Cancel</button>
+      <button type="submit" class="save-button">Save</button>
+    </div>
+  </form>
+</div>
