@@ -6,11 +6,6 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Firestore, collection, addDoc } from '@angular/fire/firestore';
-import { getFirestore } from '@angular/fire/firestore';
-import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
-import { provideFirestore } from '@angular/fire/firestore';
-import { doc, setDoc } from '@angular/fire/firestore';
 import {
   deleteObject,
   getDownloadURL,
@@ -18,6 +13,7 @@ import {
   uploadBytesResumable,
   Storage,
 } from '@angular/fire/storage';
+import { RequirementformService } from './requirementform.service';
 
 @Component({
   selector: 'app-requirement-form',
@@ -31,7 +27,7 @@ export class RequirementFormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private firestore: Firestore,
+    private requirementFormService: RequirementformService,
     private storage: Storage
   ) {
     this.requirementForm = this.fb.group({
@@ -42,26 +38,25 @@ export class RequirementFormComponent implements OnInit {
       cityname: [''],
       bloodcount: [''],
       bednumber: [''],
-      report: ['',Validators.required],
+      report: ['', Validators.required],
+      timestamp: [''],
     });
   }
   isImgSizeValid: boolean = false;
   ngOnInit(): void {}
 
+  //Function for interacting with service file
   async onSubmit(): Promise<void> {
     if (this.requirementForm.valid) {
       try {
-        const formCollection = collection(this.firestore, 'Requirement Form');
-        const docRef = doc(formCollection);
-        const formDataWithId = {
-          ...this.requirementForm.value,
-          id: docRef.id,
-        };
+        // Set the current timestamp
+        this.requirementForm.patchValue({
+          timestamp: new Date().toISOString(),
+        });
 
-        await setDoc(docRef, formDataWithId);
-        console.log(formDataWithId);
-        console.log('Data saved successfully');
-
+        await this.requirementFormService.saveFormData(
+          this.requirementForm.value
+        );
         this.requirementForm.reset();
       } catch (error) {
         console.error('Error saving data: ', error);
