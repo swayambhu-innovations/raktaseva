@@ -4,69 +4,71 @@
         <img src="surveyForm/Forms-pana 1.svg">
     </div>
 
-    
-        <div class="text">What is Your Blood Type</div>
+        <div class="bloodtype">
+        <div class="text1">What is Your Blood Type</div>
         
           <div class="radio">
 
             <div class="first">
             <div>
-              <input type="radio" id="value1" value="value1" checked />
+              <input type="radio" id="value1"  name="bloodtype" value="A+" checked />
               <label for="value1">A+</label>
             </div>
           
             <div>
-    <input type="radio"  id="value1" value="value1" />
-              <label for="value1">B+</label>
+    <input type="radio"  id="value2" name="bloodtype" value="B+" />
+              <label for="value2">B+</label>
             </div>
           
             <div>
-             <input type="radio" id="value1" value="value1" />
-              <label for="value1">AB+</label>
+             <input type="radio" id="value3"   name="bloodtype"value="AB+" />
+              <label for="value3">AB+</label>
             </div>
 
             <div>
-             <input type="radio" id="value1" value="value1" />
-                <label for="value1">O+</label>
+             <input type="radio" id="value4" name="bloodtype" value="O+" />
+                <label for="value4">O+</label>
               </div>
              </div>
 
              <div class="second">
-              <input type="radio" id="value1" value="value1"  class="A"/>
-              <label for="value1">A-</label>
+              <input type="radio" id="value5" value="A-" name="bloodtype"  class="A"/>
+              <label for="value5">A-</label>
             
           
             <div>
-              <input type="radio" id="value1" value="value1" />
-              <label for="value1">B-</label>
+              <input type="radio" id="value6" name="bloodtype" value="B-" />
+              <label for="value6">B-</label>
             </div>
           
             <div>
-              <input type="radio" id="value1" value="value1" />
-              <label for="value1">AB-</label>
+              <input type="radio" id="value7" name="bloodtype" value="AB-" />
+              <label for="value7">AB-</label>
             </div>
 
             <div>
-                <input type="radio"  id="value1" value="value1" />
-                <label for="value1">O-</label>
+                <input type="radio"  id="value8" name="bloodtype" value="O-" />
+                <label for="value8">O-</label>
               </div>
               </div>
 
               </div>
-
-
-              <div class="text">Have You Donated Previously</div>
-          <div class="yes">
+              </div>
+                
+              <div class="donate">
+              <div class="text2">Have You Donated Previously</div>
+          <div class="Donated">
             <div>
-                <input type="radio" id="value1" value="value1" checked />
-                <label for="value1">yes</label>
+                <input type="radio" id="value1" name="donate" value="Yes" checked />
+                <label for="value1">Yes</label>
               </div>
 
               <div>
-                <input type="radio" id="value1" value="value1"  />
-                <label for="value1">No</label>
+                <input type="radio" id="value2" name="donate" value="No"  />
+                <label for="value2">No</label>
               </div>
 
+          </div>
           </div>
           <!-- <br> -->
           <!-- <div> 
@@ -80,11 +82,11 @@
           </div> -->
 
 
-
+         <div class="condition>">
           <div class="text3">Have you taken any of these in the past 72 hours?</div>
 
           <div class="box">
-          <div class="check">
+          <div class="check1">
           <div><input type="checkbox" id="value1" value="value1" >
             <label for="value1">Antibiotics </label><br></div>
           
@@ -95,7 +97,7 @@
             <label for="value1">Alcohol</label><br></div>
           </div>
           
-          <div>
+          <div class="check2">
             <div><input type="checkbox" id="value1" value="value1">
               <label for="value1">Steriods </label><br></div>
             
@@ -106,6 +108,7 @@
               <label for="value1">Drugs</label><br></div>
             </div>
             
+          </div>
           </div>
 
           <div class="text4">Any history of surgery or blood transfusion in the past six months?</div>
@@ -127,7 +130,7 @@
 </div> 
 
 
-              <div class="button">
+              <div class="btn">
                 <button class="report-btn" (click)="move()">SUBMIT</button>
             </div>
 

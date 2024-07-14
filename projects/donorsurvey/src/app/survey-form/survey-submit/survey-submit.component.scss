@@ -28,7 +28,21 @@ input {
   margin: 0.4rem;
 }
 
-.text{
+
+.text1{
+    width: 200px;
+height: 20px;
+// top: 231px;
+// left: 22px;
+position: relative;
+top: 30px;
+bottom: 100px;
+left:20px;
+}
+
+
+
+.text2{
     width: 200px;
 height: 20px;
 // top: 231px;
@@ -41,18 +55,34 @@ left:20px;
 
 }
 .radio{
-    
-
     display: flex;
-    // justify-content: center;
-    // align-items: center;
     justify-content: space-between;
     margin-left: 15px;
     margin-right: 90px;
-  
     position:relative;
     top:30px;
 }
+
+
+.donate{
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+
+    
+}
+.Donated{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top:50px;
+    left:12px;
+
+
+} 
+
+
+
 .yes{
     display: flex;
     justify-content: space-between;
@@ -69,22 +99,24 @@ left:20px;
 }
 .text3{
     position: relative;
-    top:45px;
+    top:66px;
     left:20px;
     bottom: 20px;
 }
 
 .box{
     display: flex;
-    // justify-content: center;
-    // align-items: center;
+
     justify-content: space-between;
-    margin-left: 15px;
-    margin-right: 90px;
-  
+    justify-content: space-around;
     position:relative;
-    top:50px;
+    top:90px;
 }
+   .check1{
+    position: relative;
+    left:8px;
+   }
+ 
 
 .text4{
     position: relative;
@@ -102,31 +134,33 @@ left:20px;
     top:85px
 }
 
-    .button{
-        display: flex;
-        justify-content: center;
-      
-        width:280px;
-      
-      height:25px;
-      
-      padding: 16px 30px 16px 20px;
-      gap: 10px;
-      
-      opacity: 0px;
-      background: linear-gradient(180deg, #D62828 0%, rgba(188, 35, 35, 0.9492) 30.57%, rgba(165, 31, 31, 0.9032) 53.9%, rgba(138, 26, 26, 0.8502) 80.19%, rgba(112, 21, 21, 0.8) 100%);
-    //   margin-top: 50px;
-    //   margin-left: 20px;
-    //   margin-right: 35px;
-    //   margin-bottom: 30px;
-      border-radius: 10px;
-      position:relative;
-      top:170px;
-      left:20px;
-      right:35px;
+    .report-btn{
+
+
+    display: flex;
+    justify-content: center;
+  
+    width:330px;
+  
+  height:48px;
+  
+  padding: 16px 30px 16px 20px;
+  gap: 10px;
+  
+  
+  background: linear-gradient(180deg, #D62828 0%, rgba(188, 35, 35, 0.9492) 30.57%, rgba(165, 31, 31, 0.9032) 53.9%, rgba(138, 26, 26, 0.8502) 80.19%, rgba(112, 21, 21, 0.8) 100%);
+  
+  border-radius: 10px;
+  position:relative;
+  left:15px;
+  top:230px;
+  border-color: #FFFFFF;
+  
+  color:#FFFFFF;
 }
-#value1 {
+#value1,#value2,#value3,#value4,#value5,#value6,#value7,#value8 {
     accent-color: #003049;
+    color: #003049;
 }
 .date{
     width:270px;
@@ -173,4 +207,10 @@ top:20px;
 left:5px;
 // right:13px;
  
+}
+
+
+.condition{
+    display: flex;
+    justify-content: space-around;
 }
