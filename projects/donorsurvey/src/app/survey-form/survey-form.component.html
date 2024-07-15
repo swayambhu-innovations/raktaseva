@@ -1,44 +1,44 @@
-<div class="container">
+<!-- <div class="container">
   <div class="img">
     <img src="surveyForm/1.svg" />
   </div>
-  <div>
-    <h1 class="para1">Full Name</h1>
+  
+  <div class="field">
+    <label class="para1">Full Name</label>
     <div class="fullname">
       <input type="text" placeholder="Enter Your Full Name" class="input1" />
     </div>
   </div>
-
-  <div>
-    <h1 class="para2">Date of Birth</h1>
+  <div class="field">
+    <label class="para2">Date of Birth</label>
     <div class="birth">
       <input type="date" class="dob" />
     </div>
   </div>
 
-  <div class="radiobtn">
-    <h1 class="para3">Gender</h1>
+  <div class="radiobtn field">
+    <label class="para3">Gender</label>
 
     <div class="radio">
-      <div class= "radio-item">
-        <input type="radio" id="value1" value="value1" checked />
+      <div class="radio-item">
+        <input name="gender" type="radio" id="value1" value="male" checked />
         <label for="value1" id="male">Male</label>
       </div>
 
       <div class="radio-item">
-        <input type="radio" id="value1" value="value1" />
+        <input name="gender" type="radio" id="value1" value="female" />
         <label for="value1">Female</label>
       </div>
 
       <div class="radio-item">
-        <input type="radio" id="value1" value="value1" />
+        <input name="gender" type="radio" id="value1" value="other" />
         <label for="value1">Other</label>
       </div>
     </div>
   </div>
 
-  <div>
-    <h1 class="para4">Mobile Number</h1>
+  <div class="field">
+    <label class="para4">Mobile Number</label>
 
     <div class="input-container">
       <input type="text" class="mobile" placeholder="mobile no " />
@@ -46,29 +46,107 @@
     </div>
   </div>
 
-  <div>
-    <h1 class="para5">Email</h1>
+  <div class="field">
+    <label class="para5">Email</label>
 
     <div class="input-container2">
-    
       <input type="text" class="mobile2" />
-      <img src="surveyForm/Frame (3).svg" class="icon2" /></div>
-    
+      <img src="surveyForm/Frame (3).svg" class="icon2" />
+    </div>
   </div>
 
   <div class="footer">
-    <div>
-      <h1 class="para6">Address</h1>
+    <label class="para1">Address</label>
+    <div class="fullname">
       <input type="text" class="input2" placeholder="streat" />
     </div>
 
-    <div class="Address">
+    <div class="Address field">
       <input type="text" class="adres1" placeholder="city" />
       <input type="text" class="adres2" placeholder="state" />
     </div>
   </div>
 
+  
+
   <div class="btn">
-    <button  class="report-btn" (click)="submit()">NEXT</button>
+    <button class="report-btn" (click)="submit()">NEXT</button>
+  </div>
+</div> -->
+
+<!-- MYNEWCODE -->
+
+<div class="container">
+  <div class="img">
+      <img src="surveyForm/1.svg" />
+  </div>
+
+  <div class="field">
+      <label class="field-label para11">Full Name</label>
+      <div class="fullname">
+          <input type="text" placeholder=" full name" class="input1" />
+      </div>
+  </div>
+
+  <div class="field">
+      <label class=" field-label para21">Date of Birth</label>
+      <div class="birth">
+          <input type="date" class="dob" />
+      </div>
+  </div>
+
+  <div class="radiobtn field">
+      <label class="field-label para31">Gender</label>
+
+      <div class="radio">
+          <div class="radio-item">
+              <input name="gender" type="radio" id="value1" value="male" checked />
+              <label for="value1" id="male">Male</label>
+          </div>
+
+          <div class="radio-item">
+              <input name="gender" type="radio" id="value1" value="female" />
+              <label for="value1" id="female">Female</label>
+          </div>
+
+          <div class="radio-item">
+              <input name="gender" type="radio" id="value1" value="other" />
+              <label for="value1" id="other">Other</label>
+          </div>
+      </div>
+  </div>
+
+  <div class="field">
+      <label class="para41 field-label">Mobile Number</label>
+
+      <div class="input-container">
+          <input type="text" class="mobile" placeholder="mobile no " />
+          <img src="surveyForm/Vector.svg" class="icon" />
+      </div>
+  </div>
+
+  <div class="field">
+      <label class="para51 field-label">Email</label>
+
+      <div class="input-container2">
+          <input type="text" class="mobile2" />
+          <img src="surveyForm/Frame (3).svg" class="icon2" />
+      </div>
+  </div>
+
+  <div class="footer">
+      <label class="para11 field-label">Address</label>
+      <div class="fullname">
+          <input type="text" class="input2" placeholder="streat" />
+      </div>
+
+      <div class="Address field">
+          <input type="text" class="adres1 sm" placeholder="city" />
+          <input type="text" class="adres2 sm" placeholder="state" />
+      </div>
+  </div>
+
+  <div class="btn field1">
+      <button class="report-btn" (click)="submit()">NEXT</button>
   </div>
 </div>
