@@ -13,12 +13,13 @@ import {
   uploadBytesResumable,
   Storage,
 } from '@angular/fire/storage';
-import { RequirementformService } from './requirementform.service';
+import { RequirementformService } from './service/requirementform.service';
+import { HeaderWithBackComponent } from '../shared/header-with-back/header-with-back/header-with-back.component';
 
 @Component({
   selector: 'app-requirement-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, HeaderWithBackComponent],
   templateUrl: './requirement-form.component.html',
   styleUrls: ['./requirement-form.component.scss'],
 })

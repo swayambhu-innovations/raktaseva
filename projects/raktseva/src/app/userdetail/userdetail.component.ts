@@ -6,8 +6,6 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Firestore, collection, addDoc } from '@angular/fire/firestore';
-import { Storage } from '@angular/fire/storage';
 import { UserDetailService } from './service/user-detail.service';
 
 @Component({

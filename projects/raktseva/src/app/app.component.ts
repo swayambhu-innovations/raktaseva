@@ -8,13 +8,14 @@ import { UserdetailComponent } from "./userdetail/userdetail.component";
 import { OtpComponent } from "./auth/otp/otp.component";
 import { LoginWithPhoneComponent } from "./auth/login-with-phone/login-with-phone.component";
 import { EditProfileComponent } from "./edit-profile/edit-profile.component";
+import { HeaderWithBackComponent } from "./shared/header-with-back/header-with-back/header-with-back.component";
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ProfileComponent, RequirementFormComponent, UserdetailComponent, InviteFriendModalComponent, OtpComponent, LoginWithPhoneComponent, EditProfileComponent],
+  imports: [RouterOutlet, ProfileComponent, RequirementFormComponent, UserdetailComponent, InviteFriendModalComponent, OtpComponent, LoginWithPhoneComponent, EditProfileComponent, HeaderWithBackComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
