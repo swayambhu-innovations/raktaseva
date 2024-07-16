@@ -1,0 +1,45 @@
+.container {
+  border-radius: 15px;
+  background: var(
+    --form-linear,
+    linear-gradient(179deg, #75c1e9 0.91%, #d6839d 54.86%, #d5294d 99.09%)
+  );
+  width: 339px;
+  height: 260px;
+  margin: 35% auto;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  width: 80px;
+  height: 71px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  background: var(
+    --Blue-linear,
+    linear-gradient(180deg, #003049 0%, #005079 99.99%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  padding: 15px 0;
+}
+
+.paragraph {
+  color: var(--white, #fff);
+  font-feature-settings: "clig" off, "liga" off;
+  /* Lato medium */
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  padding-left: 10px;
+}
