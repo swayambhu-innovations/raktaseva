@@ -7,17 +7,8 @@ import {
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Firestore, collection, addDoc } from '@angular/fire/firestore';
-import { getFirestore } from '@angular/fire/firestore';
-import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
-import { provideFirestore } from '@angular/fire/firestore';
-import { doc, setDoc } from '@angular/fire/firestore';
-import {
-  deleteObject,
-  getDownloadURL,
-  ref,
-  uploadBytesResumable,
-  Storage,
-} from '@angular/fire/storage';
+import { Storage } from '@angular/fire/storage';
+import { UserDetailService } from './service/user-detail.service';
 
 @Component({
   selector: 'app-userdetail',
@@ -27,42 +18,36 @@ import {
   styleUrl: './userdetail.component.scss',
 })
 export class UserdetailComponent implements OnInit {
-  requirementForm: FormGroup;
+  detailForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
-    private firestore: Firestore,
-    private storage: Storage
+    private userDetailService: UserDetailService
   ) {
-    this.requirementForm = this.fb.group({
-      patientname: [''],
+    this.detailForm = this.fb.group({
+      username: [''],
       gender: [''],
+      bloodgroup: [''],
       aadharnumber: [''],
-      hospitalname: [''],
       cityname: [''],
-      bloodcount: [''],
-      bednumber: [''],
-      report: ['', Validators.required],
+      email: ['', Validators.email],
+      timestamp: [''],
     });
   }
 
   ngOnInit(): void {}
 
+  //Function for interacting with service file
   async onSubmit(): Promise<void> {
-    if (this.requirementForm.valid) {
+    if (this.detailForm.valid) {
       try {
-        const formCollection = collection(this.firestore, 'Requirement Form');
-        const docRef = doc(formCollection);
-        const formDataWithId = {
-          ...this.requirementForm.value,
-          id: docRef.id,
-        };
+        // Set the current timestamp
+        this.detailForm.patchValue({
+          timestamp: new Date().toISOString(),
+        });
 
-        await setDoc(docRef, formDataWithId);
-        console.log(formDataWithId);
-        console.log('Data saved successfully');
-
-        this.requirementForm.reset();
+        await this.userDetailService.saveFormData(this.detailForm.value);
+        this.detailForm.reset();
       } catch (error) {
         console.error('Error saving data: ', error);
       }
