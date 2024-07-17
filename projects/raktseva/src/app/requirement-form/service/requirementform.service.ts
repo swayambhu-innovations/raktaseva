@@ -11,7 +11,7 @@ export class RequirementformService {
   //Function for sending data to firebase 
   async saveFormData(formData: any): Promise<void> {
     try {
-      const formCollection = collection(this.firestore, 'Requirement Form');
+      const formCollection = collection(this.firestore, 'requirement');
       const docRef = doc(formCollection);
       const formDataWithId = {
         ...formData,
