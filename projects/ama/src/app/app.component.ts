@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { CancelledComponent } from "./modules/cancelled/cancelled.component";
 import { UserAndPermissionComponent } from "./user-and-permission/user-and-permission.component";
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
