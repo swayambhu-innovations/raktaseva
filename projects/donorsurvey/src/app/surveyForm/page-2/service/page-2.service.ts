@@ -3,15 +3,16 @@ import { Firestore } from '@angular/fire/firestore';
 import { collection, doc, setDoc } from 'firebase/firestore';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class RequirementformService {
-  constructor(private firestore: Firestore) {}
+export class Page2Service {
 
-  //Function for sending data to firebase 
-  async saveFormData(formData: any): Promise<void> {
+  constructor(private firestore: Firestore) { }
+  
+   //Function for sending data to firebase 
+   async saveFormData(formData: any): Promise<void> {
     try {
-      const formCollection = collection(this.firestore, 'requirement');
+      const formCollection = collection(this.firestore, 'survey');
       const docRef = doc(formCollection);
       const formDataWithId = {
         ...formData,

@@ -35,7 +35,7 @@ export class Page1Component implements OnInit {
       dob: [''],
       gender: [''],
       phone: [''],
-      email: [''],
+      email: ['',Validators.email],
       street: [''],
       city: [''],
       state: [''],
