@@ -8,14 +8,11 @@ import {
   FormControl,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import {
-  deleteObject,
-  getDownloadURL,
-  ref,
-  uploadBytesResumable,
-  Storage,
-} from '@angular/fire/storage';
+import { Storage } from '@angular/fire/storage';
 import { timestamp } from 'rxjs';
+import { Router } from '@angular/router';
+import { Page2Service } from './service/page-2.service';
+
 
 @Component({
   selector: 'app-page-2',
@@ -27,7 +24,12 @@ import { timestamp } from 'rxjs';
 export class Page2Component implements OnInit {
   surveyForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private storage: Storage) {
+  constructor(
+    private fb: FormBuilder,
+    private storage: Storage,
+    private router: Router,
+    private page2Service: Page2Service
+  ) {
     this.surveyForm = this.fb.group({
       bloodgroup: [''],
       donated: [''],
@@ -39,31 +41,42 @@ export class Page2Component implements OnInit {
   }
 
   ngOnInit(): void {}
+  //Function for interacting with service file
+  async onSubmit(): Promise<void> {
+    if (this.surveyForm.valid) {
+      try {
+        // Set the current timestamp
+        this.surveyForm.patchValue({
+          timestamp: new Date().toISOString(),
+        });
 
-  finalSubmit() {
-    console.log('Good Night', this.surveyForm.value);
-    const page2 = this.surveyForm.value;
-    // Retrieve the form data from local storage
-    const storedFormData = localStorage.getItem('surveyFormData');
-    console.log('Good Night', storedFormData);
-    let allData: any;
-    if (storedFormData)
-      allData = {
-        ...page2,
-        ...JSON.parse(storedFormData),
-      };
+        console.log('Good Night', this.surveyForm.value);
+        const page2 = this.surveyForm.value;
+        // Retrieve the form data from local storage
+        const storedFormData = localStorage.getItem('surveyFormData');
+        console.log('Good Night', storedFormData);
+        let allData: any;
+        if (storedFormData)
+          allData = {
+            ...page2,
+            ...JSON.parse(storedFormData),
+          };
 
-    console.log('Final Check', allData);
+        console.log('Final Check', allData);
+        localStorage.removeItem('surveyFormData');
+        this.router.navigate(['salutation']);
 
-    if (storedFormData) {
-      const formData = JSON.parse(storedFormData);
-
-      // localStorage.removeItem('surveyFormData');
+        await this.page2Service.saveFormData(allData);
+        this.surveyForm.reset();
+      } catch (error) {
+        console.error('Error saving data: ', error);
+      }
     } else {
-      console.log('No form data found in local storage.');
+      console.log('Form is invalid');
     }
   }
 
+  //Function for selection multiple input
   onCheckboxChange(e: Event) {
     const checkbox = e.target as HTMLInputElement;
     const medicineArray: FormArray = this.surveyForm.get(
