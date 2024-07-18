@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SurveyFormComponent } from "./survey-form/survey-form.component";
-import { SurveySubmitComponent } from './survey-form/survey-submit/survey-submit.component';
+import { Page1Component } from "./surveyForm/page-1/page-1.component";
+import { Page2Component } from "./surveyForm/page-2/page-2.component";
+import { SalutationComponent } from "./surveyForm/salutation/salutation.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,SurveyFormComponent,SurveySubmitComponent],
+  imports: [RouterOutlet, Page1Component, Page2Component, SalutationComponent,SurveyFormComponent,SurveySubmitComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

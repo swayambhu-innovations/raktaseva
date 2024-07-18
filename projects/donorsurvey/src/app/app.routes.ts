@@ -1,13 +1,10 @@
 import { Routes } from '@angular/router';
-import { SurveySubmitComponent } from './survey-form/survey-submit/survey-submit.component';
-import { SurveyFormComponent } from './survey-form/survey-form.component';
-import { SurveyThankComponent } from './survey-form/survey-submit/survey-thank/survey-thank.component';
-
+import { Page2Component } from './surveyForm/page-2/page-2.component';
+import { Page1Component } from './surveyForm/page-1/page-1.component';
+import { SalutationComponent } from './surveyForm/salutation/salutation.component';
 export const routes: Routes = [
-   { path: 'next-component', component: SurveySubmitComponent },
-   { path: '', component: SurveyFormComponent },
-   
+    {path:'',component:Page1Component},
 
-  { path: 'thank-component', component: SurveyThankComponent },
-   { path: '', component: SurveySubmitComponent  }
+    {path:'page-2',component:Page2Component},
+    {path: 'salutation', component: SalutationComponent }
 ];
