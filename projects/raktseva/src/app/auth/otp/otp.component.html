@@ -1,7 +1,13 @@
-<div class="container">
-  
+<!-- <div class="container">
+  <div class="header">
+    <button class="back-button"(click)="goBack()">
+      <span class="material-icons">arrow_back</span>
+    </button>
+    <h2>Profile</h2>
+  </div>
+   -->
     <!-- Logo -->
-    <div class="logo-container">
+    <!-- <div class="logo-container">
       <img src="editProfile-img/logo.png" alt="Logo">
     </div>
     
@@ -11,15 +17,15 @@
     <form [formGroup]="otp"  (ngSubmit)="onSubmit()">>
 
         <div class="input-text" id="otpInputContainer">
+            <input type="text" maxlength="6" class="otp-input" formControlName="otp1" /> -->
+            <!-- <input type="text" maxlength="1" class="otp-input" />
             <input type="text" maxlength="1" class="otp-input" />
             <input type="text" maxlength="1" class="otp-input" />
             <input type="text" maxlength="1" class="otp-input" />
-            <input type="text" maxlength="1" class="otp-input" />
-            <input type="text" maxlength="1" class="otp-input" />
-            <input type="text" maxlength="1" class="otp-input" />
-          </div>
+            <input type="text" maxlength="1" class="otp-input" /> -->
+          <!-- </div> -->
          
-          <div class="receive">
+          <!-- <div class="receive">
           <p class="dont">Don't receive code?</p><span class="resend">Resend OTP</span>
         </div>
         
@@ -27,4 +33,30 @@
     <button type="submit"[disabled]="!otp.valid">Next</button>
   </form>
 
+</div> -->
+
+<div class="container">
+  <div class="logo-container">
+    <img src="editProfile-img/logo.png" alt="Logo">
+  </div>
+  
+  <h1>Enter Verification code</h1>
+  <p>We have sent you a 6-digit verification code</p>
+
+  <form [formGroup]="otp" (ngSubmit)="onSubmit()">
+    <div class="input-text" id="otpInputContainer">
+      <input type="text" maxlength="1" class="otp-input" formControlName="otp1" (input)="moveToNext($event, 0)" (keydown)="moveToPrevious($event, 0)" />
+      <input type="text" maxlength="1" class="otp-input" formControlName="otp2" (input)="moveToNext($event, 1)" (keydown)="moveToPrevious($event, 1)" />
+      <input type="text" maxlength="1" class="otp-input" formControlName="otp3" (input)="moveToNext($event, 2)" (keydown)="moveToPrevious($event, 2)" />
+      <input type="text" maxlength="1" class="otp-input" formControlName="otp4" (input)="moveToNext($event, 3)" (keydown)="moveToPrevious($event, 3)" />
+      <input type="text" maxlength="1" class="otp-input" formControlName="otp5" (input)="moveToNext($event, 4)" (keydown)="moveToPrevious($event, 4)" />
+      <input type="text" maxlength="1" class="otp-input" formControlName="otp6" (input)="moveToNext($event, 5)" (keydown)="moveToPrevious($event, 5)" />
+    </div>
+    
+    <div class="receive">
+      <p class="dont">Don't receive code?</p><span class="resend"(click)="resendOTP()">Resend OTP</span>
+    </div>
+    
+    <button type="submit" [disabled]="!otp.valid">Next</button>
+  </form>
 </div>

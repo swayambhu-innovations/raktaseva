@@ -1,0 +1,91 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .background {
+    //   background-image: url('assets/blue-hd-medical-staff-symbol-eb0mddhppbkibjh7 1.svg'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    height: 100%;
+    display: flex;
+  
+  }
+  
+  
+  
+  .login-panel {
+    border: 1px solid #FFFFFF;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    justify-content: center;
+    
+    width: 692px;
+  height: 290px;
+  position: relative;
+  top: 133.3px;
+  
+  }
+  
+  .panel-title {
+    
+    font-size: 24px;
+    color: #333;
+    padding-top: 10px;
+  }
+  
+  .panel-subtitle {
+    margin: 10px ;
+    color: #666;
+    padding-top: 8px;
+    position :relative;
+    top:10px;
+  }
+  
+  .login-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 3px;
+    background-color: #0f4580;
+    
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 70px;
+    width: 469px;
+  height: 50px;
+  gap:3px;
+  border-radius: 12px ;
+  border: 1px ;
+  margin-left: 90px;
+  
+  
+  
+  
+  
+  
+  }
+  
+  .login-button img {
+    margin-right: 8px;
+  }
+  
+  .login-button:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  #hello{
+    top:50px;
+  }

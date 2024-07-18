@@ -39,7 +39,7 @@ top: 142px;
     background:  linear-gradient(180deg, #D62828 0%, rgba(188, 35, 35, 0.9492) 30.57%, rgba(165, 31, 31, 0.9032) 53.9%, rgba(138, 26, 26, 0.8502) 80.19%, rgba(112, 21, 21, 0.8) 100%);
     ;
     color: #fff;
-    
+    border-color: #D62828;
     width:  90px;
 height:  30px;
 top: 357px;
@@ -59,7 +59,7 @@ opacity: 0px;
   .card{
     background-color: #fff;
     color:#000;
-    border-radius:5px;
+    border-radius:20px;
     box-shadow: 4px 8px rgba(0, 0, 0, 0.1);
   }
   .card-body{
@@ -100,7 +100,7 @@ opacity: 0px;
       border:1px solid #003049;
       width: Fill (720px)px;
 height: Fill (56px)px;
-padding: 4px 0px 0px 0px;
+// padding: 4px 0px 0px 0px;
 gap: 4px;
 opacity: 0px;
 position: relative;
