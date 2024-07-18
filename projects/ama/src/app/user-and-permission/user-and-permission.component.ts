@@ -34,6 +34,8 @@ import { Component, OnDestroy } from '@angular/core';
 import { Firestore, collectionData } from '@angular/fire/firestore';
 import { collection, query, where } from 'firebase/firestore';
 import { Subscription } from 'rxjs';
+import { EmailService } from './email.service';
+
 
 @Component({
   selector: 'app-user-and-permission',
@@ -46,7 +48,8 @@ export class UserAndPermissionComponent implements OnDestroy {
   private donor: any[] = [];
   private donorSubscription: Subscription | null = null;
 
-  constructor(private firestore: Firestore) {
+
+  constructor(private firestore: Firestore, private emailService: EmailService) {
     // this.listenToDonorChanges();
   }
 
@@ -74,4 +77,14 @@ export class UserAndPermissionComponent implements OnDestroy {
       this.donorSubscription.unsubscribe();
     }
   }
+
+  sendEmail() {
+    this.emailService.sendEmail('ambarmishra740@gmail.com', 'Test Subject', 'Test Message')
+      // .subscribe(response => {
+      //   console.log('Email sent successfully', response);
+      // }, error => {
+      //   console.error('Error sending email', error);
+      // });
+  }
 }
+
