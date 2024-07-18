@@ -4,12 +4,13 @@ import { CancelledComponent } from "./modules/cancelled/cancelled.component";
 import { PendingComponent } from "./modules/pending/pending.component";
 import { UserAndPermissionComponent } from "./user-and-permission/user-and-permission.component";
 import { LoginComponent } from "./auth/login/login.component";
+import { ApprovedComponent } from "./modules/approved/approved.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CancelledComponent, UserAndPermissionComponent, PendingComponent, LoginComponent],
+  imports: [RouterOutlet, CancelledComponent, UserAndPermissionComponent, PendingComponent, LoginComponent, ApprovedComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
