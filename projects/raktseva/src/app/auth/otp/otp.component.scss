@@ -5,6 +5,37 @@
     font-family: Arial, sans-serif;
 }
 
+
+.header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 20px;
+  left: 10px;
+
+  // margin-bottom: 20px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.header h2 {
+  flex-grow: 1;
+  text-align: center;
+  text-align: left;
+  position: relative;
+  left: 10px;
+  //styleName: lato semibold;
+  font-family: Lato;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+
+}
 .container {
     // position: relative;
     // top:200px;
