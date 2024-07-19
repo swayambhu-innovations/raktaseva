@@ -9,11 +9,14 @@ import { OverallReportComponent } from "./charts/overall-report/overall-report.c
 import { RequestRejectedComponent } from "./charts/request-rejected/request-rejected.component";
 import { StatisticsComponent } from "./charts/statistics/statistics.component";
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Import this
+import { AuthService } from '../auth/auth.service';
+import { signOut } from 'firebase/auth';
+
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [TotalRequestComponent, ChartContainerComponent, ApprovedRequestComponent, OverallReportComponent, RequestRejectedComponent, StatisticsComponent],
+  imports: [TotalRequestComponent, ChartContainerComponent, ApprovedRequestComponent, OverallReportComponent, RequestRejectedComponent, StatisticsComponent,],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
   providers: [
@@ -22,16 +25,19 @@ import { StatisticsComponent } from "./charts/statistics/statistics.component";
 })
 
 export class DashboardComponent {
+  constructor(private authService:AuthService,){}
+
   totalRequest: any;
   approved: any;
   rejected: any;
   pending:any
 
+  triggerSignout() {
+    this.authService.signout().then(() => {
+      console.log('User signed out');
+    }).catch((error) => {
+      console.error('Error signing out: ', error);
+    });
+  }
 }
 
-
-// bootstrapApplication(AppComponent, {
-//   providers: [
-//     importProvidersFrom(BrowserAnimationsModule) // Add this line
-//   ]
-// });
