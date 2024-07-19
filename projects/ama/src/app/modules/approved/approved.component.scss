@@ -1,0 +1,262 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    margin: 0;
+    height: 100vh;
+  }
+  
+
+
+// newstylee
+
+body{
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.4;
+    background-color: #f2f2f2;
+    
+    
+  }
+
+  a{
+    text-decoration: none;
+    cursor: pointer;
+  }
+.sidebar{
+    display:flex;
+    flex-direction: column;
+    background-color: #003049;
+    color:#fff;
+    flex-basis: 300px;
+    text-decoration: none;
+    width: 358px;
+
+
+}
+.user-block{
+    display:flex;
+    align-items: center;
+    
+    margin-right: 0px;
+}
+.user-block .user-img{
+    flex-basis: 60px;
+    border-radius:100%;
+    border:1px solid #fff;
+    overflow: hidden;
+}
+.user-block .user-img img{
+    object-fit: cover;
+    max-width: 100%;
+    
+}
+
+
+.sidebar ul{
+    display:flex;
+    flex-direction: column;
+}
+.sidebar ul li{
+    display:block;
+}
+.sidebar ul li a{
+    display: block;
+    padding: 15px 20px;
+    color:#fff;
+
+    transition: .5s;
+}
+.sidebar ul li a:hover{
+ background: rgba(255, 255, 255, 0.16);
+ 
+ transition: .5s;
+}
+
+.nav-list{
+
+    width: 235px;
+height: 479px;
+top: 182px;
+left: 8px;
+gap: 8px;
+opacity: 0px;
+
+
+  }
+  .nav-icon{
+    width: 30px;
+height: 30px;
+padding-right: 25px;
+justify-content: space-between;
+gap: 8px;
+opacity: 0px;
+position: relative;
+top:17px;
+  }
+
+  .nav-item{
+    justify-content: space-evenly;
+    position:relative;
+    left:8.7px;
+    right:10px;
+    top:50px;
+  }
+
+  .main-content {
+    flex: 1;
+    background-color: #c6d3d6;
+    padding: 70px;
+
+  }
+  
+  .top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding:5px;
+    width: 1210px;
+    height: 60px;
+    position: relative;
+    bottom: 69px;
+    color:#003049;
+    
+  }
+  
+  .approved-section {
+    background-color: white;
+    padding: 1px;
+    border-radius: 15px;
+    position: relative;
+   bottom: 120px;
+  width: 1223px;
+  }
+  
+  .search-sort {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    position: relative;
+    bottom: 50px;
+  }
+   .search{
+    position: relative;
+    bottom: 50px;
+    left:40px;
+   }
+  
+  .search-sort input {
+    padding: 10px;
+    
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width:  460px;
+height: 40px;
+padding: 0px 40px 0px 40px;
+
+
+  }
+  
+
+  
+  .search-sort select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: var(--CR-10, 10px);
+  width: 170px;
+  height: 35px;
+background: var(--white, #FFF);
+    border-radius: 4px;
+    position: relative;
+    left:99px;
+    border-outline:#3498db;
+  }
+  
+  .search-sort option{
+justify-content: space-between;
+  }
+  table {
+
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    padding-top: 5px;
+    position: relative;
+    left:20px;
+    right:20px;
+    top:10px;
+border-radius: 90px;;
+
+  }
+  
+  
+  th, td {
+    padding: 30px;
+    text-align: center;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 2px;
+  }
+  
+  .pagination button {
+    padding: 8px 16px;
+    border: none;
+    border-radius:500px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .pagination button.active {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  .user-info{
+    margin-right: 20px;
+    position: relative;
+    top:19px;
+  }
+
+ .AMA- title{
+color:#003049;
+  }
+  .heading{
+    display:flex;
+    align-items: center;
+    padding:20px;
+    column-gap: 20px;
+  }
+.OPtion{
+    width: 280px;
+height: 40px;
+top: 386px;
+// left: 1367px;
+// padding: 11px 23px 11px 23px;
+padding:10px;
+border-radius: 10px ;
+border: 1px 0px 0px 0px;
+justify-content: space-between;
+border: 1px solid#CCC;
+
+
+#para{
+  left:1px;
+}
+
+
+
+
+
+}
+.notification{
+  
+  position: relative;
+  left:350px
+}
