@@ -28,3 +28,46 @@ export class UserDetailService {
     }
   }
 }
+
+// import { Injectable } from '@angular/core';
+// import { Firestore, doc, setDoc, getDoc } from '@angular/fire/firestore';
+// import { AngularFireAuth } from '@angular/fire/compat/auth';
+// import { from, Observable } from 'rxjs';
+// import { switchMap } from 'rxjs/operators';
+
+// @Injectable({
+//   providedIn: 'root'
+// })
+// export class UserDetailService {
+
+//   constructor(private firestore: Firestore, private afAuth: AngularFireAuth) {}
+
+//   getUserProfile(): Observable<any> {
+//     return this.afAuth.user.pipe(
+//       switchMap(user => {
+//         if (user) {
+//           const userDocRef = doc(this.firestore, `users/${user.uid}`);
+//           return from(getDoc(userDocRef)).pipe(
+//             switchMap(docSnap => {
+//               if (docSnap.exists()) {
+//                 return [docSnap.data()];
+//               } else {
+//                 return [{}];
+//               }
+//             })
+//           );
+//         } else {
+//           return [{}];
+//         }
+//       })
+//     );
+//   }
+
+//   async updateUserProfile(profileData: any): Promise<void> {
+//     const user = await this.afAuth.currentUser;
+//     if (user) {
+//       const userDocRef = doc(this.firestore, `users/${user.uid}`);
+//       await setDoc(userDocRef, profileData, { merge: true });
+//     }
+//   }
+// }

@@ -44,7 +44,7 @@ export class RequirementFormComponent implements OnInit {
     });
   }
   isImgSizeValid: boolean = false;
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   //Function for interacting with service file
   async onSubmit(): Promise<void> {
@@ -56,7 +56,7 @@ export class RequirementFormComponent implements OnInit {
         });
 
         await this.requirementFormService.saveFormData(
-          this.requirementForm.value
+          { ...this.requirementForm.value, status: 'pending' }
         );
         this.requirementForm.reset();
       } catch (error) {

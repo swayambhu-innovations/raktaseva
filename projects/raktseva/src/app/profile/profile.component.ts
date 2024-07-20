@@ -8,6 +8,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { MatDialog } from '@angular/material/dialog';
 import { InviteFriendModalComponent } from '../invite-friend-modal/invite-friend-modal.component';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { AuthPermissionService } from '../auth/auth-permission.service';
 
 
 
@@ -22,7 +23,7 @@ import { MatBottomSheet } from '@angular/material/bottom-sheet';
   styleUrl: './profile.component.scss'
 })
 export class ProfileComponent {
-  constructor(private route:Router ,private location: Location,private dialog: MatDialog){}
+  constructor(private route:Router ,private location: Location,private dialog: MatDialog,private authService: AuthPermissionService){}
 
   openInviteFriendModal() {
     this.dialog.open(InviteFriendModalComponent, {
@@ -34,6 +35,10 @@ export class ProfileComponent {
   }
   routing(){
     this.route.navigate(['editprofile'])
+  }
+
+  logout(): void {
+    this.authService.logout();
   }
 
 

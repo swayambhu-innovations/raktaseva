@@ -188,7 +188,7 @@
 
 
 import { Injectable } from '@angular/core';
-import { Auth, signInWithPhoneNumber, ConfirmationResult, getAuth, RecaptchaVerifier } from '@angular/fire/auth';
+import { Auth, signInWithPhoneNumber, ConfirmationResult, getAuth, RecaptchaVerifier, signOut } from '@angular/fire/auth';
 import { FirebaseApp } from '@angular/fire/app';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
@@ -269,5 +269,13 @@ export class AuthPermissionService {
 
   get phoneNumber(): string | null {
     return this.currentPhoneNumber;
+  }
+  logout(): void {
+    signOut(this.auth).then(() => {
+      console.log('User signed out');
+      this.router.navigate(['/']); 
+    }).catch((error) => {
+      console.error('Error during sign out:', error);
+    });
   }
 }
