@@ -13,12 +13,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { OverallReportComponent } from "./dashboard/charts/overall-report/overall-report.component";
 import { StatisticsComponent } from "./dashboard/charts/statistics/statistics.component";
+import { EditProfileComponent } from "../../../raktseva/src/app/edit-profile/edit-profile.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CancelledComponent, UserAndPermissionComponent, PendingComponent, LoginComponent, ApprovedComponent, DashboardComponent, TotalRequestComponent, ApprovedRequestComponent, ChartContainerComponent, OverallReportComponent, StatisticsComponent],
+  imports: [RouterOutlet, CancelledComponent, UserAndPermissionComponent, PendingComponent, LoginComponent, ApprovedComponent, DashboardComponent, TotalRequestComponent, ApprovedRequestComponent, ChartContainerComponent, OverallReportComponent, StatisticsComponent, EditProfileComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
