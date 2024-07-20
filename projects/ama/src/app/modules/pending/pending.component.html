@@ -107,6 +107,23 @@
             </div>
             
         </div>
+
+        <div class="modal-background" *ngIf="isOpen">
+            <div class="modal">
+                <span class="close" (click)="closeModal()">×</span>
+                <h2>Patient Report</h2>
+                <div class="divset">
+                  <div>
+                    <app-patient-details></app-patient-details>
+                  </div>
+                  <div class="imgdiv">
+                    IMG Report
+                  </div>  
+                </div>
+            
+            </div>
+        </div>
+
     </main>
 </body>
 

@@ -1,14 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AmaService } from '../../services/ama.service';
 import {  collection, getDocs } from 'firebase/firestore';
 // import { FirebaseApp } from '@angular/fire/app';
 import { Firestore } from '@angular/fire/firestore';
+import { PatientDetailsComponent } from "./patient-details/patient-details.component";
 
 @Component({
   selector: 'app-pending',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModuleCommonModule, PatientDetailsComponent],
   templateUrl: './pending.component.html',
   styleUrls: ['./pending.component.scss']
 })
@@ -51,3 +53,7 @@ export class PendingComponent implements OnInit {
     }
   }
 }
+
+
+
+
