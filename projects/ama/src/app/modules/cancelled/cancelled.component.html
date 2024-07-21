@@ -78,69 +78,18 @@
                                     <th>Patient Name</th>
                                     <th>Aadhar Number</th>
                                     <th>Contact</th>
+                                    <th>Status</th>
                                     <th class="report-cell">Report</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Nirmal sravan</td>
-                                    <td>387458962541</td>
-                                    <td>9988776655</td>
-                                    <td><button class="btn btn-danger" (click)="openModal()">View Report</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Nirmal sravan</td>
-                                    <td>387458962541</td>
-                                    <td>9988776655</td>
-                                    <td><button class="btn btn-danger">View Report</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Nirmal sravan</td>
-                                    <td>387458962541</td>
-                                    <td>9988776655</td>
-                                    <td><button class="btn btn-danger">View Report</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Nirmal sravan</td>
-                                    <td>387458962541</td>
-                                    <td>9988776655</td>
-                                    <td><button class="btn btn-danger">View Report</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Nirmal sravan</td>
-                                    <td>387458962541</td>
-                                    <td>9988776655</td>
-                                    <td><button class="btn btn-danger">View Report</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Nirmal sravan</td>
-                                    <td>387458962541</td>
-                                    <td>9988776655</td>
-                                    <td><button class="btn btn-danger">View Report</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Nirmal sravan</td>
-                                    <td>387458962541</td>
-                                    <td>9988776655</td>
-                                    <td><button class="btn btn-danger">View Report</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Nirmal sravan</td>
-                                    <td>387458962541</td>
-                                    <td>9988776655</td>
-                                    <td><button class="btn btn-danger">View Report</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Nirmal sravan</td>
-                                    <td>387458962541</td>
-                                    <td>9988776655</td>
-                                    <td><button class="btn btn-danger">View Report</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Nirmal sravan</td>
-                                    <td>387458962541</td>
-                                    <td>9988776655</td>
-                                    <td><button class="btn btn-danger">View Report</button></td>
+                                <tr *ngFor="let pending of pendingSummary">
+                                    <td>{{ pending && pending.name ? pending.name: '-' }}</td>
+                                    <td>{{ pending && pending.aadharNumber ? pending.aadharNumber : '-' }}</td>
+                                    <td>{{ pending && pending.contact ? pending.contact: '-' }}</td>
+                                    <td>{{ pending && pending.status ? pending.status: '-' }}</td>
+                                    <td><button class="btn btn-danger" (click)="openModal(pending.id)">View
+                                            Report</button></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -153,12 +102,12 @@
             <div class="modal">
                 <span class="close" (click)="closeModal()">×</span>
                 <h2>Patient Report</h2>
-                <div class="img">
-                    <img [src]="imageURL"alt="report-img">
+                    <div class="img">
+                        <img [src]="imageURL" alt="report-img">
+                    </div>
                 </div>
-                <!-- <p>Modal con</p> -->
             </div>
-        </div>
+        
     </main>
 </body>
 

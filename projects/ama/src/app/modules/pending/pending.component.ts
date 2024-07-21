@@ -1,16 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { AmaService } from '../../services/ama.service';
-import {  collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore';
 // import { FirebaseApp } from '@angular/fire/app';
 import { Firestore } from '@angular/fire/firestore';
 import { PatientDetailsComponent } from "./patient-details/patient-details.component";
+import { Patient } from '../patient.structure';
 
 @Component({
   selector: 'app-pending',
   standalone: true,
-  imports: [CommonModuleCommonModule, PatientDetailsComponent],
+  imports: [CommonModule, PatientDetailsComponent],
   templateUrl: './pending.component.html',
   styleUrls: ['./pending.component.scss']
 })
@@ -19,10 +20,34 @@ export class PendingComponent implements OnInit {
   aadharNumber: number = 0;
   contact: number = 0;
   status: string = '';
+  imageURL: string = '';
+  patientData: Patient;
+  unit:number=0;
+  city:string='';
+  hospital_name:string;
+  bed_no:string='';
 
-  pendingSummary: any[] = [];
+  pendingSummary: Patient[] = [];
 
-  constructor(private amaService: AmaService,private firestore: Firestore) {}
+
+  isOpen = false;
+
+  openModal(id: string) {
+    this.isOpen = true;
+    this.pendingSummary.map((patient) => {
+      if (patient.id == id) {
+        this.patientData = patient
+        this.imageURL = patient.imageURL
+      }
+    })
+
+  }
+
+  closeModal() {
+    this.isOpen = false;
+  }
+
+  constructor(private amaService: AmaService, private firestore: Firestore) { }
 
   ngOnInit(): void {
     this.getPatientDetail();
@@ -31,23 +56,32 @@ export class PendingComponent implements OnInit {
   async getPatientDetail() {
     try {
       const usersSnapshot = await this.amaService.getRequirement();
-        const patientSnapshot = await getDocs(collection(this.firestore, 'requirement'));
-        const patientDocs = patientSnapshot.docs;
+      const patientSnapshot = await getDocs(collection(this.firestore, 'requirement'));
+      const patientDocs = patientSnapshot.docs;
 
-        for (const patient of patientDocs) {
-          const patientData = patient.data();
-          console.log(patientData)
+      for (const patient of patientDocs) {
+        const patientData = patient.data();
+        console.log(patientData)
 
-          if(patientData['status']=='pending'){
-          
+
+        if (patientData['status'] == 'pending') {
+
           this.pendingSummary.push({
-            name:patientData['patientname'],
-            aadharNumber:patientData['aadharnumber'],
+            id: patientData['id'],
+            name: patientData['patientname'],
+            aadharNumber: patientData['aadharnumber'],
             contact: '9987565848',
             status: patientData['status'],
+            imageURL: patientData['report'],
+            unit: patientData['bloodcount'],
+            city: patientData['cityname'],
+            hospital_name: patientData['hospitalname'],
+            bed_no: patientData['bednumber'],
+            bloodGroup:'',
+
           });
+        }
       }
-    }
     } catch (error) {
       console.error("Error fetching users' booking data:", error);
     }

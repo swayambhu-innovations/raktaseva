@@ -1,4 +1,3 @@
-
 <body>
     <main>
         <aside class="sidebar">
@@ -12,57 +11,38 @@
                 </div>
             </header>
             <nav>
-                <!-- <ul class="nav-list">
-                    <li class="nav-item"><a href="#" class="nav-link">Dashboard</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Pending</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Approved</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Cancelled</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Ready Donor</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">User and Permission</a></li>
-                </ul> -->
-
-
-
                 <ul class="nav-list">
                     <li class="nav-item">
-                      <a href="#" class="nav-link">
-                        <img src="Vector (2).svg"  class="nav-icon"> Dashboard
-                      </a>
+                        <a href="#" class="nav-link">
+                            <img src="Vector (2).svg" class="nav-icon"> Dashboard
+                        </a>
                     </li>
                     <li class="nav-item">
-                      <a href="#" class="nav-link">
-                        <img src="Frame (5).svg" class="nav-icon"> Pending
-                      </a>
+                        <a href="#" class="nav-link">
+                            <img src="Frame (5).svg" class="nav-icon"> Pending
+                        </a>
                     </li>
                     <li class="nav-item">
-                      <a href="#" class="nav-link">
-                        <img src="noun-approved-7018854 1.svg"  class="nav-icon"> Approved
-                      </a>
+                        <a href="#" class="nav-link">
+                            <img src="noun-approved-7018854 1.svg" class="nav-icon"> Approved
+                        </a>
                     </li>
                     <li class="nav-item">
-                      <a href="#" class="nav-link">
-                        <img src="1.svg" class="nav-icon"> Cancelled
-                      </a>
+                        <a href="#" class="nav-link">
+                            <img src="1.svg" class="nav-icon"> Cancelled
+                        </a>
                     </li>
                     <li class="nav-item">
-                      <a href="#" class="nav-link">
-                        <img src="Group (1).svg"  class="nav-icon"> Ready Donor
-                      </a>
+                        <a href="#" class="nav-link">
+                            <img src="Group (1).svg" class="nav-icon"> Ready Donor
+                        </a>
                     </li>
                     <li class="nav-item">
-                      <a href="#" class="nav-link">
-                        <img src="noun-permission-6109283 1.svg"  class="nav-icon"> User and Permission
-                      </a>
+                        <a href="#" class="nav-link">
+                            <img src="noun-permission-6109283 1.svg" class="nav-icon"> User and Permission
+                        </a>
                     </li>
-                  </ul>
-                  
-
-
-
-
-
-
-
+                </ul>
             </nav>
         </aside>
         <div class="main-container">
@@ -74,9 +54,9 @@
                 <div class="search">
                     <h2>Pending</h2>
                     <div class="search-block">
-            
+
                         <input type="text" name="search" id="search" class="form-control" placeholder="Search" />
-                        
+
                         <button class="btn">Newest</button>
                     </div>
                 </div>
@@ -93,22 +73,23 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <tr *ngFor="let pending of pendingSummary">
-                                    <td>{{  pending &&  pending.name ?  pending.name: '-' }}</td>
-                                    <td>{{  pending &&  pending.aadharNumber ?  pending.aadharNumber : '-' }}</td>
-                                    <td>{{ pending && pending.contact >= 0 ?  + pending.contact: '-' }}</td>
-                                    <td>{{  pending &&  pending.status ?  pending.status: '-' }}</td>
-                                    <td><button class="btn btn-danger">View Report</button></td>
-                                  </tr>
+                                <tr *ngFor="let pending of pendingSummary">
+                                    <td>{{ pending && pending.name ? pending.name: '-' }}</td>
+                                    <td>{{ pending && pending.aadharNumber ? pending.aadharNumber : '-' }}</td>
+                                    <td>{{ pending && pending.contact ? pending.contact: '-' }}</td>
+                                    <td>{{ pending && pending.status ? pending.status: '-' }}</td>
+                                    <td><button class="btn btn-danger" (click)="openModal(pending.id)">View
+                                            Report</button></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-            
+
         </div>
 
-        <div class="modal-background" *ngIf="isOpen">
+        <!-- <div class="modal-background" *ngIf="isOpen">
             <div class="modal">
                 <span class="close" (click)="closeModal()">×</span>
                 <h2>Patient Report</h2>
@@ -116,15 +97,29 @@
                   <div>
                     <app-patient-details></app-patient-details>
                   </div>
-                  <div class="imgdiv">
-                    IMG Report
+                  <div class="img">
+                    <img src="Rectangle 3464156.png"alt="report-img">
                   </div>  
                 </div>
             
             </div>
+        </div> -->
+
+        <div class="modal-background" *ngIf="isOpen">
+            <div class="modal">
+                <span class="close" (click)="closeModal()">×</span>
+                <h2>Patient Report</h2>
+                <div class="divset">
+                    <div class="patient-details">
+                        <app-patient-details [patientData]="patientData"></app-patient-details>
+                    </div>
+                    <div class="img">
+                        <img [src]="imageURL" alt="report-img">
+                    </div>
+                </div>
+            </div>
         </div>
+
 
     </main>
 </body>
-
-
