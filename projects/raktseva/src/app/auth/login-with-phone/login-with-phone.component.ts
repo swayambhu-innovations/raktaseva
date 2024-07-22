@@ -121,7 +121,7 @@ export class LoginWithPhoneComponent implements OnInit {
     if (this.loginForm.valid) {
       const phoneNumber = this.loginForm.value.mobileNumber;
       this.authService.login(`+91${phoneNumber}`);  
-   
+      
     }
    
   }
