@@ -138,6 +138,7 @@ export class CancelledComponent implements OnInit {
     this.pendingSummary.map((patient) => {
       if (patient.id == id) {
         this.patientData = patient
+        console.log(patient.id)
         this.imageURL = patient.imageURL
       }
     })

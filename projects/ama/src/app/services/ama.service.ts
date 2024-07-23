@@ -12,4 +12,21 @@ export class AmaService {
     return  await getDocs(collection(this.firestore, 'requirement'));
    
    }
+   async getSurvey() {
+    return  await getDocs(collection(this.firestore, 'survey'));
+   
+   }
+
+  //  async getSurveyDetail() {
+  //     const usersSnapshot = await this.getSurvey();
+  //     const surveySnapshot = await getDocs(collection(this.firestore, 'survey'));
+  //     const surveyDocs = surveySnapshot.docs;
+
+  //     for (const survey of surveyDocs) {
+  //       const surveyData = survey.data();
+  //       console.log(surveyData)
+
+  //       return this.getSurveyDetail()
+  //     }
+  //   }
 }

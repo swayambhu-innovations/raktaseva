@@ -41,6 +41,7 @@ export class ApprovedComponent implements OnInit {
   bed_no:string='';
 
   pendingSummary: Patient[] = [];
+  surveyDetail: any;
 
 
   isOpen = false;
@@ -67,6 +68,13 @@ export class ApprovedComponent implements OnInit {
   }
 
   async getPatientDetail() {
+    const surveySnapshot = await getDocs(collection(this.firestore, 'survey'));
+    const surveyDocs = surveySnapshot.docs;
+
+    for (const survey of surveyDocs) {
+      const surveyData = survey.data();
+      console.log(surveyData)
+    }
     try {
       const usersSnapshot = await this.amaService.getRequirement();
       const patientSnapshot = await getDocs(collection(this.firestore, 'requirement'));
@@ -75,6 +83,8 @@ export class ApprovedComponent implements OnInit {
       for (const patient of patientDocs) {
         const patientData = patient.data();
         console.log(patientData)
+
+      
 
 
         if (patientData['status'] == 'approved') {
@@ -95,11 +105,13 @@ export class ApprovedComponent implements OnInit {
           });
         }
       }
+    
     } catch (error) {
       console.error("Error fetching users' booking data:", error);
     }
   }
 }
+
 
 
 
