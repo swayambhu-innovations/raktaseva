@@ -1,0 +1,114 @@
+.wrapper {
+  // background: var(--web-bg, #F1F5FB);
+
+  background-color: red;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  background-color: blueviolet;
+  height: 90%;
+  width: 95%;
+  margin: 0 auto;
+}
+.header {
+  background-color: white;
+  width: auto;
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 3%;
+}
+.heading {
+  font-family: Lato;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.8px;
+  background: var(
+    --Blue-linear,
+    linear-gradient(180deg, #003049 0%, #005079 99.99%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+.btn {
+  //   background-color: red;
+  width: 187px;
+  height: 62px;
+  border-radius: 15px;
+  border: 1px solid var(--Blue-linear, #003049);
+  background: var(
+    --Blue-linear,
+    linear-gradient(180deg, #003049 0%, #005079 99.99%)
+  );
+  color: var(--white, #fff);
+  font-family: Lato;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.user {
+  width: 377px;
+  height: 140px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  border: 2px solid #fff;
+  background: linear-gradient(93deg, #fff 35.37%, #f2f2f2 84.38%);
+  margin-left: 5%;
+  padding: 6px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 15% 70%;
+}
+
+.user-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-left: 5%;
+}
+.img {
+  width: 62px;
+  height: 102px;
+}
+.user-info {
+  //   background-color: blue;
+  width: 300px;
+  height: 50px;
+  display: flex;
+  margin-left: 4%;
+  justify-content: space-around;
+  margin-top: 1.5%;
+}
+.mail {
+  width: 300px;
+  height: 50px;
+  background-color: yellow;
+}
+.user-info img {
+  width: 28px;
+  height: 28px;
+}
+.img-wrapper-1 {
+  margin-left: 40%;
+}
+.user-info p {
+  color: var(--Button, #145889);
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 27px */
+}
+

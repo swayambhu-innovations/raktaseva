@@ -80,11 +80,22 @@ export class UserAndPermissionComponent implements OnDestroy {
 
   sendEmail() {
     this.emailService.sendEmail('ambarmishra740@gmail.com', 'Test Subject', 'Test Message')
-      // .subscribe(response => {
-      //   console.log('Email sent successfully', response);
-      // }, error => {
-      //   console.error('Error sending email', error);
-      // });
+       .subscribe(response => {
+        console.log('Email sent successfully', response);
+      }, error => {
+        console.error('Error sending email', error);
+       });
   }
+  // sendEmail() {
+  //   this.emailService.sendEmail('ambarmishra740@gmail.com', 'Test Subject', 'Test email body')
+  //     .subscribe(
+  //       response => {
+  //         console.log('Email sent successfully:', response);
+  //       },
+  //       error => {
+  //         console.error('Error sending email:', error);
+  //       }
+  //     );
+  // }
 }
 
