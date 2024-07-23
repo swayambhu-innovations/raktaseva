@@ -1,8 +1,5 @@
-
-
-    <body>
-        
-            <aside class="sidebar">
+ <body>
+        <aside class="sidebar">
                 <div class="user-block">
                     <figure class="user-img">
                         <img src="Rectangle 3464151 (1).svg" />
@@ -45,15 +42,7 @@
                           </a>
                         </li>
                       </ul>
-                      
-    
-    
-    
-    
-    
-    
-    
-                </nav>
+                      </nav>
             </aside>
 
     
@@ -87,67 +76,22 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Nirmal Sravan</td>
-                        <td>8798 5465 2187</td>
-                        <td>B+</td>
-                        <td>2</td>
-                        <td>
-                            <select class="OPtion">
-                                <option><p>Ambar Khan</p>
-                                    <p> 8655432290</p>
 
-                                </option>
-                                
-                            </select>
-                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nirmal Sravan</td>
-                        <td>8798 5465 2187</td>
-                        <td>B+</td>
-                        <td>2</td>
-                        <td>
-                            <select class="OPtion">
-                                <option><p>Ambar Khan</p>
-                                    <p> 8655432290</p>
+                    <tr *ngFor="let pending of pendingSummary">
+                        <td>{{ pending && pending.name ? pending.name: '-' }}</td>
+                        <td>{{ pending && pending.aadharNumber ? pending.aadharNumber : '-' }}</td>
+                        <td>{{ pending && pending.bloodGroup ? pending.bloodGroup: '-' }}</td>
+                        <td>{{ pending && pending.unit ? pending.unit: '-' }}</td>
+                        <!-- <td><button class="btn btn-danger" (click)="openModal(pending.id)">View -->
+                                <!-- Report</button></td> -->
+                                <td>
+                                    <select class="OPtion">
+                                        <option><p>Ambar Khan</p>
+                                            <p> 8655432290</p></option>
+                                        </select>
+                                    </td>
+                                </tr>
 
-                                </option>
-                            </select>
-                        
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nirmal Sravan</td>
-                        <td>8798 5465 2187</td>
-                        <td>B+</td>
-                        <td>2</td>
-                        <td>
-                            <select class="OPtion">
-                                <option><p>Ambar Khan</p>
-                                    <p> 8655432290</p>
-
-                                </option>
-                            </select>
-                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nirmal Sravan</td>
-                        <td>8798 5465 2187</td>
-                        <td>B+</td>
-                        <td>2</td>
-                        <td>
-                            <select class="OPtion">
-                                <option><p>Ambar Khan</p>
-                                    <p> 8655432290</p>
-
-                                </option>
-                            </select>
-                        
-                        </td>
-                    </tr>
                 </tbody>
             </table>
             <div class="pagination">
