@@ -111,7 +111,7 @@
 
 
 // import { Injectable } from '@angular/core';
-// import { Auth, signInWithPhoneNumber, ConfirmationResult, getAuth, RecaptchaVerifier } from '@angular/fire/auth';
+// import { Auth, signInWithPhoneNumber, ConfirmationResult, getAuth, RecaptchaVerifier, signOut } from '@angular/fire/auth';
 // import { FirebaseApp } from '@angular/fire/app';
 // import { inject } from '@angular/core';
 // import { Router } from '@angular/router';
@@ -184,6 +184,14 @@
 //   get phoneNumber(): string | null {
 //     return this.currentPhoneNumber;
 //   }
+// logout(): void {
+//   signOut(this.auth).then(() => {
+//     console.log('User signed out');
+//     this.router.navigate(['/']); 
+//   }).catch((error) => {
+//     console.error('Error during sign out:', error);
+//   });
+// }
 // }
 
 
@@ -208,7 +216,7 @@ export class AuthPermissionService {
   }
 
   initializeRecaptcha(containerId: any): void {
-    try {
+    
       this.recaptchaVerifier = new RecaptchaVerifier(this.auth, containerId, {
         'size': 'invisible',
         'callback': (response: any) => {
@@ -219,14 +227,7 @@ export class AuthPermissionService {
 
       this.recaptchaVerifier.render().then((widgetId: any) => {
         console.log('reCAPTCHA rendered with widget ID:', widgetId);
-      }).catch((error) => {
-        console.error('Error rendering reCAPTCHA:', error);
-        // Potentially re-render or handle error as needed
-      });
-    } catch (error) {
-      console.error('Error initializing reCAPTCHA:', error);
-      // Handle initialization error
-    }
+      })
   }
 
   login(phoneNumber: string): void {
@@ -235,7 +236,7 @@ export class AuthPermissionService {
       return;
     }
 
-    this.currentPhoneNumber = phoneNumber;
+    // this.currentPhoneNumber = phoneNumber;
     signInWithPhoneNumber(this.auth, phoneNumber, this.recaptchaVerifier)
       .then((confirmationResult) => {
         this.confirmationResult = confirmationResult;
@@ -267,9 +268,9 @@ export class AuthPermissionService {
     }
   }
 
-  get phoneNumber(): string | null {
-    return this.currentPhoneNumber;
-  }
+  // get phoneNumber(): string | null {
+  //   return this.currentPhoneNumber;
+  // }
   logout(): void {
     signOut(this.auth).then(() => {
       console.log('User signed out');
