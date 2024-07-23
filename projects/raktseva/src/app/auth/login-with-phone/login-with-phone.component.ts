@@ -1,7 +1,6 @@
-
 // import { Component } from '@angular/core';
 // import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-// import { ReactiveFormsModule } from '@angular/forms'; 
+// import { ReactiveFormsModule } from '@angular/forms';
 
 // @Component({
 //   selector: 'app-login-with-phone',
@@ -26,9 +25,8 @@
 //   }
 // }
 
-
 // import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-// import { ReactiveFormsModule } from '@angular/forms'; 
+// import { ReactiveFormsModule } from '@angular/forms';
 // import { Component, OnInit } from '@angular/core';
 // import { Router } from '@angular/router';
 // // import { AuthService } from '../../core/auth.service';
@@ -52,18 +50,16 @@
 //   phoneNumber:string= '';
 //   terms:boolean= false;
 //   verifier:RecaptchaVerifier|undefined;
-//   constructor(private router: Router,private fb: FormBuilder,public auth:authGuard, public dataProvider:DataProviderService,) 
-//    {  
+//   constructor(private router: Router,private fb: FormBuilder,public auth:authGuard, public dataProvider:DataProviderService,)
+//    {
 //     // this.loginForm = this.fb.group({
 //   //   mobileNumber: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]]
 //   }
 //   // );
 
-
 //   // ngOnInit() {
-    
-//   // }
 
+//   // }
 
 //   // onSubmit() {
 //   //   if (this.loginForm.valid) {
@@ -87,7 +83,7 @@
 //     }).finally(()=>{
 //       loader.dismiss();
 //     });
-//   } 
+//   }
 // }
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -101,14 +97,21 @@ import { OtpComponent } from '../otp/otp.component';
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './login-with-phone.component.html',
-  styleUrls: ['./login-with-phone.component.scss']
+  styleUrls: ['./login-with-phone.component.scss'],
 })
 export class LoginWithPhoneComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private authService: AuthPermissionService, private route:Router) {
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthPermissionService,
+    private route: Router
+  ) {
     this.loginForm = this.fb.group({
-      mobileNumber: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]]
+      mobileNumber: [
+        '',
+        [Validators.required, Validators.pattern('^[0-9]{10}$')],
+      ],
     });
   }
 
@@ -117,12 +120,10 @@ export class LoginWithPhoneComponent implements OnInit {
   }
 
   onSubmit() {
-  
     if (this.loginForm.valid) {
       const phoneNumber = this.loginForm.value.mobileNumber;
-      this.authService.login(`+91${phoneNumber}`);  
-      
+      localStorage.setItem('loginFormData', JSON.stringify(this.loginForm.value));
+      this.authService.login(`+91${phoneNumber}`);
     }
-   
   }
 }
