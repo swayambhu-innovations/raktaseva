@@ -18,7 +18,6 @@ import { Subscription } from 'rxjs';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-edit-profile',
   standalone: true,
@@ -40,7 +39,6 @@ export class EditProfileComponent {
   userData: any = {};
   private userDataSubscription: Subscription | null = null;
   number: string = '';
-
   constructor(
     private location: Location,
     private firestore: Firestore,
@@ -55,11 +53,9 @@ export class EditProfileComponent {
       city: [''],
     });
   }
-
   goBack() {
     this.location.back();
   }
-
   ngOnInit(): void {
     const storedUserData = localStorage.getItem('loginFormData');
     if (storedUserData) {
@@ -71,14 +67,12 @@ export class EditProfileComponent {
     console.log('Phone Number', this.number);
     this.userdata();
   }
-
   userdata() {
     if (this.number) {
       const q = query(
         collection(this.firestore, 'users'),
         where('phone', '==', this.number)
       );
-
       this.userDataSubscription = collectionData(q, {
         idField: 'id',
       }).subscribe(
@@ -93,7 +87,6 @@ export class EditProfileComponent {
               aadharnumber: user.aadharnumber,
               city: user.cityname,
             };
-
             this.profileForm.patchValue({
               fullName: this.userData.name,
               gender: this.userData.gender,
@@ -101,7 +94,6 @@ export class EditProfileComponent {
               aadharNumber: this.userData.aadharnumber,
               city: this.userData.city,
             });
-
             // this.profileForm.patchValue(this.userData);
             console.log('Fetched User Data:', this.userData);
           } else {
@@ -116,14 +108,11 @@ export class EditProfileComponent {
       console.error('Phone number is not set.');
     }
   }
-
   onSubmit() {
     if (this.profileForm.valid) {
       const updatedData = this.profileForm.value;
-
       if (this.userData.id) {
         const userDocRef = doc(this.firestore, `users/${this.userData.id}`);
-
         updateDoc(userDocRef, {
           username: updatedData.fullName,
           gender: updatedData.gender,
@@ -133,7 +122,6 @@ export class EditProfileComponent {
         })
           .then(() => {
             console.log('Profile updated successfully.');
-
             this.router.navigate(['home']);
           })
           .catch((error) => {
@@ -147,4 +135,10 @@ export class EditProfileComponent {
     }
   }
 }
+
+
+
+
+
+
 
