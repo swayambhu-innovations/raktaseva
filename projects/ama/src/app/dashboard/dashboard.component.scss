@@ -28,35 +28,28 @@ a {
     border: 1px solid #003049;
     transition: background 0.3s;
     text-decoration: none;
-
     width: 185px;
-    height: 58;
+    height: 58px;
     top: 142px;
-
 }
 
 .btn-danger {
     display: inline-block;
     background: linear-gradient(180deg, #D62828 0%, rgba(188, 35, 35, 0.9492) 30.57%, rgba(165, 31, 31, 0.9032) 53.9%, rgba(138, 26, 26, 0.8502) 80.19%, rgba(112, 21, 21, 0.8) 100%);
-    ;
     color: #ffffff;
     border-color: #D62828;
-    // background-color: #ffffff;
     width: 100px;
     height: 32px;
     top: 357px;
     left: 1599px;
-    padding: 1px 2px 1px 2px;
+    padding: 1px 2px;
     gap: 10px;
     border-radius: 11px;
     opacity: 0px;
-
 }
 
 .btn-danger:hover {
-
     background: linear-gradient(180deg, #D62828 0%, rgba(188, 35, 35, 0.9492) 30.57%, rgba(165, 31, 31, 0.9032) 53.9%, rgba(138, 26, 26, 0.8502) 80.19%, rgba(112, 21, 21, 0.8) 100%);
-
 }
 
 .card {
@@ -78,16 +71,12 @@ table,
     color: #000;
 }
 
-
-
 table thead tr th {
     padding: 15px;
     text-align: left;
     border-bottom: 1px solid #eee;
     font-size: 16px;
 }
-
-
 
 table tbody tr td {
     padding: 15px;
@@ -96,9 +85,6 @@ table tbody tr td {
 
 .report-cell {
     width: 200px;
-
-
-
 }
 
 .form-control {
@@ -106,19 +92,12 @@ table tbody tr td {
     padding: 10px 15px;
     border-radius: 9px;
     border: 1px solid #003049;
-    width: Fill (720px)px;
-    height: Fill (56px)px;
-    // padding: 4px 0px 0px 0px;
+    width: 720px;
+    height: 56px;
     padding-left: 50px;
-
     gap: 4px;
     position: relative;
     right: 82px;
-
-
-
-
-
 }
 
 main {
@@ -130,16 +109,11 @@ main {
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 300px;
+    width: 250px;
     background-color: #003049;
     color: #fff;
-    // flex-basis: 300px;
-//  width: 355px;
-    // height: 1080px;
-    // gap: 0px;
     border-radius: 0px 15px 15px 0px;
-    // opacity: 0px;
-
+    position: fixed;
 }
 
 .user-block {
@@ -162,16 +136,6 @@ main {
     object-fit: cover;
     max-width: 100%;
 }
-
-//   .user-block .user-info{
-
-//   }
-//   .user-block .user-info h4{
-
-//   }
-//   .user-block .user-info h6{
-
-//   }
 
 .sidebar ul {
     display: flex;
@@ -196,8 +160,10 @@ main {
 }
 
 .main-container {
+    // width: 100px;
+    margin-left: 250px;
     flex-basis: 100%;
-    height:100vh;
+    height: 100vh;
 }
 
 .header {
@@ -247,7 +213,6 @@ main {
     flex-basis: 70%;
 }
 
-
 .nav-list {
     width: 235px;
     height: 479px;
@@ -255,8 +220,6 @@ main {
     left: 8px;
     gap: 8px;
     opacity: 0px;
-
-
 }
 
 .nav-icon {
@@ -268,9 +231,6 @@ main {
     opacity: 0px;
     position: relative;
     top: 17px;
-
-
-
 }
 
 .nav-item {
@@ -284,28 +244,21 @@ main {
 .h2 {
     color: linear-gradient(180deg, #003049 0%, #005079 99.99%);
     color: #005079;
-
     font-family: Lato;
     font-size: 40px;
     font-weight: 600;
     line-height: 48px;
     letter-spacing: -0.02em;
     text-align: left;
-
-
 }
-
-
 
 .btn-pending {
     background: #D1885354;
-
-
     width: 91px;
     height: 32px;
     top: 361px;
     left: 1361px;
-    padding: 3px 6px 3px 6px;
+    padding: 3px 6px;
     gap: 10px;
     border-radius: 5px;
     border: 2px;
@@ -317,9 +270,6 @@ main {
     font-weight: 500;
     line-height: 16px;
     text-align: left;
-
-
-
 }
 
 .btn-rejected {
@@ -328,7 +278,7 @@ main {
     height: 32px;
     top: 361px;
     left: 1361px;
-    padding: 3px 6px 3px 6px;
+    padding: 3px 6px;
     gap: 10px;
     border-radius: 5px;
     border: 2px;
@@ -340,9 +290,6 @@ main {
     font-weight: 500;
     line-height: 16px;
     text-align: left;
-
-
-
 }
 
 .btn-approved {
@@ -351,39 +298,90 @@ main {
     height: 32px;
     top: 361px;
     left: 1361px;
-    padding: 3px 6px 3px 6px;
+    padding: 3px 6px;
     gap: 10px;
     border-radius: 5px;
     border: 2px;
     opacity: 0px;
     border: 1px solid #00B087;
     color: #00B087;
-
     font-family: Lato;
     font-size: 18px;
     font-weight: 500;
     line-height: 16px;
     text-align: left;
-
-
 }
 
-.chartsSection{
-    height: 20vh;
+.chartsSection {
+    height: 80vh;
     display: grid;
-    grid-template-areas: "chart1 chart1 chart2 chart2" "chart3 chart3 chart4 chart4 ";
-    gap:20px;
+    grid-template-areas: "chart1 chart1 chart2 chart2" "chart3 chart3 chart4 chart4";
+    gap: 20px;
     padding: 20px;
-    app-chart-container:nth-child(1){
-        grid-area: chart1;
+}
+
+.chartsSection app-chart-container:nth-child(1) {
+    grid-area: chart1;
+}
+
+.chartsSection app-chart-container:nth-child(2) {
+    grid-area: chart2;
+}
+
+.chartsSection app-chart-container:nth-child(3) {
+    grid-area: chart3;
+}
+
+.chartsSection app-chart-container:nth-child(4) {
+    grid-area: chart4;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .chartsSection {
+        grid-template-areas: 
+            "chart1"
+            "chart2"
+            "chart3"
+            "chart4";
     }
-    app-chart-container:nth-child(2){
-        grid-area: chart2;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: static;
+        border-radius: 0;
     }
-    app-chart-container:nth-child(3){
-        grid-area: chart3;
+    
+    .main-container {
+        margin-left: 0;
     }
-    app-chart-container:nth-child(4){
-        grid-area: chart4;
+
+    .header {
+        flex-direction: column;
+    }
+
+    .page-title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px;
+    }
+
+    .page-title {
+        font-size: 20px;
+    }
+    
+    .search h2 {
+        font-size: 20px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding-left: 15px;
     }
 }

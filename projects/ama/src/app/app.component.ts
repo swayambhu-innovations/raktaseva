@@ -15,12 +15,13 @@ import { OverallReportComponent } from "./dashboard/charts/overall-report/overal
 import { StatisticsComponent } from "./dashboard/charts/statistics/statistics.component";
 import { EditProfileComponent } from "../../../raktseva/src/app/edit-profile/edit-profile.component";
 import { NotAdminComponent } from "./auth/not-admin/not-admin.component";
+import { SidebarComponent } from "./sidebar/sidebar.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CancelledComponent, UserAndPermissionComponent, PendingComponent, LoginComponent, ApprovedComponent, DashboardComponent, TotalRequestComponent, ApprovedRequestComponent, ChartContainerComponent, OverallReportComponent, StatisticsComponent, EditProfileComponent, NotAdminComponent],
+  imports: [RouterOutlet, CancelledComponent, UserAndPermissionComponent, PendingComponent, LoginComponent, ApprovedComponent, DashboardComponent, TotalRequestComponent, ApprovedRequestComponent, ChartContainerComponent, OverallReportComponent, StatisticsComponent, EditProfileComponent, NotAdminComponent, SidebarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

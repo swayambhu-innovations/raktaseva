@@ -1,11 +1,11 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; 
-
+import Chart from "chart.js/auto";
+import { Firestore, collection, getDocs } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-total-request',
@@ -13,89 +13,110 @@ import { FormsModule } from '@angular/forms';
   imports: [
     MatFormFieldModule,
     MatInputModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
+    MatSelectModule,
     CommonModule,
     FormsModule,
-  
   ],
-  
   templateUrl: './total-request.component.html',
   styleUrls: ['./total-request.component.scss']
 })
 export class TotalRequestComponent implements OnInit {
-  startDate!: Date;
-  endDate!: Date;
-  maxDate: string;
-  private myChart: any;
-  fromDate: any = '';
-  toDate: any = '';
-  keysArray: string[] = [];
-  valuesArray: string[] = [];
-  @Output() notify = new EventEmitter<any>();
+  selectedYear: number = new Date().getFullYear();
+  years: number[] = [2023, 2024]; 
+  lineChart: Chart | undefined;
 
-  constructor() {
-    this.maxDate = new Date().toISOString().split('T')[0];
-  }
+  constructor(private firestore: Firestore) {}
 
   ngOnInit() {
-    const currentDate = new Date();
-    this.startDate = new Date(currentDate);
-    this.endDate = new Date();
-    this.startDate.setDate(currentDate.getDate() - 6); 
-    this.onDateChange(); 
+    this.onYearChange();
   }
 
-  onDateChange() {
-    this.fromDate = this.convertToYYYYMMDD(this.startDate.toString());
-    this.toDate = this.convertToYYYYMMDD(this.endDate.toString());
-    console.log(this.fromDate, this.toDate);
+  onYearChange() {
+    this.refreshChart();
   }
 
-  convertToYYYYMMDD(dateString: string): string | null {
-    const inputDate = new Date(dateString);
-    if (isNaN(inputDate.getTime())) {
-      return null;
+  private async refreshChart() {
+    const labels = [
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
+    ];
+    const data: number[] = Array(12).fill(0);
+
+    const patientSnapshot = await getDocs(collection(this.firestore, 'requirement'));
+    const patientDocs = patientSnapshot.docs;
+
+    for (const patient of patientDocs) {
+      const patientData = patient.data();
+      const dateAt = new Date(patientData['timestamp']);
+      const year = dateAt.getFullYear();
+      const month = dateAt.getMonth(); // 0-based index for month (0 = January, 11 = December)
+
+      if (year === this.selectedYear) {
+        data[month]++;
+      }
     }
-    const year = inputDate.getFullYear();
-    const month = ('0' + (inputDate.getMonth() + 1)).slice(-2); 
-    const day = ('0' + inputDate.getDate()).slice(-2);
-    return `${year}-${month}-${day}`;
+
+    this.createLineChart(labels, data);
   }
 
-  // private destroyChart() {
-  //   if (this.myChart) {
-  //     this.myChart.destroy();
-  //     this.myChart = null;
-  //   }
-  // }
+  private createLineChart(labels: string[], data: number[]) {
+    const lineChartCanvas = document.getElementById('chart') as HTMLCanvasElement;
 
-  // private loadChart() {
-  //   if (this.myChart) {
-  //     this.destroyChart();
-  //   }
-  //   this.myChart = new Chart('bookingsPerDay', {
-  //     type: 'line',
-  //     data: {
-  //       labels: this.keysArray,
-  //       datasets: [
-  //         {
-  //           label: 'Sales',
-  //           data: this.valuesArray,
-  //           borderColor: 'rgb(255, 99, 132)',
-  //           backgroundColor: 'rgb(255, 99, 132,50)',
-  //           fill: true,
-  //           tension: 0.4,
-  //         },
-  //       ],
-  //     },
-  //     options: {
-  //       plugins: {
-  //         legend: {
-  //           display: false,
-  //         },
-  //       },
-  //     },
-  //   });
-  // }
+    if (this.lineChart) {
+      this.lineChart.destroy(); 
+    }
+
+    this.lineChart = new Chart(lineChartCanvas, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Total Requests',
+          data: data,
+          borderColor: '#0692FB',
+          fill: false,
+          tension: 1.5,
+        }],
+      },
+      options: {
+        responsive: true,
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: 'Month',
+            },
+            beginAtZero: true,
+          },
+          y: {
+            title: {
+              display: true,
+              text: 'Count',
+            },
+            beginAtZero: true,
+          },
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: 'Total Requests per Month',
+            font: {
+              size: 20,
+              weight: 'bold',
+              family: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+            },
+            padding: {
+              top: 10,
+              bottom: 30,
+            },
+          },
+        },
+      },
+    });
+  }
+
+  private formatDate(date: Date): string {
+    return date.toLocaleDateString('en-US', { month: 'short' });
+  }
 }
+
