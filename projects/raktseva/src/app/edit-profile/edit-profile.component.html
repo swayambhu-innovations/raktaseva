@@ -6,13 +6,12 @@
     <h2>Profile</h2>
   </div>
   <div class="profile-picture">
-    <img [src]="profileImageUrl || 'editProfile-img/Ellipse 31.png'" alt="Profile Picture">
-    <button class="edit-picture-button" (click)="fileInput.click()">
+    <img src="editProfile-img/Ellipse 31.png" alt="Profile Picture">
+    <button class="edit-picture-button">
       <span class="material-icons">camera_alt</span>
     </button>
-    <input #fileInput type="file" accept="image/*" (change)="onFileSelected($event)" style="display: none;">
   </div>
-  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <form  (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="fullName">Full Name</label>
       <input formControlName="fullName" type="text" id="fullName" name="fullName" placeholder="Enter your Name">
