@@ -1,25 +1,25 @@
 .wrapper {
   // background: var(--web-bg, #F1F5FB);
-
-  background-color: red;
+  // background-color: red;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .container {
-  background-color: blueviolet;
+  // background-color: blueviolet;
   height: 90%;
   width: 95%;
   margin: 0 auto;
 }
+
+// Header Section Start
 .header {
-  background-color: white;
+  // background-color: blue;
   width: auto;
   height: 10vh;
   display: flex;
-  justify-content: space-around;
-  justify-items: center;
+  justify-content:space-between;
   align-items: center;
   margin-bottom: 3%;
 }
@@ -37,15 +37,14 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: flex;
-  justify-items: center;
-  align-items: center;
+margin-left:6%;
 }
 .btn {
   //   background-color: red;
   width: 187px;
   height: 62px;
   border-radius: 15px;
+  margin-right:100px;
   border: 1px solid var(--Blue-linear, #003049);
   background: var(
     --Blue-linear,
@@ -58,50 +57,58 @@
   font-weight: 500;
   line-height: normal;
 }
+// Header Section End
+
+
+// Card Section Start
 .user {
   width: 377px;
-  height: 140px;
+  height: 80px;
   flex-shrink: 0;
   border-radius: 16px;
-  border: 2px solid #fff;
-  background: linear-gradient(93deg, #fff 35.37%, #f2f2f2 84.38%);
+  border: 2px solid black;
+  // background: linear-gradient(90deg, #f86b6b 35.37%, #ffffff 84.38%);
+  background: var(--web-bg, #F1F5FB);
   margin-left: 5%;
   padding: 6px;
   text-align: center;
   display: grid;
   grid-template-columns: 15% 70%;
+ 
 }
 
 .user-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 50px;
   margin-left: 5%;
+  // background-color: blue;
 }
 .img {
-  width: 62px;
-  height: 102px;
+  margin-top: 10px;
+  // width: 62px;
+  // height: 102px;
 }
 .user-info {
-  //   background-color: blue;
+    // background-color: blue;
   width: 300px;
-  height: 50px;
+  height: 30px;
   display: flex;
   margin-left: 4%;
-  justify-content: space-around;
   margin-top: 1.5%;
+  justify-content: space-between;
 }
 .mail {
   width: 300px;
   height: 50px;
-  background-color: yellow;
+  // background-color: yellow;
 }
 .user-info img {
   width: 28px;
   height: 28px;
 }
 .img-wrapper-1 {
-  margin-left: 40%;
+  margin-right: 10px;
 }
 .user-info p {
   color: var(--Button, #145889);
@@ -109,6 +116,29 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
-  line-height: 150%; /* 27px */
+  line-height: 150%; 
 }
 
+.user-info-container{
+  // background-color: red;
+  width: 11vw;
+}
+
+.img-btn{
+  display: flex;
+  // background-color: white;
+}
+.mail-container{
+  // background-color: pink;
+  display: flex;
+  margin-left:4%;
+  justify-content: flex-start;
+  color: var(--text-black, #454545);
+text-align: right;
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%;
+}
+// Card Section End
