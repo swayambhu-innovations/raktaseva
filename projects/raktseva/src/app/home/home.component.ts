@@ -45,28 +45,30 @@
 //   autoSlide(slides: HTMLElement) {
 //     this.autoSlideInterval = setInterval(() => {
 //       this.nextSlide(slides);
-//     }, 3000); 
+//     }, 3000);
 //   }
 
 //   // Controlling the number of words in testimonial section
 
 // }
 
-import { Component, AfterViewInit, OnDestroy,Renderer2  } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
+import { BottomNavbarComponent } from '../shared/bottom-navbar/bottom-navbar.component';
+import { NavbarComponent } from '../shared/navbar/navbar.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [BottomNavbarComponent, BottomNavbarComponent, NavbarComponent],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements AfterViewInit, OnDestroy {
   currentIndex = 0;
   autoSlideInterval: any;
 
-  constructor(private renderer: Renderer2,private router: Router) {}
+  constructor(private renderer: Renderer2, private router: Router) {}
 
   ngAfterViewInit() {
     const slides = document.querySelector('.slides') as HTMLElement;
@@ -86,12 +88,18 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   }
 
   prevSlide(slides: HTMLElement) {
-    this.currentIndex = (this.currentIndex > 0) ? this.currentIndex - 1 : slides.children.length - 1;
+    this.currentIndex =
+      this.currentIndex > 0
+        ? this.currentIndex - 1
+        : slides.children.length - 1;
     this.updateSlider(slides);
   }
 
   nextSlide(slides: HTMLElement) {
-    this.currentIndex = (this.currentIndex < slides.children.length - 1) ? this.currentIndex + 1 : 0;
+    this.currentIndex =
+      this.currentIndex < slides.children.length - 1
+        ? this.currentIndex + 1
+        : 0;
     this.updateSlider(slides);
   }
 
@@ -102,15 +110,17 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   autoSlide(slides: HTMLElement) {
     this.autoSlideInterval = setInterval(() => {
       this.nextSlide(slides);
-    }, 3000); 
+    }, 3000);
   }
 
-// Page Navigation Code
-requirement(){
-  this.router.navigate(['requirement']);
+  // Page Navigation Code
+  requirement() {
+    this.router.navigate(['requirement']);
+  }
+
+  status() {
+    this.router.navigate(['status']);
+  }
 }
 
-status(){
 
-}
-}

@@ -1,54 +1,36 @@
-<!-- <p>user-and-permission works!</p>
-<button (click)="listenToDonorChanges()">CLICK</button>
-<div>
-    <div class="contact-form-wrapper d-flex justify-content-center">
-      <form (ngSubmit)="onSubmit()" class="contact-form">
-        <h5 class="title">Contact us</h5>
-        <p class="description">{{ "Lets talk about everything!" | translate }}
-        </p>
-        <div>
-          <input type="text" class="form-control rounded border-white mb-3 form-input" [(ngModel)]="name" name="name" placeholder="Name" required>
-        </div>
-        <div>
-          <input type="email" class="form-control rounded border-white mb-3 form-input" [(ngModel)]="email" name="email" placeholder="Email" required>
-        </div>
-        <div>
-          <textarea class="form-control rounded border-white mb-3 form-text-area" [(ngModel)]="message" name="message" rows="5" cols="30" placeholder="Message" required></textarea>
-        </div>
-        <div class="submit-button-wrapper">
-          <button type="submit">Send</button>
-        </div>
-      </form>
-    </div>
-  </div> -->
-
-<!-- <button (click)="sendEmail()">Click</button>
-  <p>hello</p> -->
-
 <div class="wrapper">
   <div class="container">
+     <!-- Header Start -->
     <div class="header">
       <div class="heading"><h1>User and Permission</h1></div>
       <div class="add-new">
         <button class="btn">Add New</button>
       </div>
     </div>
+     <!-- Header End -->
+
     <div class="user-container">
+      <!-- Card Start -->
       <div class="user">
         <div class="img">
           <img src="person.svg" alt="" />
         </div>
-        <div class="user-info">
-          <p>Ambar Mishra</p>
-          <img class="img-wrapper-1" src="edit-img.svg" />
-          <img class="img-wrapper-2" src="delete-img.svg" />
-          <div class="email">
+        <div class="user-info-container">
+          <div class="user-info">
+            <div class="para">
+              <p>Ambar Mishra</p>
+            </div>
+            <div class="img-btn">
+              <div class="img-wrapper-1"><img src="edit-img.svg" /></div>
+              <div class="img-wrapper-2"><img src="delete-img.svg" /></div>
+            </div>
+          </div>
+          <div class="mail-container">
             <p>ambarmishra740</p>
           </div>
         </div>
-        
-        
       </div>
+      <!-- Card End -->
     </div>
   </div>
 </div>
