@@ -27,10 +27,10 @@ import { Firestore } from '@angular/fire/firestore';
 })
 
 export class DashboardComponent implements OnInit {
-  totalRequest: number 
-  approved: number;
-  rejected: number ;
-  pending: number ;
+  totalRequest: number =0;
+  approved: number=0;
+  rejected: number =0;
+  pending: number =0;
 
   constructor(private authService: AuthService, private firestore: Firestore) {}
 
