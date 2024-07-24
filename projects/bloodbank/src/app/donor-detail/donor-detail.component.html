@@ -1,0 +1,85 @@
+<body>
+  <div class="main">
+    <app-bbsidebar></app-bbsidebar>
+
+    <div class="main-container">
+      <header class="header">
+        <h1 class="page-title">Blood Bank Management</h1>
+        <!-- <img src="logout.svg" class="notification" /> -->
+      </header>
+      <div class="content-block">
+        <div class="search">
+          <h2>Donor Details</h2>
+          <div class="search-block">
+            <input
+              type="text"
+              name="search"
+              id="search"
+              class="form-control"
+              placeholder="Search"
+            />
+
+            <button class="btn">Newest</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+              <thead>
+                <tr>
+                  <th>Donor Name</th>
+                  <th>Age</th>
+                  <th>Disease</th>
+                  <th>Date</th>
+                  <th class="report-cell">Blood Group</th>
+                  <!-- <th>Status</th> -->
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- <tr *ngFor="let pending of pendingSummary">
+                  <td>{{ pending && pending.name ? pending.name : "-" }}</td>
+                  <td>
+                    {{
+                      pending && pending.aadharNumber
+                        ? pending.aadharNumber
+                        : "-"
+                    }}
+                  </td>
+                  <td>
+                    {{ pending && pending.contact ? pending.contact : "-" }}
+                  </td>
+                  <td>
+                    {{ pending && pending.status ? pending.status : "-" }}
+                  </td>
+                  <td>
+                    <button class="btn btn-danger">View Report</button>
+                  </td>
+                </tr> -->
+                <tr>
+                    <td>Ambar Mishra</td>
+                    <td>21</td>
+                    <td>No</td>
+                    <td>24/07/2024</td>
+                    <td>O+</td>
+                    <!-- <td><button class="btn-pending">Pending</button></td> -->
+                    <td><button class="btn-approved">2 Unit Donated</button></td>
+                </tr>
+                <tr>
+                    <td>Aman Yadav</td>
+                    <td>21</td>
+                    <td>No</td>
+                    <td>24/07/2024</td>
+                    <td>O+</td>
+                    <!-- <td><button class="btn-rejected">Rejected</button></td> -->
+                    <td><button class="btn-approved">1 Unit Donated</button></td>
+                </tr>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
