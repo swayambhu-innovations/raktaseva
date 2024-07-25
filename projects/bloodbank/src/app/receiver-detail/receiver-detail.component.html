@@ -9,7 +9,7 @@
       </header>
       <div class="content-block">
         <div class="search">
-          <h2>Donor Details</h2>
+          <h2>Receiver Details</h2>
           <div class="search-block">
             <input
               type="text"
@@ -27,27 +27,22 @@
             <table border="0" cellspacing="0" cellpadding="0" width="100%">
               <thead>
                 <tr>
-                  <th>Donor Name</th>
-                  <th>Age</th>
-                  <th>Gender</th>
-                  <th>Disease</th>
-                  <th>Date</th>
-                  <th class="report-cell">Blood Group</th>
-                  <!-- <th>Status</th> -->
-                  <th>Action</th>
+                  <th>Patient Name</th>
+                  <th>Aadhar Number</th>
+                  <th>Blood Required / Fulfilled</th>
+                  <th>Assigned Donor</th>
+                  <th>Donor Details</th>
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let donor of donor">
-                  <td>{{ donor.donorname }}</td>
-                  <td>{{ donor.age }}</td>
-                  <td>{{ donor.gender }}</td>
-                  <td>{{ donor.medicalcondition }}</td>
-                  <td>{{ donor.lastdonation }}</td>
-                  <td>{{ donor.bloodgroup }}</td>
+                <tr *ngFor="let patient of patient">
+                  <td>{{patient.patientname}}</td>
+                  <td>{{patient.aadharnumber}}</td>
+                  <td >{{patient.bloodcount  }} / {{patient.fulfilled}}</td>
+                  <td>{{patient.assigneddonor}}</td>
                   <td>
                     <button class="btn-approved">
-                      {{ donor.unitdonated }} Unit Donated
+                      Assign Donor
                     </button>
                   </td>
                 </tr>
