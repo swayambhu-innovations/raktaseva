@@ -4,6 +4,8 @@ import { collection, query, where } from 'firebase/firestore';
 import { Subscription } from 'rxjs';
 import { BbsidebarComponent } from '../shared/bbsidebar/bbsidebar.component';
 import { CommonModule } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
+import { AssignDonorDialogComponent } from './assign-donor-dialog/assign-donor-dialog.component';
 
 @Component({
   selector: 'app-receiver-detail',
@@ -16,7 +18,7 @@ export class ReceiverDetailComponent implements OnDestroy {
   patient: any[] = [];
   private patientSubscription: Subscription | null = null;
 
-  constructor(private firestore: Firestore) {
+  constructor(private firestore: Firestore,public dialog: MatDialog) {
     this.listenToPatientChanges();
   }
 
@@ -41,5 +43,15 @@ export class ReceiverDetailComponent implements OnDestroy {
     if (this.patientSubscription) {
       this.patientSubscription.unsubscribe();
     }
+  }
+
+  openAssignDonorDialog(): void {
+    const dialogRef = this.dialog.open(AssignDonorDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log('Assigned Donor:', result);
+      // Handle the result here
+    });
   }
 }

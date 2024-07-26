@@ -41,7 +41,7 @@
                   <td >{{patient.bloodcount  }} / {{patient.fulfilled}}</td>
                   <td>{{patient.assigneddonor}}</td>
                   <td>
-                    <button class="btn-approved">
+                    <button class="btn-approved" (click)="openAssignDonorDialog()">
                       Assign Donor
                     </button>
                   </td>
