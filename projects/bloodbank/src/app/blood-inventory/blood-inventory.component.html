@@ -1,0 +1,31 @@
+<main>
+    <div class="side">
+    <app-sidebar class="sidebar"></app-sidebar>
+    </div>
+    <div class="main-container">
+        <header class="header">
+            <h1 class="page-title">Blood Bank Management</h1>
+        </header>
+        <div class="content-block">
+            <div class="search">
+                <h2>Blood Inventory</h2>
+                <div class="search-block">
+                    <!-- <input type="text" name="search" id="search" class="form-control" placeholder="Search" /> -->
+                    <!-- <button class="btn">Newest</button> -->
+                </div>
+            </div>
+            <section class="content-block">
+                <p>Available Blood per group in Units</p>
+                <div class="cards-container">
+                    <div class="card" *ngFor="let bloodGroup of bloodGroups">
+                        <div class="card-content">
+                            <img src="Rectangle 3464161.png" alt="Blood Drop">
+                            <span class="blood-group">{{ bloodGroup.name }}</span>
+                        </div>
+                        <div class="unit-count">{{ bloodGroup.units }}</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
