@@ -22,6 +22,8 @@ export class PatientDetailsComponent implements OnInit {
     hospital_name:'',
     bed_no:'',
     bloodGroup:'',
+    availableDonor:'',
+    assignedDonor:'',
   };
   firestore: Firestore = inject(Firestore)
   constructor() {

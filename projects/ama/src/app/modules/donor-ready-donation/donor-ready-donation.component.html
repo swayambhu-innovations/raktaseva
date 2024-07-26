@@ -1,1 +1,131 @@
-<p>donor-ready-donation works!</p>
+<body>
+  <main>
+    <aside class="sidebar">
+      <header class="user-block">
+        <figure class="user-img">
+          <img src="Rectangle 3464151 (1).svg" />
+        </figure>
+        <div class="user-info">
+          <h4>Shreeva</h4>
+          <h6>Project</h6>
+        </div>
+      </header>
+      <nav>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <img src="Vector (2).svg" class="nav-icon" /> Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <img src="Frame (5).svg" class="nav-icon" /> Pending
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <img src="noun-approved-7018854 1.svg" class="nav-icon" />
+              Approved
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <img src="1.svg" class="nav-icon" /> Cancelled
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <img src="Group (1).svg" class="nav-icon" /> Ready Donor
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <img src="noun-permission-6109283 1.svg" class="nav-icon" /> User
+              and Permission
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <div class="main-container">
+      <header class="header">
+        <h1 class="page-title">Allahabad Medical Association</h1>
+      </header>
+      <div class="content-block">
+        <div class="search">
+          <h2>Ready Donor</h2>
+          <div class="search-block">
+            <input
+              type="text"
+              name="search"
+              id="search"
+              class="form-control"
+              placeholder="Search"
+            />
+            <button class="btn">Newest</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+              <thead>
+                <tr>
+                  <th>Patient Name</th>
+                  <th>Aadhar Number</th>
+                  <th>Required Blood</th>
+                  <th>Available Donor</th>
+                  <th>Assigned Donor</th>
+                  <th>Status</th>
+                  <!-- <th>Action</th> -->
+                  <th class="report-cell">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let pending of pendingSummary">
+                  <td>{{ pending && pending.name ? pending.name : "-" }}</td>
+                  <td>
+                    {{
+                      pending && pending.aadharNumber
+                        ? pending.aadharNumber
+                        : "-"
+                    }}
+                  </td>
+                  <td>
+                    {{ pending && pending.unit ? pending.unit : "-" }}
+                  </td>
+                  <td>
+                    {{ pending && pending.availableDonor ? pending.availableDonor : "-" }}
+                  </td>
+                  <td>
+                    {{ pending && pending.assignedDonor ? pending.assignedDonor : "-" }}
+                  </td>
+                  <td>
+                    {{ pending && pending.status ? pending.status : "-" }}
+                  </td>
+                   <td>
+                    <button
+                      class="btn btn-danger"
+                      
+                    >
+                      Assign
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- (click)="openModal(pending.id)" -->
+    <div class="modal-background" *ngIf="isOpen">
+      <div class="modal">
+        <span class="close" (click)="closeModal()">×</span>
+        <h2>Patient Report</h2>
+        <div class="img">
+          <img [src]="imageURL" alt="report-img" />
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
