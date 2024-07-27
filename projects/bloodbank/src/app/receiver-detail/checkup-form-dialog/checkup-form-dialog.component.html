@@ -1,1 +1,127 @@
-<p>checkup-form-dialog works!</p>
+<form [formGroup]="checkupForm" >
+  <div class="container">
+    <div class="middle-container">
+      <div class="header">
+        <div class="heading">
+          <h2>Donor Checkup Form</h2>
+        </div>
+        <div class="cancel"><img src="close.svg" /></div>
+      </div>
+      <div class="inner-container">
+        <div class="info-wrapper">
+          <div class="box-info">
+            <p>Donor Name</p>
+          </div>
+          <div class="input-container">
+            <input class="input" type="text" formControlName="donorname" placeholder="Kriti Prasad" />
+          </div>
+
+          <div class="box-info">
+            <p>Gender</p>
+          </div>
+          <div class="input-container">
+            <div class="option-container">
+              <select class="select-input" formControlName="gender">
+                <option value="" disabled>Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="box-info">
+            <p>Blood Group</p>
+          </div>
+          <div class="input-container">
+            <div class="option-container">
+              <select class="select-input" formControlName="bloodgroup">
+                <option value="" disabled>Select Blood Group</option>
+                <option value="o+">O+</option>
+                <option value="o-">O-</option>
+                <option value="a+">A+</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="box-info">
+            <p>Age</p>
+          </div>
+          <div class="input-container">
+            <input class="input" type="text" formControlName="age" placeholder="12" />
+          </div>
+
+          <div class="box-info">
+            <p>Aadhar Number</p>
+          </div>
+          <div class="input-container">
+            <input class="input" type="text" formControlName="aadharnumber" placeholder="1234 1234 1234" />
+          </div>
+
+          <div class="box-info">
+            <p>Any Medical Condition</p>
+          </div>
+          <div class="input-container">
+            <div class="option-container">
+              <select class="select-input" formControlName="medicalcondition">
+                <option value="" disabled>Select Condition</option>
+                <option value="na">NA</option>
+                <option value="sugar">Sugar</option>
+                <option value="cancer">Cancer</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="box-info">
+            <p>Last Blood Donation Date</p>
+          </div>
+          <div class="input-container">
+            <input class="input" type="date" formControlName="lastdonation" />
+          </div>
+
+          <div class="box-info">
+            <p>Unit of Blood Donating</p>
+          </div>
+          <div class="input-container">
+            <input class="input" type="number" formControlName="unitdonated" placeholder="1" />
+          </div>
+
+          <div class="medical-info-wrapper">
+            <div class="medical-heading-1">
+              <p>Blood Pressure</p>
+            </div>
+            <div class="medical-heading">
+              <p>Weight (in Kg)</p>
+            </div>
+            <div class="medical-heading-2">
+              <p>Height (in cm)</p>
+            </div>
+           
+          </div>
+          <div class="medical-container">
+            <div class="medical-info-1">
+              <input class="medical-input" type="text" formControlName="bp" placeholder="180" />
+            </div>
+            <div class="medical-info">
+              <input class="medical-input" type="text" formControlName="weight" placeholder="70" />
+            </div>
+            <div class="medical-info">
+              <input class="medical-input" type="text" formControlName="height" placeholder="160" />
+            </div>
+          </div>
+          <div class="footer">
+            <div class="btn-container">
+              <div class="button">
+                <button class="approve-btn" type="submit" (click)="onSubmit()" [disabled]="!checkupForm.valid"
+                [ngClass]="{ 'blue-button': !checkupForm.valid }">Submit</button>
+              </div>
+              <!-- <div class="button">
+                <button class="reject-btn" type="button" >Reject</button>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

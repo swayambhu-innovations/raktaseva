@@ -5,11 +5,12 @@ import { SidebarComponent } from "../../../ama/src/app/sidebar/sidebar.component
 import { BbsidebarComponent } from "./shared/bbsidebar/bbsidebar.component";
 import { ReceiverDetailComponent } from "./receiver-detail/receiver-detail.component";
 import { AssignDonorDialogComponent } from "./receiver-detail/assign-donor-dialog/assign-donor-dialog.component";
+import { CheckupFormDialogComponent } from "./receiver-detail/checkup-form-dialog/checkup-form-dialog.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, BbsidebarComponent, DonorDetailComponent, ReceiverDetailComponent, AssignDonorDialogComponent,],
+  imports: [RouterOutlet, BbsidebarComponent, DonorDetailComponent, ReceiverDetailComponent, AssignDonorDialogComponent, CheckupFormDialogComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
