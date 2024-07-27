@@ -1,0 +1,36 @@
+.container {
+  height: 8vh;
+  //   background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  //   margin-top: 6px;
+  
+}
+
+.salutation {
+  color: var(--black, var(--Schemes-Shadow, #000));
+  text-align: center;
+  font-family: Lato;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.user {
+  width: 70%;
+  display: flex;
+  // background-color: blue;
+  margin-right: 4%;
+}
+
+.notificaiton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 4%;
+}

@@ -32,6 +32,7 @@
 .aadhar-container,
 .blood-container,
 .city-container,
+.email-container,
 .submit-container {
   display: flex;
   justify-content: center;
@@ -49,6 +50,17 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding-left: 9px;
+}
+
+//Email
+.email{
+  width: 80%;
+  height: 48px;
+  flex-shrink: 0;
+  padding-left: 23px;
+  border-radius: var(--CR-10, 10px);
+  border: 1px solid var(--Blue-linear, #003049);
+  color: linear-gradient(180deg, #003049 0%, #005079 99.99%);
 }
 
 // Aadhar Number

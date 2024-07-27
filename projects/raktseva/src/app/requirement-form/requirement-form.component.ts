@@ -13,12 +13,13 @@ import {
   uploadBytesResumable,
   Storage,
 } from '@angular/fire/storage';
-import { RequirementformService } from './requirementform.service';
+import { RequirementformService } from './service/requirementform.service';
+import { HeaderWithBackComponent } from '../shared/header-with-back/header-with-back/header-with-back.component';
 
 @Component({
   selector: 'app-requirement-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, HeaderWithBackComponent],
   templateUrl: './requirement-form.component.html',
   styleUrls: ['./requirement-form.component.scss'],
 })
@@ -43,7 +44,7 @@ export class RequirementFormComponent implements OnInit {
     });
   }
   isImgSizeValid: boolean = false;
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   //Function for interacting with service file
   async onSubmit(): Promise<void> {
@@ -55,7 +56,7 @@ export class RequirementFormComponent implements OnInit {
         });
 
         await this.requirementFormService.saveFormData(
-          this.requirementForm.value
+          { ...this.requirementForm.value, status: 'pending' }
         );
         this.requirementForm.reset();
       } catch (error) {

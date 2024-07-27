@@ -1,1 +1,91 @@
-<p>user-and-permission works!</p>
+<!-- <div class="wrapper">
+  <div class="container"> -->
+     <!-- Header Start -->
+    <!-- <div class="header">
+      <div class="heading"><h1>User and Permission</h1></div>
+      <div class="add-new">
+        <button class="btn">Add New</button>
+      </div>
+    </div> -->
+     <!-- Header End -->
+
+    <!-- <div class="user-container"> -->
+      <!-- Card Start -->
+      <!-- <div class="user">
+        <div class="img">
+          <img src="person.svg" alt="" />
+        </div>
+        <div class="user-info-container">
+          <div class="user-info">
+            <div class="para">
+              <p>Ambar Mishra</p>
+            </div>
+            <div class="img-btn">
+              <div class="img-wrapper-1"><img src="edit-img.svg" /></div>
+              <div class="img-wrapper-2"><img src="delete-img.svg" /></div>
+            </div>
+          </div>
+          <div class="mail-container">
+            <p>ambarmishra740</p>
+          </div>
+        </div>
+      </div> -->
+      <!-- Card End -->
+    <!-- </div>
+  </div>
+</div> -->
+
+
+
+
+
+<div class="user-permission-container">
+  <aside class="sidebar">
+    <div class="admin-info">
+      <img src="Rectangle 3464151 (1).svg" alt="Admin" class="admin-img">
+      <div class="user-info">
+        <h4>Shreeva</h4>
+        <h6>Project</h6>
+      </div>
+    </div>
+    <nav class="menu">
+      <a href="#" class="menu-item">Dashboard</a>
+      <a href="#" class="menu-item">Pending</a>
+      <a href="#" class="menu-item">Approved</a>
+      <a href="#" class="menu-item">Cancelled</a>
+      <a href="#" class="menu-item">Ready Donor</a>
+      <a href="#" class="menu-item active">User and Permission</a>
+    </nav>
+  </aside>
+  <main class="content">
+    <header class="header">
+      <h1>Allahabad Medical Association</h1>
+    </header>
+    <section class="user-permission">
+      <div class="header d-flex">
+        <h2>User and Permission</h2>
+        <button class="button" (click)="openAddUserModal()">Add New</button>
+      </div>
+      <div class="user-cards">
+        <div *ngFor="let user of users" class="user-card">
+          <div class="user-detail">
+            <img [src]="user?.['userDetail'].img" alt="User Image" class="user-img">
+            <div class="user-info">
+              <p class="user-name">{{user?.['userDetail'].name}}</p>
+              <p class="role-detail">{{getRoleName(user?.['userDetail'].role)}}</p>
+              <p class="user-email">{{user?.['userDetail'].email}}</p>
+            </div>
+          </div>
+          <div class="user-actions">
+            <label class="switch">
+              <input type="checkbox" [checked]="user?.['userDetail'].active" (change)="changeUserStatus(user.id, !user?.['userDetail'].active)">
+              <span class="slider round"></span>
+            </label>
+            <img src="Assets/service/pencil-line.svg" alt="Edit" (click)="editUser(user)" class="icon">
+            <img src="Assets/service/delete.svg" alt="Delete" (click)="deleteUser(user.id)" class="icon">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>

@@ -1,6 +1,6 @@
 <div class="container">
   <!-- Reactive Form Start-->
-  <form [formGroup]="requirementForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="detailForm" (ngSubmit)="onSubmit()">
     <!-- User Detail Page Image -->
     <div class="user-img">
       <img src="userdetail/user.svg" />
@@ -24,7 +24,7 @@
         id="patientname"
         name="patientname"
         placeholder="Name"
-        formControlName="patientname"
+        formControlName="username"
         required
       />
     </div>
@@ -44,7 +44,7 @@
     <!-- Blood Group -->
     <div class="blood-container">
         <div class="select-container">
-            <select class="blood-group" name="blood" id="blood" >
+            <select class="blood-group" name="blood" id="blood" formControlName="bloodgroup">
                 <option value="" disabled selected>Blood Group</option>
                 <option value="O+">O+</option>
                 <option value="A+">A+</option>
@@ -82,12 +82,25 @@
       />
     </div>
 
+      <!-- Email -->
+      <div class="email-container">
+        <input
+          class="email"
+          type="text"
+          id="email"
+          name="email"
+          formControlName="email"
+          placeholder="Email"
+          required
+        />
+      </div>
+
     <!-- Submit Button -->
     <div class="submit-container">
       <button
         class="submit-btn"
-        [disabled]="!requirementForm.valid"
-        [ngClass]="{ 'blue-button': !requirementForm.valid }"
+        [disabled]="!detailForm.valid"
+        [ngClass]="{ 'blue-button': !detailForm.valid }"
       >
         Submit
       </button>

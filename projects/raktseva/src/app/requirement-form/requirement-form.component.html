@@ -1,3 +1,4 @@
+<app-header-with-back [title]="'Patient Details'"></app-header-with-back>
 <div class="container">
   <!-- Reactive Form Start-->
   <form [formGroup]="requirementForm" (ngSubmit)="onSubmit()">
@@ -10,7 +11,7 @@
         name="patientname"
         placeholder="Patient Name"
         formControlName="patientname"
-        required
+        required 
       />
     </div>
 

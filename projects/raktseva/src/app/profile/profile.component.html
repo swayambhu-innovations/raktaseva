@@ -1,6 +1,7 @@
+<app-header-with-back></app-header-with-back>
 <mat-card class="profile-card">
   <div class="profile-header">
-      <div class="profile-image-container">
+      <div class="profile-image-container" (click)="editprofile()">
           <img class="prof" src="editProfile-img/Ellipse 31.png" alt="Profile Picture" />
       </div>
       <h2>Kriti Prasad</h2>
@@ -24,10 +25,10 @@
               <h4  (click)="openInviteFriendModal()">Invite Friend</h4>
           </mat-list-item>
           <mat-list-item>
-            <img src="editProfile-img/Frame (1).png" class="profile-icon" alt="Edit Profile Icon">
-              <h4>Testimonial</h4>
+            <img src="editProfile-img/Frame (1).png" class="profile-icon" alt="Edit Profile Icon" (click)="testimonial()">
+              <h4 (click)="testimonial()">Testimonial</h4>
           </mat-list-item>
-          <mat-list-item>
+          <mat-list-item (click)="logout()">
             <img src="editProfile-img/Group 10149.png" class="profile-icon" alt="Edit Profile Icon">
               <h4>Log Out</h4>
           </mat-list-item>
@@ -39,3 +40,4 @@
   </div>
 
 </mat-card>
+<app-bottom-navbar></app-bottom-navbar>

@@ -1,0 +1,56 @@
+<body>
+  <div class="main">
+    <app-bbsidebar></app-bbsidebar>
+
+    <div class="main-container">
+      <header class="header">
+        <h1 class="page-title">Blood Bank Management</h1>
+        <!-- <img src="logout.svg" class="notification" /> -->
+      </header>
+      <div class="content-block">
+        <div class="search">
+          <h2>Receiver Details</h2>
+          <div class="search-block">
+            <input
+              type="text"
+              name="search"
+              id="search"
+              class="form-control"
+              placeholder="Search"
+            />
+
+            <button class="btn">Newest</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+              <thead>
+                <tr>
+                  <th>Patient Name</th>
+                  <th>Aadhar Number</th>
+                  <th>Blood Required / Fulfilled</th>
+                  <th>Assigned Donor</th>
+                  <th>Donor Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let patient of patient">
+                  <td>{{patient.patientname}}</td>
+                  <td>{{patient.aadharnumber}}</td>
+                  <td >{{patient.bloodcount  }} / {{patient.fulfilled}}</td>
+                  <td>{{patient.assigneddonor}}</td>
+                  <td>
+                    <button class="btn-approved" (click)="openAssignDonorDialog()">
+                      Assign Donor
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,10 @@
+<div>
+  <mat-form-field>
+    <mat-label>Select Year</mat-label>
+    <mat-select [(ngModel)]="selectedYear" (ngModelChange)="onYearChange()">
+      <mat-option *ngFor="let year of years" [value]="year">{{ year }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+  <canvas class="chart" id="chart"></canvas>
+  

@@ -1,1 +1,85 @@
-<p>dashboard works!</p>
+<main>
+  <aside class="sidebar">
+    <header class="user-block">
+      <figure class="user-img">
+        <img src="Rectangle 3464151 (1).svg" />
+      </figure>
+      <div class="user-info">
+        <h4>Shreeva</h4>
+        <h6>Project</h6>
+      </div>
+    </header>
+    <nav>
+      <ul class="nav-list">
+        <li class="nav-item">
+          <div (click)="dashboard()" class="nav-link">
+            <img src="Vector (2).svg" class="nav-icon" /> Dashboard
+          </div>
+        </li>
+        <li class="nav-item">
+          <div (click)="pendingpage()" class="nav-link">
+            <img src="Frame (5).svg" class="nav-icon" /> Pending
+          </div>
+        </li>
+        <li class="nav-item">
+          <div (click)="approvepage()" class="nav-link">
+            <img src="noun-approved-7018854 1.svg" class="nav-icon" /> Approved
+          </div>
+        </li>
+        <li class="nav-item">
+          <div (click)="cancelpage()" class="nav-link">
+            <img src="1.svg" class="nav-icon" /> Cancelled
+          </div>
+        </li>
+        <li class="nav-item">
+          <div (click)="readydonor()" class="nav-link">
+            <img src="Group (1).svg" class="nav-icon" /> Ready Donor
+          </div>
+        </li>
+        <li class="nav-item">
+          <div (click)="userpermission()" class="nav-link">
+            <img src="noun-permission-6109283 1.svg" class="nav-icon" /> User
+            and Permission
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="nav-link" (click)="triggerSignout()">
+            <img src="noun-permission-6109283 1.svg" class="nav-icon" />
+            Logout
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="main-container">
+    <header class="header">
+      <h1 class="page-title">Allahabad Medical Association</h1>
+      <img src="Group (1).svg" class="notification" />
+    </header>
+
+    <app-statistics
+      [totalRequest]="totalRequest"
+      [approved]="approved"
+      [rejected]="rejected"
+      [pending]="pending"
+    ></app-statistics>
+
+    <section class="chartsSection">
+      <app-chart-container title="Total Request"
+        ><app-total-request
+          >(notify)="handleNotification($event)"</app-total-request
+        >
+      </app-chart-container>
+      <app-chart-container title="Overall Report"
+        ><app-overall-report></app-overall-report
+      ></app-chart-container>
+      <app-chart-container title="Request Rejected"
+        ><app-request-rejected></app-request-rejected
+      ></app-chart-container>
+      <app-chart-container title="Approved Request"
+        ><app-approved-request></app-approved-request
+      ></app-chart-container>
+    </section>
+  </div>
+</main>
