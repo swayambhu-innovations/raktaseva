@@ -1,0 +1,61 @@
+<body>
+  <div class="main">
+    <app-bbsidebar></app-bbsidebar>
+
+    <div class="main-container">
+      <header class="header">
+        <h1 class="page-title">Blood Bank Management</h1>
+        <!-- <img src="logout.svg" class="notification" /> -->
+      </header>
+      <div class="content-block">
+        <div class="search">
+          <h2>Donor Details</h2>
+          <div class="search-block">
+            <input
+              type="text"
+              name="search"
+              id="search"
+              class="form-control"
+              placeholder="Search"
+            />
+
+            <button class="btn">Newest</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+              <thead>
+                <tr>
+                  <th>Donor Name</th>
+                  <th>Age</th>
+                  <th>Gender</th>
+                  <th>Disease</th>
+                  <th>Date</th>
+                  <th class="report-cell">Blood Group</th>
+                  <!-- <th>Status</th> -->
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let donor of donor">
+                  <td>{{ donor.donorname }}</td>
+                  <td>{{ donor.age }}</td>
+                  <td>{{ donor.gender }}</td>
+                  <td>{{ donor.medicalcondition }}</td>
+                  <td>{{ donor.lastdonation }}</td>
+                  <td>{{ donor.bloodgroup }}</td>
+                  <td>
+                    <button class="btn-approved">
+                      {{ donor.unitdonated }} Unit Donated
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

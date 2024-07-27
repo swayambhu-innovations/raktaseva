@@ -21,6 +21,8 @@ import { collection, getDocs } from 'firebase/firestore';
 import { Firestore } from '@angular/fire/firestore';
 // import { PatientDetailsComponent } from "./patient-details/patient-details.component";
 import { Patient } from '../patient.structure';
+import { Router } from '@angular/router';
+import { AuthService } from '../../auth/auth.service';
 @Component({
   selector: 'app-approved',
   standalone: true,
@@ -61,7 +63,7 @@ export class ApprovedComponent implements OnInit {
     this.isOpen = false;
   }
 
-  constructor(private amaService: AmaService, private firestore: Firestore) { }
+  constructor(private amaService: AmaService, private firestore: Firestore,private router: Router,private authService: AuthService,) { }
 
   ngOnInit(): void {
     this.getPatientDetail();
@@ -112,6 +114,38 @@ export class ApprovedComponent implements OnInit {
       console.error("Error fetching users' booking data:", error);
     }
   }
+
+    //Routing
+    userpermission() {
+      this.router.navigate(['userpermission']);
+    }
+    dashboard() {
+      this.router.navigate(['dashboard']);
+    }
+    pendingpage() {
+      this.router.navigate(['pending']);
+    }
+    approvepage() {
+      this.router.navigate(['approve']);
+    }
+    cancelpage() {
+      this.router.navigate(['cancel']);
+    }
+    readydonor() {
+      this.router.navigate(['readydonor']);
+    }
+
+    triggerSignout() {
+      console.log('hello');
+      this.authService
+        .signout()
+        .then(() => {
+          console.log('User signed out');
+        })
+        .catch((error) => {
+          console.error('Error signing out: ', error);
+        });
+    }
 }
 
 

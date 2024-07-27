@@ -1,0 +1,258 @@
+.container {
+  height: 100vh;
+  // background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.middle-container {
+  height: 95%;
+  width: 45%;
+  border-radius: 15px;
+  background: #dce6f6;
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.5);
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // margin-right: 3%;
+  // margin-top: 4%;
+  // background-color: black;
+  height: 10vh;
+}
+.heading {
+  // background-color: pink;
+  height: 5vh;
+  width: 80%;
+  color: var(--black, var(--Schemes-Shadow, #000));
+  font-family: Lato;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.68px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 9%;
+  padding-left: 6px;
+}
+.cancel {
+  // background-color: purple;
+  height: 5vh;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2%;
+}
+.inner-container {
+  border-radius: var(--CR-10, 10px);
+  background: rgba(255, 255, 255, 0.7);
+  //   background-color: black;
+  height: 87%;
+  width: 62%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.info-wrapper {
+  width: 80%;
+  height: 12%;
+  //   background-color: pink;
+  margin-top: 20px;
+}
+.box-info {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-top: 6px;
+  //   background-color: yellow;
+  height: 18%;
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--black, var(--Schemes-Shadow, #000));
+}
+
+.input-container,
+.medical-container {
+  //   background-color: brown;
+  height: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.input {
+  width: 90%;
+  height: 75%;
+  border-radius: var(--CR-10, 10px);
+  border: 1px solid var(--Blue-linear, #003049);
+  //   background: var(--white, #fff);
+  padding-left: 15px;
+  background: var(
+    --Blue-linear,
+    linear-gradient(180deg, #003049 0%, #005079 99.99%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.option-container {
+  // background-color: black;
+  width: 95%;
+  height: 80%;
+  border-radius: var(--CR-10, 10px);
+}
+.select-input {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--CR-10, 10px);
+  border: 1px solid var(--Blue-linear, #003049);
+  // background: var(--white, #fff);
+  padding-left: 10px;
+
+  background: var(
+    --linear-blue,
+    linear-gradient(180deg, #003049 0%, #005079 99.99%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.medical-container {
+  // background-color: brown;
+  height: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.medical-info,
+.medical-info-1 {
+  // background-color: red;
+  height: 65%;
+  width: 25%;
+  border-radius: var(--CR-10, 10px);
+  border: 1px solid var(--Blue-linear, #003049);
+  background: var(--white, #fff);
+}
+.medical-heading,
+.medical-heading-1,
+.medical-heading-2 {
+  height: 65%;
+  width: 25%;
+}
+.medical-info-wrapper {
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  padding-top: 10px;
+
+  //   background-color: yellow;
+  height: 18%;
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--black, var(--Schemes-Shadow, #000));
+  justify-content: space-around;
+}
+.medical-info-1 {
+  margin-right: 12px;
+}
+.medical-heading-1 {
+  margin-right: 9%;
+}
+.medical-input {
+  width: 85%;
+  height: 80%;
+  border: none;
+  // outline: none;
+  margin-left: 8px;
+  margin-top: 3.5px;
+}
+.medical-heading-2 {
+  margin-right: 1%;
+}
+.medical-heading {
+  padding-right: 7%;
+}
+.footer {
+  // background-color: black;
+  height: 10vh;
+}
+.btn-container {
+  display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // background-color: pink;
+  height: 7vh;
+}
+
+.approve-btn {
+  border-radius: var(--CR-10, 10px);
+  background: var(
+    --Blue-linear,
+    linear-gradient(180deg, #003049 0%, #005079 99.99%)
+  );
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+    0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  display: flex;
+  width: 143px;
+  height: 40px;
+  padding: 10px 17px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  color: white;
+}
+.button {
+  margin-top: 3%;
+  // background-color: red;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reject-btn {
+  display: flex;
+  width: 143px;
+  height: 40px;
+  padding: 10px 17px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: var(--CR-10, 10px);
+  background: var(
+    --Red-linear,
+    linear-gradient(
+      180deg,
+      #d62828 0%,
+      rgba(188, 35, 35, 0.95) 30.57%,
+      rgba(165, 31, 31, 0.9) 53.9%,
+      rgba(138, 26, 26, 0.85) 80.19%,
+      rgba(112, 21, 21, 0.8) 100%
+    )
+  );
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+    0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  color: white;
+}
+// Disable Button Styling
+.blue-button {
+  border-radius: var(--CR-10, 10px);
+  opacity: 0.4;
+  background: var(
+    --Blue-linear,
+    linear-gradient(180deg, #003049 0%, #005079 99.99%)
+  );
+}

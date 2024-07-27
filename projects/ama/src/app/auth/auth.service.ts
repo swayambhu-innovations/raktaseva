@@ -65,6 +65,7 @@ export class AuthService {
       } else {
         this.userDetails = null;
         localStorage.removeItem('token');
+        
       }
     });
   }
@@ -89,10 +90,12 @@ export class AuthService {
   }
 
   async signout() {
+    console.log("hello 2")
     await signOut(this._auth);
     localStorage.removeItem('token');
+    localStorage.removeItem('userEmail');
     this.showLoginIn = true;
-    return this.router.navigate(['login']);
+    return this.router.navigate(['/']);
   }
 
   private updateUserData(user: any) {
