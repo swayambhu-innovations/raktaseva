@@ -17,12 +17,15 @@ import { EditProfileComponent } from "../../../raktseva/src/app/edit-profile/edi
 import { NotAdminComponent } from "./auth/not-admin/not-admin.component";
 import { SidebarComponent } from "./sidebar/sidebar.component";
 import { MailgunComponent } from "./mailgun/mailgun.component";
+import { ConfirmationDialogComponent } from './user-and-permission/dialog/dialog.component';
+import { DonorReadyDonationComponent } from "./modules/donor-ready-donation/donor-ready-donation.component";
+// import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CancelledComponent, UserAndPermissionComponent, PendingComponent, LoginComponent, ApprovedComponent, DashboardComponent, TotalRequestComponent, ApprovedRequestComponent, ChartContainerComponent, OverallReportComponent, StatisticsComponent, EditProfileComponent, NotAdminComponent, SidebarComponent, MailgunComponent],
+  imports: [RouterOutlet, CancelledComponent, UserAndPermissionComponent, PendingComponent, LoginComponent, ApprovedComponent, DashboardComponent, TotalRequestComponent, ApprovedRequestComponent, ChartContainerComponent, OverallReportComponent, StatisticsComponent, ConfirmationDialogComponent, EditProfileComponent, NotAdminComponent, SidebarComponent, MailgunComponent, DonorReadyDonationComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

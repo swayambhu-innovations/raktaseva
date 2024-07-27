@@ -23,6 +23,7 @@ import {
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs';
 import { getDoc } from 'firebase/firestore';
+// import { UserAndPermissionComponent } from '../user-and-permission/user-and-permission.component';
 
 @Injectable({
   providedIn: 'root',
@@ -30,10 +31,12 @@ import { getDoc } from 'firebase/firestore';
 export class AuthService {
   private _firestore = inject(Firestore);
   private _auth = inject(Auth);
+  // private userPermission:UserAndPermissionComponent;
   authState$ = authState(this._auth);
   user$: Observable<User | null> = user(this._auth);
   userDetails: any | null = null;
   showLoginIn = true;
+  userPermissions: any;
   // userPermissions: any;
   constructor(private router: Router) {
     this.user$.subscribe(async (user) => {
@@ -113,5 +116,22 @@ export class AuthService {
         where(documentId(), '==', email)
       )
     );
+  }
+  async getUserPermissions() {
+    const email = localStorage.getItem("userEmail") as string;
+    const userRef = doc(this._firestore, "admin-user", email);
+    const userSnapshot = await getDoc(userRef);
+
+    if (userSnapshot.exists()) {
+      const userDetail = userSnapshot.data();
+
+      const roleRef = doc(this._firestore, "roles", userDetail?.["role"]);
+
+      const roleSnapshot = await getDoc(roleRef);
+      this.userPermissions = roleSnapshot.data();
+      return roleSnapshot.data();
+    } else {
+      return null;
+    }
   }
 }

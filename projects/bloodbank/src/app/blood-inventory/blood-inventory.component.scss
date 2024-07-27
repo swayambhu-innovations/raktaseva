@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #fff;
+  color: #000;
+  border-radius: 10px;
+  border: 1px solid #003049;
+  transition: background 0.3s;
+  text-decoration: none;
+}
+
+.btn-danger {
+  display: inline-block;
+  background: linear-gradient(
+    180deg,
+    #d62828 0%,
+    rgba(188, 35, 35, 0.9492) 30.57%,
+    rgba(165, 31, 31, 0.9032) 53.9%,
+    rgba(138, 26, 26, 0.8502) 80.19%,
+    rgba(112, 21, 21, 0.8) 100%
+  );
+  color: #fff;
+  border-color: #d62828;
+  width: 90px;
+  height: 30px;
+  padding: 1px 2px;
+  gap: 10px;
+  border-radius: 15px;
+}
+
+.btn-danger:hover {
+  background: linear-gradient(
+    180deg,
+    #d62828 0%,
+    rgba(188, 35, 35, 0.9492) 30.57%,
+    rgba(165, 31, 31, 0.9032) 53.9%,
+    rgba(138, 26, 26, 0.8502) 80.19%,
+    rgba(112, 21, 21, 0.8) 100%
+  );
+}
+
+.card {
+  background-color: #fff;
+  color: #000;
+  border-radius: 20px;
+  box-shadow: 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 30px;
+}
+
+table,
+.table {
+  width: 100%;
+  border: none;
+  background-color: #fff;
+  color: #000;
+}
+
+table thead tr th {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  font-size: 16px;
+}
+
+table tbody tr td {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.report-cell {
+  width: 200px;
+}
+
+.form-control {
+  display: block;
+  padding: 10px 15px;
+  border-radius: 9px;
+  border: 1px solid #003049;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-container {
+  flex-grow: 1;
+  // padding: 20px; /* Add padding here */
+  background-color: #f2f2f2;
+  overflow-x: hidden;
+  // height:100vh;
+  // position: relative;
+  margin-left: 250px;
+}
+
+.header {
+  display: flex;
+  background-color: #fff;
+  padding: 20px;
+  justify-content: center;
+}
+
+.page-title {
+  font-size: 25px;
+  font-weight: 600;
+  color: #d5294d;
+}
+
+.content-block {
+  display: flex;
+  padding: 0 50px 50px;
+  flex-direction: column;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  column-gap: 20px;
+}
+
+.search h2 {
+  font-size: 20px;
+  padding: 0px 20px;
+  flex-basis: 30%;
+  color: #003049;
+}
+
+.search .search-block {
+  display: flex;
+  flex-basis: 100%;
+  column-gap: 20px;
+  justify-content: flex-end;
+}
+
+.search .search-block .filter {
+  display: flex;
+  flex-basis: 30%;
+}
+
+.search .search-block .form-control {
+  flex-basis: 70%;
+}
+
+.content-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 20px;
+}
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px 20px;
+}
+
+.card {
+  background-color: #fff;
+  color: #000;
+  border-radius: 20px;
+  box-shadow: 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-content img {
+  position: relative;
+  right: 50px;
+  top: 30px;
+}
+
+.blood-group {
+  position: relative;
+  // left: 60px;
+  bottom: 30px;
+  font-weight: 800;
+  font-size: 40px;
+  color: #003049;
+  padding-left: 50px;
+}
+.unit-count {
+  font-weight: 400;
+  font-size: 25px;
+  position: relative;
+  left: 100px;
+}
+p {
+  font-size: 18px;
+  color: #003049;
+  font-family: Lato;
+  //   font-size: 24px;
+  font-weight: 500;
+  line-height: 28.8px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  padding: 0px 20px;
+}
