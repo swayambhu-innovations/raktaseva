@@ -79,7 +79,7 @@ export class CancelledComponent implements OnInit {
             hospital_name: patientData['hospitalname'],
             bed_no: patientData['bednumber'],
             bloodGroup:'',
-            availableDonor:'',
+            availableDonor:0,
             assignedDonor:'',
 
 

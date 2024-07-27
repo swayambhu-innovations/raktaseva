@@ -34,6 +34,9 @@
     top: 142px;
   
   }
+  .new{
+    color:#3D3C42;
+  }
   .btn-danger {
     display: inline-block;
     background: linear-gradient(180deg, #D62828 0%, rgba(188, 35, 35, 0.9492) 30.57%, rgba(165, 31, 31, 0.9032) 53.9%, rgba(138, 26, 26, 0.8502) 80.19%, rgba(112, 21, 21, 0.8) 100%);
@@ -180,8 +183,11 @@
   
   .page-title {
     font-size: 36px;
-    font-weight: 800;
+    font-weight: 600;
     color: #003049;
+    // font-family: Lato;
+
+
   }
   
   .content-block {
@@ -200,6 +206,7 @@
   .search h2 {
     font-size: 30px;
     flex-basis: 30%;
+    color:#003049
   }
   
   .search .search-block {
@@ -264,7 +271,7 @@
   }
   
   .modal {
-    background: #8AC9D6;
+    background: #faf9f9;
     width: 90vw;
     max-width: 1000px;
     padding: 20px;

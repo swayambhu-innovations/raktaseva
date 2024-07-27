@@ -10,6 +10,6 @@ export interface Patient {
     hospital_name:string;
     bed_no:string;
     bloodGroup:string;
-    availableDonor:string;
+    availableDonor:number;
     assignedDonor:string;
 }

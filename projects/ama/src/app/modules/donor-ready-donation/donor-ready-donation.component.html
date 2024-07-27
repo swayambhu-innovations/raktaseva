@@ -62,7 +62,7 @@
               class="form-control"
               placeholder="Search"
             />
-            <button class="btn">Newest</button>
+            <button class="btn new">Newest</button>
           </div>
         </div>
         <div class="card">
@@ -75,40 +75,18 @@
                   <th>Required Blood</th>
                   <th>Available Donor</th>
                   <th>Assigned Donor</th>
-                  <th>Status</th>
-                  <!-- <th>Action</th> -->
                   <th class="report-cell">Action</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let pending of pendingSummary">
                   <td>{{ pending && pending.name ? pending.name : "-" }}</td>
+                  <td>{{ pending && pending.aadharNumber ? pending.aadharNumber : "-" }}</td>
+                  <td>{{ pending && pending.unit ? pending.unit : "-" }}</td>
+                  <td>{{ pending && pending.availableDonor ? pending.availableDonor : "-" }}</td>
+                  <td>{{ pending && pending.assignedDonor ? pending.assignedDonor : "-" }}</td>
                   <td>
-                    {{
-                      pending && pending.aadharNumber
-                        ? pending.aadharNumber
-                        : "-"
-                    }}
-                  </td>
-                  <td>
-                    {{ pending && pending.unit ? pending.unit : "-" }}
-                  </td>
-                  <td>
-                    {{ pending && pending.availableDonor ? pending.availableDonor : "-" }}
-                  </td>
-                  <td>
-                    {{ pending && pending.assignedDonor ? pending.assignedDonor : "-" }}
-                  </td>
-                  <td>
-                    {{ pending && pending.status ? pending.status : "-" }}
-                  </td>
-                   <td>
-                    <button
-                      class="btn btn-danger"
-                      
-                    >
-                      Assign
-                    </button>
+                    <button class="btn btn-danger" (click)="openModal(pending.id)">Assign</button>
                   </td>
                 </tr>
               </tbody>
@@ -117,14 +95,38 @@
         </div>
       </div>
     </div>
-    <!-- (click)="openModal(pending.id)" -->
     <div class="modal-background" *ngIf="isOpen">
       <div class="modal">
         <span class="close" (click)="closeModal()">×</span>
-        <h2>Patient Report</h2>
-        <div class="img">
-          <img [src]="imageURL" alt="report-img" />
-        </div>
+        <h2>Donor List</h2>
+        <div class="card">
+            <div class="card-body">
+              <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                <thead>
+                  <tr>
+                    <th>Donor Name</th>
+                    <th>Aadhar Number</th>
+                    <th>Blood Group</th>
+                    <th>Contact</th>
+                    <th>Status</th>
+                    <th class="report-cell">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let donor of donorSummary">
+                    <td>{{ donor && donor.donorName ? donor.donorName : "-" }}</td>
+                    <td>{{ donor && donor.aadharNumber ? donor.aadharNumber : "-" }}</td>
+                    <td>{{ donor && donor.bloodGroup ? donor.bloodGroup : "-" }}</td>
+                    <td>{{ donor && donor.contact ? donor.contact : "-" }}</td>
+                    <td>{{ donor && donor.status ? donor.status : "-" }}</td>
+                    <td>
+                      <button class="btn btn-danger" (click)="assignDonor(donor.id)">Assign</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
       </div>
     </div>
   </main>
