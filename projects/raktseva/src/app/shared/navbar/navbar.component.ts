@@ -27,6 +27,7 @@ export class NavbarComponent {
   notification() {
     this.router.navigate(['notification']);
   }
+  
   ngOnInit(): void {
     const storedUserData = localStorage.getItem('loginFormData');
     if (storedUserData) {

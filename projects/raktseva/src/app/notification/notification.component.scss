@@ -1,0 +1,83 @@
+.blood-bank {
+//   background-color: red;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid var(--Blue-linear, #003049);
+  background: #fff;
+  width: 90%;
+//   height: 78px;
+  flex-shrink: 0;
+  box-shadow: -1px 4px 10px -4px rgba(22, 22, 22, 0.08);
+  align-items: center;
+  margin: 7% auto;
+}
+.icon {
+//   background-color: black;
+  height: 10vh;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.info {
+//   background-color: purple;
+  height: 10vh;
+  width: 70%;
+  display: flex;
+  align-items: center;margin-left:10px
+}
+.heading {
+//   background-color: pink;
+  height: 3vh;
+  font-family: Lato;
+  font-size: 7px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+}
+.paragraph {
+//   background-color: yellow;
+  height: 3vh;
+  font-family: Lato;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+}
+
+
+.notification-icon {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.blink {
+    animation: blink-animation 1s infinite;
+}
+
+@keyframes blink-animation {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+b{
+    color:red
+}
+
+.blood-bank {
+    transition: transform 0.3s ease;
+    position: relative;
+  }
+  
+  .blood-bank.swiped {
+    transform: translateX(-100%);
+  }

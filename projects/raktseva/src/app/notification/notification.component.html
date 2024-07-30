@@ -1,2 +1,39 @@
-<app-header-with-back></app-header-with-back>
-<p>notification works!</p>
+<app-header-with-back [title]="'Notification'"></app-header-with-back>
+<div class="blood-bank">
+    <div class="icon">
+<img src="blood-bank.svg">
+    </div>
+    <div class="info">
+        <div class="info-inner">
+            <div class="heading">
+                <h1>Blood Bank</h1>
+            </div>
+            <div class="paragraph">
+                <p>Request is in progress</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="blood-bank" 
+     *ngFor="let user of userData; let i = index" 
+     (touchstart)="onTouchStart($event, i)" 
+     (touchend)="onTouchEnd($event, i)">
+    <div class="icon">
+        <img src="ama.svg">
+    </div>
+    <div class="info">
+        <div class="info-inner">
+            <div class="heading">
+                <h1>AMA Panel</h1>
+            </div>
+            <div class="paragraph">
+                <p>Request <b>{{user.status}}</b> for <b>{{user.patientname}}</b></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<app-bottom-navbar></app-bottom-navbar>
