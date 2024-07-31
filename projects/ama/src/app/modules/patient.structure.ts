@@ -11,5 +11,5 @@ export interface Patient {
     bed_no:string;
     bloodGroup:string;
     availableDonor:number;
-    assignedDonor:string;
+    assignedDonor:number;
 }

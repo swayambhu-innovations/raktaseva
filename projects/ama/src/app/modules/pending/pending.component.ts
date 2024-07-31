@@ -81,7 +81,7 @@ export class PendingComponent implements OnInit {
             bed_no: patientData['bednumber'],
             bloodGroup:'',
             availableDonor:0,
-            assignedDonor:'',
+            assignedDonor:0,
 
           });
         }
