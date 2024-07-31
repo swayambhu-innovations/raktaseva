@@ -1,0 +1,48 @@
+<body>
+  <div class="container">
+    <div class="top">
+      <h3 class="head">Confirmation Page</h3>
+      <div class="image-container">
+        <img
+          src="22378319_6566469 1.png"
+          alt="Confirmation Form Illustration"
+        />
+      </div>
+      <div class="text-container">
+        <p class="text">
+          Your single act of donating blood can give someone another chance at
+          life.
+        </p>
+      </div>
+    </div>
+    <form [formGroup]="phoneForm" (ngSubmit)="onSubmit()">
+      <div class="question-container">
+        <p>
+          Are you available to donate blood? Your generosity could save a life
+          today.
+        </p>
+        <input
+          id="phoneNumber"
+          formControlName="phoneNumber"
+          placeholder="Phone number"
+        />
+        <div class="button-container">
+          <button
+            type="submit"
+            class="yes-button"
+            (click)="handleResponse('yes')"
+          >
+            Yes
+          </button>
+          <button
+            type="submit"
+            class="no-button"
+            (click)="handleResponse('no')"
+          >
+            No
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>

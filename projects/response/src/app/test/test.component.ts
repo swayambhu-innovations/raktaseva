@@ -13,7 +13,7 @@ export class TestComponent {
   constructor(private emailService: EmailService) {}
 
   sendEmail() {
-    const recipients = ['ambarmishra740@gmail.com,amanyddv@gmail.com'];
+    const recipients = ['ambarmishra740@gmail.com,amanyddv@gmail.com','kritarthshukla92@gmail.com'];
     const subject = 'Test Subject';
     const text = 'Test Text';
     const html = '<p>Hello</p>';
