@@ -19,7 +19,7 @@
                     <p>Total Donor</p>
                   </div>
                   <div class="count">
-                    <p>4</p>
+                    <p>{{ userData[0]?.donorIDSum }}</p>
                   </div>
                 </div>
               </div>
@@ -66,22 +66,24 @@
                   <th>Gender</th>
                   <th>Contact</th>
                   <th>Blood Group</th>
-                  <th>Status</th>
+                
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>x</td>
-                  <td>x</td>
-                  <td>x</td>
-                  <td>x</td>
-                  <td>x</td>
-                  <td>x</td>
+                <tr *ngFor="let survey of userData[0]?.matchedSurveyDocs">
+                  <td>{{survey.name}}</td>
+                  <td>{{survey.aadharnumber}}</td>
+                  <td>{{survey.gender}}</td>
+                  <td>{{survey.phone}}</td>
+                  <td>{{survey.bloodgroup}}</td>
+               
                   <td>
                     <button class="btn-approved">Checkup Form</button>
                   </td>
                 </tr>
+
+                
               </tbody>
             </table>
           </div>
