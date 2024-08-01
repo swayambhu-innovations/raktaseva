@@ -13,13 +13,15 @@ import { HomeComponent } from "./home/home.component";
 import { BottomNavbarComponent } from "./shared/bottom-navbar/bottom-navbar.component";
 import { NavbarComponent } from "./shared/navbar/navbar.component";
 import { NotificationComponent } from "./notification/notification.component";
+import { StatusComponent } from "./status/status.component";
+import { ContactComponent } from "./contact/contact.component";
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ProfileComponent, RequirementFormComponent, UserdetailComponent, InviteFriendModalComponent, OtpComponent, LoginWithPhoneComponent, EditProfileComponent, HeaderWithBackComponent, HomeComponent, BottomNavbarComponent, NavbarComponent, NotificationComponent],
+  imports: [RouterOutlet, ProfileComponent, RequirementFormComponent, UserdetailComponent, InviteFriendModalComponent, OtpComponent, LoginWithPhoneComponent, EditProfileComponent, HeaderWithBackComponent, HomeComponent, BottomNavbarComponent, NavbarComponent, NotificationComponent, StatusComponent, ContactComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
