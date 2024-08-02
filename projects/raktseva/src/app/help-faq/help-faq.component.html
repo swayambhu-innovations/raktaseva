@@ -1,0 +1,30 @@
+<div class="main-container">
+    <app-header-with-back [title]="'FAQs'"></app-header-with-back>
+    <div class="heading">
+        <h1>Frequently Asked Questions</h1>
+    </div>
+
+    <div class="card-container">
+        <div class="card" (click)="toggleCard($event.currentTarget)">
+            <div class="card-header">
+               <b> Can I use the app to request blood for someone else, like a family member or friend?</b>
+            </div>
+            <div class="card-content">
+              <p>Yes, you can use the app to request blood for someone else, such as a family member or friend. The app is designed to facilitate blood request for anyone in need.</p>
+            </div>
+          </div>
+    </div>
+
+    <div class="card-container">
+        <div class="card" (click)="toggleCard($event.currentTarget)">
+            <div class="card-header">
+               <b>How do I create a blood request on the app?</b> 
+            </div>
+            <div class="card-content">
+              <p>Yes, you can use the app to request blood for someone else, such as a family member or friend. The app is designed to facilitate blood request for anyone in need.</p>
+            </div>
+          </div>
+    </div>
+
+
+</div>
