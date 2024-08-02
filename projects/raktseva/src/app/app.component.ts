@@ -12,13 +12,14 @@ import { HeaderWithBackComponent } from "./shared/header-with-back/header-with-b
 import { HomeComponent } from "./home/home.component";
 import { BottomNavbarComponent } from "./shared/bottom-navbar/bottom-navbar.component";
 import { NavbarComponent } from "./shared/navbar/navbar.component";
+import { TestimonialComponent } from "./testimonial/testimonial.component";
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ProfileComponent, RequirementFormComponent, UserdetailComponent, InviteFriendModalComponent, OtpComponent, LoginWithPhoneComponent, EditProfileComponent, HeaderWithBackComponent, HomeComponent, BottomNavbarComponent, NavbarComponent],
+  imports: [RouterOutlet, ProfileComponent, RequirementFormComponent, UserdetailComponent, InviteFriendModalComponent, OtpComponent, LoginWithPhoneComponent, EditProfileComponent, HeaderWithBackComponent, HomeComponent, BottomNavbarComponent, NavbarComponent, TestimonialComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

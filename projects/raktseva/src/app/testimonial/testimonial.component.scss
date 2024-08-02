@@ -1,0 +1,179 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // height: 100vh;
+    background-color: #f4f4f9;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    height: 100vh;
+    // border-radius: 10px;
+    border: 1px solid #dbd9d9;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    // max-width: 400px;
+    width: 100%;
+  }
+
+  .header{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    right: 85px;
+  }
+  .back{
+    // height: 100px;
+    // width: 100px;
+    position:relative;
+    bottom :13px;
+    gap:10px;
+    // font-size: 30px;
+   
+    
+  }
+  .head {
+    //styleName: lato semibold;
+    font-family: Lato;
+    font-size: 20px;
+    font-weight: 600;
+  //   line-height: 24px;
+  //   letter-spacing: -0.02em;
+  //   text-align: left;
+  }
+  .header h3{
+    font-family: Lato;
+    color:#003049;
+
+  }
+
+  
+  .image-container img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+  
+  .text-container {
+    // padding:50px;
+    color: #003049;
+    //styleName: lato semi;
+  
+    margin-top: 20px;
+  }
+  .feed{
+    // padding: 2px;
+    display: flex;
+    flex-direction: column;
+  }
+  .feedback{
+    font-family: Lato;
+    color:#003049;
+    font-size: 18px;
+    font-weight: 600px;
+    margin-top: 20px;
+    padding: 5px;
+    text-align: start;
+  }
+
+  textarea{
+    padding: 8px;
+    height: 150px;
+    width:290px;
+    font-size: 18px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0.5, 0.5);
+    border: 1px solid #003049;
+    border-radius: 15px;
+  }
+  #name{
+    padding-left: 20px;
+    margin-top: 40px;
+    font-size: 18px;
+     width: 290px;
+     height: 50px;
+     border-radius: 15px;
+     border: 1px solid #003049;
+ }
+ 
+  .text {
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21.6px;
+    text-align: center;
+    color: #003049;
+  }
+  .question-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #d9d9d9;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 100%;
+  }
+  p {
+    color: #003049;
+    //styleName: lato semi;
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21.6px;
+    text-align: center;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10px;
+  }
+  #phoneNumber{
+     padding-left: 20px;
+     margin-top: 40px;
+      width: 270px;
+      height: 50px;
+      border-radius: 20px;
+      border: 1px solid #003049;
+  }
+  
+  button {
+    // padding: 10px 20px;
+    border: none;
+    width: 120px;
+    height: 45px;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f8f9fa;
+    color: black;
+    border: 1px solid #003049;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #003049;
+    color: white;
+  }
+  .error-message {
+    color: red;
+    margin-top: 5px;
+  }
+  
+  
