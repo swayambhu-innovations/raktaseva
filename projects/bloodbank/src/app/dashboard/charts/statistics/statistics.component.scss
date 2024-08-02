@@ -1,0 +1,76 @@
+:host{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    .three{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .stats{
+        display: grid;
+        width: 100%;
+        // gap:20px;
+        .stat{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 16px;
+            border: 2px solid #f3efe3;
+            background: linear-gradient(93deg, #e3e1e1 53.37%, #a4a2a2 84.38%);
+            padding: 10px 20px;
+            img{
+                width: 70px;
+                height: 70px;
+            }
+            .detail{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                .title{
+                    color: var(--Button, #00421F);
+                    font-family: Inter;
+                    font-size: 25px;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-weight: 500;
+                    line-height: 150%; /* 36px */
+                }
+                .title2{
+                    color: var(--Button, #046a34);
+                    font-family: Inter;
+                    font-size: 25px;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-weight: bold;
+                    line-height: 150%; /* 36px */
+                }
+                .title3{
+                    color: var(--Button, #d82e47);
+                    font-family: Inter;
+                    font-size: 25px;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-weight: bold;
+                    line-height: 150%; /* 36px */
+                }
+                .title4{
+                    color: var(--Button, #c96222);
+                    font-family: Inter;
+                    font-size: 25px;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-weight: bold;
+                    line-height: 150%; /* 36px */
+                }
+                .value{
+                    color: #003049;
+                    font-family: Inter;
+                    font-size: 37px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 150%; /* 75px */
+                }
+            }
+        }
+    }
+}
