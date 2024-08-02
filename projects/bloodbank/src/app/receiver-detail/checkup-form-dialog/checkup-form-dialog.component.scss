@@ -256,3 +256,20 @@
     linear-gradient(180deg, #003049 0%, #005079 99.99%)
   );
 }
+
+// Disable Button Styling
+.red-button {
+  border-radius: var(--CR-10, 10px);
+  opacity: 0.4;
+  background: var(
+    --Red-linear,
+    linear-gradient(
+      180deg,
+      #d62828 0%,
+      rgba(188, 35, 35, 0.95) 30.57%,
+      rgba(165, 31, 31, 0.9) 53.9%,
+      rgba(138, 26, 26, 0.85) 80.19%,
+      rgba(112, 21, 21, 0.8) 100%
+    )
+  );
+}
