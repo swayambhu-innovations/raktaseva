@@ -64,19 +64,23 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Firestore, collection, getDocs, setDoc, doc, updateDoc, query, where } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-donor-acknowledge',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,CommonModule],
   templateUrl: './donor-acknowledge.component.html',
   styleUrls: ['./donor-acknowledge.component.scss']
 })
 export class DonorAcknowledgeComponent {
   phoneForm: FormGroup;
   response: string | null = null;
+  showErrorMessage: boolean = false;
 
-  constructor(private fb: FormBuilder, private firestore: Firestore) {
+
+  constructor(private fb: FormBuilder, private firestore: Firestore,private router:Router) {
     this.phoneForm = this.fb.group({
       phoneNumber: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]]
     });
@@ -84,9 +88,20 @@ export class DonorAcknowledgeComponent {
 
   handleResponse(response: string) {
     this.response = response;
+    if (response === 'yes') {
+      this.router.navigate(['yes-thank']);
+    } else if (response === 'no') {
+      this.router.navigate(['no-thank']);
+    }
   }
 
   async onSubmit() {
+    // if (this.phoneForm.trim() === '') {
+    //   this.showErrorMessage = true;
+    //   return;
+    // }
+    // this.showErrorMessage = false;
+    
     if (this.phoneForm.valid) {
       const phoneNumber = this.phoneForm.value.phoneNumber;
       const donorSnapshot = await getDocs(collection(this.firestore, 'survey'));
