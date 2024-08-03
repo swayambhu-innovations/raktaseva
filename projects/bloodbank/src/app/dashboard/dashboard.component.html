@@ -1,0 +1,34 @@
+<main>
+  <!-- <app-bbsidebar class="sidebar"></app-bbsidebar> -->
+  <app-sidebar  class="sidebar"></app-sidebar>
+<div class="main-container">
+    <header class="header">
+      <h1 class="page-title">Blood Bank Management</h1>
+      <img src="Group (1).svg" class="notification" />
+    </header>
+
+    <app-statistics
+      [totalDonor]="totalDonor"
+      [approved]="approved"
+      [rejected]="rejected"
+      [pending]="pending"
+    ></app-statistics>
+
+    <section class="chartsSection">
+      <app-chart-container title="Approved and Rejected Donor"
+        ><app-total-request
+          >(notify)="handleNotification($event)"</app-total-request
+        >
+      </app-chart-container>
+      <app-chart-container title="Blood Count"
+        ><app-overall-report></app-overall-report
+      ></app-chart-container>
+      <app-chart-container title="Donors Count"
+        ><app-request-rejected></app-request-rejected
+      ></app-chart-container>
+      <app-chart-container title="Approved Request"
+        ><app-approved-request></app-approved-request
+      ></app-chart-container>
+    </section>
+  </div>
+</main>

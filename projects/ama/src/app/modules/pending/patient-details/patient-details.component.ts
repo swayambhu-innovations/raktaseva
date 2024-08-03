@@ -23,7 +23,7 @@ export class PatientDetailsComponent implements OnInit {
     bed_no:'',
     bloodGroup:'',
     availableDonor:0,
-    assignedDonor:'',
+    assignedDonor:0,
   };
   firestore: Firestore = inject(Firestore)
   constructor() {

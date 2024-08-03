@@ -104,7 +104,7 @@ export class ApprovedComponent implements OnInit {
             bed_no: patientData['bednumber'],
             bloodGroup:'AB+',
             availableDonor:0,
-            assignedDonor:'',
+            assignedDonor:0,
 
           });
         }
