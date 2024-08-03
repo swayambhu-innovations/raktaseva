@@ -16,7 +16,7 @@ export class TestComponent {
     const recipients = ['ambarmishra740@gmail.com,amanyddv@gmail.com','kritarthshukla92@gmail.com'];
     const subject = 'Test Subject';
     const text = 'Test Text';
-    const html = '<p>Hello</p>';
+    const html = '<p>Good Evening</p>';
 
     this.emailService.sendEmail(recipients, subject, text, html).subscribe(
       response => {

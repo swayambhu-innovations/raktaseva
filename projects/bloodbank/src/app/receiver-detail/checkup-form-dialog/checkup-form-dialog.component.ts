@@ -12,6 +12,7 @@ import { CheckupFormService } from './service/checkup-form.service';
 })
 export class CheckupFormDialogComponent implements OnInit  {
   checkupForm: FormGroup;
+  status: string = '';
 
   constructor(private fb: FormBuilder,private checkupFormService: CheckupFormService,) {
     this.checkupForm = this.fb.group({
@@ -32,7 +33,27 @@ export class CheckupFormDialogComponent implements OnInit  {
 
   ngOnInit(): void {}
 
-  async onSubmit(): Promise<void> {
+  // async onSubmit(): Promise<void> {
+  //   if (this.checkupForm.valid) {
+  //     try {
+  //       // Set the current timestamp
+  //       this.checkupForm.patchValue({
+  //         timestamp: new Date().toISOString(),
+  //       });
+
+  //       await this.checkupFormService.saveFormData(
+  //         { ...this.checkupForm.value, status: 'pending' }
+  //       );
+  //       this.checkupForm.reset();
+  //     } catch (error) {
+  //       console.error('Error saving data: ', error);
+  //     }
+  //   } else {
+  //     console.log('Form is invalid');
+  //   }
+  // }
+
+  async onSubmit(status: string): Promise<void> {
     if (this.checkupForm.valid) {
       try {
         // Set the current timestamp
@@ -41,8 +62,12 @@ export class CheckupFormDialogComponent implements OnInit  {
         });
 
         await this.checkupFormService.saveFormData(
-          { ...this.checkupForm.value, status: 'pending' }
+          { ...this.checkupForm.value, status: status }
         );
+
+        // Update the status property
+        this.status = status;
+
         this.checkupForm.reset();
       } catch (error) {
         console.error('Error saving data: ', error);
@@ -50,5 +75,10 @@ export class CheckupFormDialogComponent implements OnInit  {
     } else {
       console.log('Form is invalid');
     }
+  }
+
+  // Example method to set the status (optional if not used elsewhere)
+  setStatus(newStatus: string) {
+    this.status = newStatus;
   }
 }
