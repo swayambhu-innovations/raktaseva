@@ -1,0 +1,91 @@
+<div class="wrapper">
+    <div class="header">
+      <div class="d-flex heading-text">
+        <span class="blue-bold-text">Create Role</span>
+        <mat-icon class="blue-bold-text">add</mat-icon>
+      </div>
+      <div class="modal-close-icon">
+        <mat-icon (click)="closeDialog()">close</mat-icon>
+      </div>
+    </div>
+    <hr class="my-4" />
+    <div>
+      <form [formGroup]="roleForm">
+        <label for="" class="label">Role Name</label>
+        <div
+          class="input_field space_between"
+          [ngClass]="{
+            'invalid-field':
+              roleForm.controls['roleName'].invalid &&
+              roleForm.controls['roleName'].touched
+          }"
+        >
+          <div>
+            <img src="" alt="" />
+            <input
+              type="text"
+              formControlName="roleName"
+              placeholder="Enter role"
+            />
+          </div>
+        </div>
+  
+        <div class="vertical_scroll">
+          <div class="droplist">
+            <div
+              class="space_between droplist_heading"
+              (click)="togglePermissions('Dashboard')"
+            >
+              <p>Dashboard</p>
+              <div class="flex">
+                <span
+                  matTooltip="Enable/Disable"
+                  matTooltipPosition="above"
+                  class="d-flex mx-2"
+                  (click)="stopPropagation($event)"
+                >
+                  <label class="switch">
+                    <input type="checkbox" formControlName="dashboard" />
+                    <span class="slider round"></span>-
+                  </label>
+                </span>
+                <img src="assets/add-user/downarrow.svg" alt="" />
+              </div>
+            </div>
+            <div *ngIf="isDashboard">
+              <div>
+                <div class="permission space_between">
+                  <p>Total request, Approved, Reject, Pending</p>
+                  <span
+                    matTooltip="Enable/Disable"
+                    matTooltipPosition="above"
+                    class="d-flex mx-2"
+                  >
+                    <label class="switch">
+                      <input type="checkbox" formControlName="totalSales" />
+                      <span class="slider round"></span>
+                    </label>
+                  </span>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+  
+          
+          
+        </div>
+      </form>
+      <div class="d-flex justify-content-center">
+        <div class="d-flex">
+          <button class="btn btn-success me-3" type="submit" (click)="onSubmit()">
+            Submit
+          </button>
+          <button class="btn btn-secondary" (click)="closeDialog()">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
