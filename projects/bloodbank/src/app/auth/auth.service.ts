@@ -88,11 +88,20 @@ export class AuthService {
     return this.updateUserData(credential.user);
   }
 
+  // async signout() {
+  //   await signOut(this._auth);
+  //   localStorage.removeItem('token');
+  //   this.showLoginIn = true;
+  //   return this.router.navigate(['login']);
+  // }
+
   async signout() {
+    console.log("hello 2")
     await signOut(this._auth);
     localStorage.removeItem('token');
+    localStorage.removeItem('userEmail');
     this.showLoginIn = true;
-    return this.router.navigate(['login']);
+    return this.router.navigate(['/']);
   }
 
   private updateUserData(user: any) {
