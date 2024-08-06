@@ -8,12 +8,14 @@ import { UserPermissionService } from "./service/user-permission.service";
 import { AuthService } from "../auth/auth.service";
 import { CommonModule } from "@angular/common";
 import { BbsidebarComponent } from "../shared/bbsidebar/bbsidebar.component";
+import { SidebarComponent } from "../sidebar/sidebar.component";
+
 
 
 @Component({
   selector: 'app-user-permission',
   standalone: true,
-  imports: [CommonModule, BbsidebarComponent],
+  imports: [CommonModule, BbsidebarComponent, SidebarComponent],
   templateUrl: './user-permission.component.html',
   styleUrl: './user-permission.component.scss'
 })

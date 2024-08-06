@@ -6,7 +6,8 @@ import { BbsidebarComponent } from '../shared/bbsidebar/bbsidebar.component';
 import { CommonModule } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { AssignDonorDialogComponent } from './assign-donor-dialog/assign-donor-dialog.component';
-import { SidebarComponent } from "../../../../ama/src/app/sidebar/sidebar.component";
+import { SidebarComponent } from "../sidebar/sidebar.component";
+
 
 @Component({
   selector: 'app-receiver-detail',
