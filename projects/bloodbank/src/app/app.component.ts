@@ -17,23 +17,26 @@ import { OverallReportComponent } from './dashboard/charts/overall-report/overal
 import { StatisticsComponent } from './dashboard/charts/statistics/statistics.component';
 import { CommonModule } from '@angular/common';
 
+import { UserPermissionComponent } from "./user-permission/user-permission.component";
+import { ConfirmationDialogComponent } from "../../../ama/src/app/user-and-permission/dialog/dialog.component";
+
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule,
     RouterOutlet,
-     BloodInventoryComponent,
-      SidebarComponent, 
-      LoginComponent,
-       NotAdminComponent, 
-       BbsidebarComponent,
-        DonorDetailComponent,
-         ReceiverDetailComponent, 
-         AssignDonorDialogComponent,
-          CheckupFormDialogComponent, 
-          DashboardComponent,TotalRequestComponent
-          ,ApprovedRequestComponent,ChartContainerComponent
-          ,OverallReportComponent,StatisticsComponent],
+    BloodInventoryComponent,
+    SidebarComponent,
+    LoginComponent,
+    NotAdminComponent,
+    BbsidebarComponent,
+    DonorDetailComponent,
+    ReceiverDetailComponent,
+    AssignDonorDialogComponent,
+    CheckupFormDialogComponent,
+    DashboardComponent, TotalRequestComponent,
+    ApprovedRequestComponent, ChartContainerComponent,
+    OverallReportComponent, StatisticsComponent, UserPermissionComponent, ConfirmationDialogComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
