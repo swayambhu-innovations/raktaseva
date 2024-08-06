@@ -11,6 +11,8 @@ import { StatusComponent } from './status/status.component';
 import { HistoryComponent } from './history/history.component';
 import { NotificationComponent } from './notification/notification.component';
 import { TestimonialComponent } from './testimonial/testimonial.component';
+import { ContactComponent } from './contact/contact.component';
+import { HelpFaqComponent } from './help-faq/help-faq.component';
 
 export const routes: Routes = [
   // { path: '', component: ProfileComponent },
@@ -19,16 +21,19 @@ export const routes: Routes = [
   { path: 'otp', component: OtpComponent },
   { path: 'home', component: HomeComponent },
   { path: 'requirement', component: RequirementFormComponent },
-  // { path: 'status', component: StatusComponent },
-  // {
-  //   path: 'userdetail',
-  //   component: UserdetailComponent,
-  //   canActivate: [AuthGuard],
-  // },
-  // { path: 'history', component: HistoryComponent },
+  { path: 'status', component: StatusComponent },
+  {
+    path: 'userdetail',
+    component: UserdetailComponent,
+    canActivate: [AuthGuard],
+  },
+  { path: 'history', component: HistoryComponent },
   { path: 'profile', component: ProfileComponent },
-  // { path: 'notification', component: NotificationComponent },
-  // {path: 'testimonial', component: TestimonialComponent},
+  { path: 'notification', component: NotificationComponent },
+  {path: 'testimonial', component: TestimonialComponent},
+  {path:'contact', component: ContactComponent},
+  {path:'help', component: HelpFaqComponent}
+
 
   // { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];
