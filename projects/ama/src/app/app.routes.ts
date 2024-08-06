@@ -14,14 +14,15 @@ export const routes: Routes = [
 
   // {path:'',component:LoginComponent},
   {
+    path: '',
+    component: LoginComponent,
+  },
+  {
     path: 'home',
     component: DashboardComponent,
     canActivate: [AuthGuard],
   },
-  {
-    path: '',
-    component: LoginComponent,
-  },
+  
   {
     path: 'userpermission',
     component: UserAndPermissionComponent,

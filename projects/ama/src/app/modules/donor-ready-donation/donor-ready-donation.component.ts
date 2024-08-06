@@ -194,6 +194,7 @@ import { Firestore, collection, getDocs, doc, updateDoc, getDoc } from '@angular
 import { Patient } from '../patient.structure';
 import { donor } from '../donor.structure';
 import { LoaderComponent } from "../../loader/loader.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-donor-ready-donation',
@@ -223,7 +224,7 @@ export class DonorReadyDonationComponent implements OnInit {
   selectedPatientId: string = '';
   isLoading: boolean = false; 
 
-  constructor(private firestore: Firestore) {}
+  constructor(private firestore: Firestore,private router: Router,) {}
 
   ngOnInit(): void {
     this.getPatientDetail();
@@ -353,6 +354,25 @@ export class DonorReadyDonationComponent implements OnInit {
     }finally {
       this.isLoading = false; 
     }
+  }
+   //Routing
+   userpermission() {
+    this.router.navigate(['userpermission']);
+  }
+  dashboard() {
+    this.router.navigate(['dashboard']);
+  }
+  pendingpage() {
+    this.router.navigate(['pending']);
+  }
+  approvepage() {
+    this.router.navigate(['approve']);
+  }
+  cancelpage() {
+    this.router.navigate(['cancel']);
+  }
+  readydonor() {
+    this.router.navigate(['readydonor']);
   }
   
 }

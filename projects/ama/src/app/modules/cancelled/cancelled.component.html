@@ -97,9 +97,13 @@
             <div class="modal">
                 <span class="close" (click)="closeModal()">×</span>
                 <h2>Patient Report</h2>
-                    <div class="img">
-                        <img [src]="imageURL" alt="report-img">
-                    </div>
+                <div class="img">
+                <app-image-container class="i-container"
+                [imageSrc]="imageURL"
+                [width]="500"
+                [height]="550"
+              ></app-image-container>
+            </div>
                 </div>
             </div>
         
