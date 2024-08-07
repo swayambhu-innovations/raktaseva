@@ -18,13 +18,14 @@ import { StatusComponent } from "./status/status.component";
 import { ContactComponent } from "./contact/contact.component";
 import { HelpFaqComponent } from "./help-faq/help-faq.component";
 import { InviteFriendModalComponent } from './invite-friend-modal/invite-friend-modal.component';
+import { HistoryComponent } from "./history/history.component";
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ProfileComponent, RequirementFormComponent, UserdetailComponent, InviteFriendModalComponent, OtpComponent, LoginWithPhoneComponent, EditProfileComponent, HeaderWithBackComponent, HomeComponent, BottomNavbarComponent, NavbarComponent, NotificationComponent,TestimonialComponent, StatusComponent, ContactComponent, HelpFaqComponent],
+  imports: [RouterOutlet, ProfileComponent, RequirementFormComponent, UserdetailComponent, InviteFriendModalComponent, OtpComponent, LoginWithPhoneComponent, EditProfileComponent, HeaderWithBackComponent, HomeComponent, BottomNavbarComponent, NavbarComponent, NotificationComponent, TestimonialComponent, StatusComponent, ContactComponent, HelpFaqComponent, HistoryComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

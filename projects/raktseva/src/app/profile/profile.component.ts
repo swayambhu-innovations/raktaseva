@@ -50,6 +50,12 @@ export class ProfileComponent {
     this.router.navigate(['testimonial']);
   }
 
+  contact(){
+    this.router.navigate(['contact']);
+  }
+  help(){
+    this.router.navigate(['help']);
+  }
 
 
   editprofile() {
