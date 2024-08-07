@@ -9,11 +9,12 @@ import { Firestore } from '@angular/fire/firestore';
 import { Patient } from '../patient.structure';
 import { Router } from '@angular/router';
 import { AuthService } from '../../auth/auth.service';
+import { ImageContainerComponent } from "../image-container/image-container.component";
 
 @Component({
   selector: 'app-cancelled',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ImageContainerComponent],
   templateUrl: './cancelled.component.html',
   styleUrl: './cancelled.component.scss'
 })
@@ -83,6 +84,7 @@ export class CancelledComponent implements OnInit {
             bloodGroup:'',
             availableDonor:0,
             assignedDonor:0,
+            date:'',
 
 
           });

@@ -7,6 +7,7 @@ import { ConfirmationDialogComponent } from "./dialog/dialog.component";
 import { UserPermissionService } from "./service/user-permission.service";
 import { AuthService } from "../auth/auth.service";
 import { CommonModule } from "@angular/common";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-user-and-permission',
@@ -19,7 +20,8 @@ export class UserAndPermissionComponent{
   constructor(
     private dialog: MatDialog,
     private UserPermissionService: UserPermissionService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router,
   ) {}
 
   roles: any[] = [];
@@ -151,4 +153,23 @@ export class UserAndPermissionComponent{
   async changeUserStatus(id: string, status: boolean) {
     await this.UserPermissionService.updateUserStatus(id, status);
   }
+  userpermission() {
+    this.router.navigate(['userpermission']);
+  }
+  dashboard() {
+    this.router.navigate(['dashboard']);
+  }
+  pendingpage() {
+    this.router.navigate(['pending']);
+  }
+  approvepage() {
+    this.router.navigate(['approve']);
+  }
+  cancelpage() {
+    this.router.navigate(['cancel']);
+  }
+  readydonor() {
+    this.router.navigate(['readydonor']);
+  }
+
 }

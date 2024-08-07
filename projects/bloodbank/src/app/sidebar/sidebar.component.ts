@@ -38,8 +38,20 @@ export class SidebarComponent {
       });
   }
 
+  home(){
+    this.router.navigate(['home']);
+  }
   bloodInventory(){
     this.router.navigate(['bloodInventory']);
+  }
+  receiverDetail(){
+    this.router.navigate(['receiverDetail']);
+  }
+  donorDetail(){
+    this.router.navigate(['donorDetail']);
+  }
+  userPermission(){
+    this.router.navigate(['userPermission']);
   }
 
 }

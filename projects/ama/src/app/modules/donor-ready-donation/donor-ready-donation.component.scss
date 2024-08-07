@@ -12,10 +12,22 @@
     color: #000;
   }
   
-  a {
-    text-decoration: none;
-    cursor: pointer;
+  .nav-link{
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    transition: .5s;
   }
+  .nav-link:hover{
+  
+    background-color: #f2f2f2;
+    color: #000;
+    transition: .5s;
+    }
+    .nav-link {
+        text-decoration: none;
+        cursor: pointer;
+    }
   
   .btn {
     display: inline-block;

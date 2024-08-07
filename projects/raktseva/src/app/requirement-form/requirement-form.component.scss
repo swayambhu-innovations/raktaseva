@@ -29,6 +29,7 @@
 // Overall Container Css
 .patient-container,
 .gender-container,
+.bloodgroup-container,
 .aadhar-container,
 .hospital-container,
 .city-container,
@@ -53,6 +54,21 @@
   -webkit-text-fill-color: transparent;
   padding-left:9px;
 }
+
+//bloodgroup
+
+.bloodgroup {
+  width: 80vw;
+  margin-right: 25px;
+  height: 48px;
+  flex-shrink: 0;
+  border: none;
+  background: linear-gradient(180deg, #003049 0%, #005079 99.99%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-left:9px;
+}
+
 
 // Aadhar Number
 .aadhar-number {
@@ -108,6 +124,7 @@
   border: 1px solid var(--Blue-linear, #003049);
   color: linear-gradient(180deg, #003049 0%, #005079 99.99%);
 }
+
 
 // Report Upload Button
 .report-btn {

@@ -9,11 +9,12 @@ import { PatientDetailsComponent } from "./patient-details/patient-details.compo
 import { Patient } from '../patient.structure';
 import { Router } from '@angular/router';
 import { AuthService } from '../../auth/auth.service';
+import { ImageContainerComponent } from "../image-container/image-container.component";
 
 @Component({
   selector: 'app-pending',
   standalone: true,
-  imports: [CommonModule, PatientDetailsComponent],
+  imports: [CommonModule, PatientDetailsComponent, ImageContainerComponent],
   templateUrl: './pending.component.html',
   styleUrls: ['./pending.component.scss']
 })
@@ -82,6 +83,7 @@ export class PendingComponent implements OnInit {
             bloodGroup:'',
             availableDonor:0,
             assignedDonor:0,
+            date:'',
 
           });
         }

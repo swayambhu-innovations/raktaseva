@@ -4,11 +4,12 @@ import { collection, query, where } from 'firebase/firestore';
 import { Subscription } from 'rxjs';
 import { BbsidebarComponent } from '../shared/bbsidebar/bbsidebar.component';
 import { CommonModule } from '@angular/common';
+import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
   selector: 'app-donor-detail',
   standalone: true,
-  imports: [BbsidebarComponent, CommonModule],
+  imports: [BbsidebarComponent, CommonModule, SidebarComponent],
   templateUrl: './donor-detail.component.html',
   styleUrl: './donor-detail.component.scss',
 })

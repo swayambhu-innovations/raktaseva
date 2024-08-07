@@ -19,13 +19,14 @@ import { SidebarComponent } from "./sidebar/sidebar.component";
 import { MailgunComponent } from "./mailgun/mailgun.component";
 import { ConfirmationDialogComponent } from './user-and-permission/dialog/dialog.component';
 import { DonorReadyDonationComponent } from "./modules/donor-ready-donation/donor-ready-donation.component";
+import { ImageContainerComponent } from "./modules/image-container/image-container.component";
 // import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CancelledComponent, UserAndPermissionComponent, PendingComponent, LoginComponent, ApprovedComponent, DashboardComponent, TotalRequestComponent, ApprovedRequestComponent, ChartContainerComponent, OverallReportComponent, StatisticsComponent, ConfirmationDialogComponent, EditProfileComponent, NotAdminComponent, SidebarComponent, MailgunComponent, DonorReadyDonationComponent],
+  imports: [RouterOutlet, CancelledComponent, UserAndPermissionComponent, PendingComponent, LoginComponent, ApprovedComponent, DashboardComponent, TotalRequestComponent, ApprovedRequestComponent, ChartContainerComponent, OverallReportComponent, StatisticsComponent, ConfirmationDialogComponent, EditProfileComponent, NotAdminComponent, SidebarComponent, MailgunComponent, DonorReadyDonationComponent, ImageContainerComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

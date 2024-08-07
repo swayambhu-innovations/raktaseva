@@ -11,11 +11,23 @@ body {
   background-color: #f2f2f2;
   color: #000;
 }
-
-a {
-  text-decoration: none;
-  cursor: pointer;
+.nav-link{
+  display: block;
+  padding: 15px 20px;
+  color: #fff;
+  transition: .5s;
 }
+.nav-link:hover{
+
+  background-color: #f2f2f2;
+  color: #000;
+  transition: .5s;
+  }
+  .nav-link {
+      text-decoration: none;
+      cursor: pointer;
+  }
+  
 
 .btn {
   display: inline-block;
@@ -143,9 +155,9 @@ main {
 }
 
 .user-block .user-img {
-  flex-basis: 60px;
-  height: 60px;
-  width: 60px;
+  flex-basis: 50px;
+  height: 50px;
+  width: 50px;
   border-radius: 100%;
   border: 2px solid #fff;
   overflow: hidden;
@@ -212,6 +224,7 @@ main {
 .search h2 {
   font-size: 30px;
   flex-basis: 30%;
+  color: #003049;
 }
 
 .search .search-block {
@@ -366,8 +379,9 @@ main {
 
 .modal {
   background: #8AC9D6;
-  width: 100%;
+  width: 90%;
   max-width: 1500px;
+  max-height: 800px;
   padding: 20px;
   border-radius: 19px;
   display: flex;
@@ -378,8 +392,20 @@ main {
   box-sizing: border-box;
   
 }
+.patDetail{
+  position: relative;
+  top: 20px;
+}
+.i-container{
+  position: relative;
+  right: 700px;
+  // top: 30px;
+  bottom: 50px;
+}
 
-h2 {
+
+.pat-head {
+  padding-top: 110px;
   text-align: center;
   margin-bottom: 20px;
   font-family: Lato, sans-serif;

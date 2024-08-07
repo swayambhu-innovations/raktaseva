@@ -37,6 +37,7 @@ export class RequirementFormComponent implements OnInit {
       aadharnumber: [''],
       hospitalname: [''],
       cityname: [''],
+      bloodgroup: [''],
       bloodcount: [''],
       bednumber: [''],
       report: ['', Validators.required],

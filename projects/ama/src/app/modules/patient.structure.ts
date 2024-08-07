@@ -12,4 +12,5 @@ export interface Patient {
     bloodGroup:string;
     availableDonor:number;
     assignedDonor:number;
+    date:string;
 }
