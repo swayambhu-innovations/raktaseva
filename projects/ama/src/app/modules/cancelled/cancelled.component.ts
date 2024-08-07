@@ -84,6 +84,7 @@ export class CancelledComponent implements OnInit {
             bloodGroup:'',
             availableDonor:0,
             assignedDonor:0,
+            date:'',
 
 
           });

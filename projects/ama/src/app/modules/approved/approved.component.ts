@@ -105,6 +105,7 @@ export class ApprovedComponent implements OnInit {
             bloodGroup:patientData['bloodgroup'],
             availableDonor:0,
             assignedDonor:0,
+            date:this.formatDate(patientData['patientTime']),
 
           });
         }
@@ -145,6 +146,19 @@ export class ApprovedComponent implements OnInit {
         .catch((error) => {
           console.error('Error signing out: ', error);
         });
+    }
+    formatDate(timestamp: string): string {
+      const date = new Date(timestamp);
+      const formattedDate = date.toLocaleString('en-GB', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true,
+      });
+      return formattedDate;
     }
 }
 

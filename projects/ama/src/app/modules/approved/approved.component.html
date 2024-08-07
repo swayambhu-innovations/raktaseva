@@ -74,7 +74,7 @@
                               <th>Aadhar Number</th>
                               <th>Required blood group</th>
                               <th>Required blood unit</th>
-                              <th>Donor Name and Contact</th>
+                              <th>Date And Time</th>
                           </tr>
                           </thead>
                           <tbody>
@@ -83,14 +83,15 @@
                               <td>{{ pending && pending.aadharNumber ? pending.aadharNumber : '-' }}</td>
                               <td>{{ pending && pending.bloodGroup ? pending.bloodGroup: '-' }}</td>
                               <td>{{ pending && pending.unit ? pending.unit: '-' }}</td>
+                              <td>{{ pending && pending.date ? pending.date: '-' }}</td>
                               <!-- <td><button class="btn btn-danger" (click)="openModal(pending.id)">View -->
                                       <!-- Report</button></td> -->
-                                      <td>
+                                      <!-- <td>
                                           <select class="Option">
                                               <option><p>Ambar Khan</p>
                                                   <p> 8655432290</p></option>
                                               </select>
-                                          </td>
+                                          </td> -->
                                       </tr>
       
                           </tbody>

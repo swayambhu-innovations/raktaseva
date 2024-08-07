@@ -271,6 +271,7 @@ export class DonorReadyDonationComponent implements OnInit {
             bloodGroup: '',
             availableDonor: availableDonorCount || 0,
             assignedDonor:assignedDonor || 0,
+            date:'',
           });
         }
       });

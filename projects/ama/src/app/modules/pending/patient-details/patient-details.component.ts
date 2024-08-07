@@ -24,7 +24,9 @@ export class PatientDetailsComponent implements OnInit {
     bloodGroup:'',
     availableDonor:0,
     assignedDonor:0,
+    date:'',
   };
+  patientTime: string = '';
   firestore: Firestore = inject(Firestore)
   constructor() {
   }
@@ -38,9 +40,11 @@ export class PatientDetailsComponent implements OnInit {
     }
 
     try {
+      const timestamp = new Date().toISOString();
+      // this.patientTime = timestamp;
       const docRef = doc(this.firestore, `requirement/${this.patientData.id}`);
-      await updateDoc(docRef, { status });
-      console.log(`Status updated to ${status}`);
+      await updateDoc(docRef, { status,patientTime:timestamp});
+      console.log(`Status updated to ${status}at ${this.patientTime}`);
     } catch (error) {
       console.error('Error updating status: ', error);
     }
