@@ -28,11 +28,12 @@ import {
 } from '@angular/fire/firestore';
 import { collection, query, where } from 'firebase/firestore';
 import { Subscription } from 'rxjs';
+import { BottomNavbarComponent } from "../shared/bottom-navbar/bottom-navbar.component";
 
 @Component({
   selector: 'app-history',
   standalone: true,
-  imports: [HeaderWithBackComponent,HeaderWithBackComponent,CommonModule],
+  imports: [HeaderWithBackComponent, HeaderWithBackComponent, CommonModule, BottomNavbarComponent],
   templateUrl: './history.component.html',
   styleUrl: './history.component.scss'
 })

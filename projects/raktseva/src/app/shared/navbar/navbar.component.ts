@@ -56,6 +56,7 @@ export class NavbarComponent {
             this.userData = {
               id: user.id,
               name: user.username,
+              img:user.img
             };
 
             // this.profileForm.patchValue(this.userData);
@@ -71,5 +72,10 @@ export class NavbarComponent {
     } else {
       console.error('Phone number is not set.');
     }
+  }
+
+  onImageError(event: Event) {
+    const element = event.target as HTMLImageElement;
+    element.src = 'home/profile.png'; // Path to your default image
   }
 }

@@ -6,7 +6,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
-import { Location } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
+import {
+  deleteObject,
+  getDownloadURL,
+  ref,
+  uploadBytesResumable,
+  Storage,
+} from '@angular/fire/storage';
 import {
   Firestore,
   collectionData,
@@ -30,16 +37,19 @@ import { Router } from '@angular/router';
     MatSelectModule,
     MatButtonModule,
     ReactiveFormsModule,
+    CommonModule
   ],
   templateUrl: './edit-profile.component.html',
   styleUrls: ['./edit-profile.component.scss'],
 })
 export class EditProfileComponent {
+  isImgSizeValid: boolean = false;
   profileForm: FormGroup;
   userData: any = {};
   private userDataSubscription: Subscription | null = null;
   number: string = '';
   constructor(
+    private storage: Storage,
     private location: Location,
     private firestore: Firestore,
     private fb: FormBuilder,
@@ -51,11 +61,14 @@ export class EditProfileComponent {
       bloodGroup: [''],
       aadharNumber: ['', [Validators.minLength(12), Validators.maxLength(12)]],
       city: [''],
+      img: ['', Validators.required],
     });
   }
   goBack() {
     this.location.back();
   }
+
+
   ngOnInit(): void {
     const storedUserData = localStorage.getItem('loginFormData');
     if (storedUserData) {
@@ -86,6 +99,7 @@ export class EditProfileComponent {
               bloodgroup: user.bloodgroup,
               aadharnumber: user.aadharnumber,
               city: user.cityname,
+              img:user.img
             };
             this.profileForm.patchValue({
               fullName: this.userData.name,
@@ -93,6 +107,7 @@ export class EditProfileComponent {
               bloodGroup: this.userData.bloodgroup,
               aadharNumber: this.userData.aadharnumber,
               city: this.userData.city,
+              img:this.userData.img
             });
             // this.profileForm.patchValue(this.userData);
             console.log('Fetched User Data:', this.userData);
@@ -119,6 +134,7 @@ export class EditProfileComponent {
           bloodgroup: updatedData.bloodGroup,
           aadharnumber: updatedData.aadharNumber,
           cityname: updatedData.city,
+          img: updatedData.img
         })
           .then(() => {
             console.log('Profile updated successfully.');
@@ -133,6 +149,47 @@ export class EditProfileComponent {
     } else {
       console.error('Form is not valid.');
     }
+  }
+
+ // Photo changing TS file
+ async changePhoto(e: any) {
+  const file = e.target.files[0];
+  const fileSizeKB = file.size / 1024;
+  const maxSizeKB = 500;
+
+  if (fileSizeKB > maxSizeKB) {
+    this.isImgSizeValid = true;
+    return;
+  } else {
+    this.isImgSizeValid = false;
+    try {
+      const fileName = `${this.profileForm.value.report}.${file.name
+        .split('.')
+        .pop()}`;
+      const filePath = `userAvatar/${fileName}`;
+
+      // Upload file to storage
+      const storageRef = ref(this.storage, filePath);
+      const uploadTask = uploadBytesResumable(storageRef, file);
+
+      // Get download URL and update form value
+      const snapshot = await uploadTask;
+      const downloadURL = await getDownloadURL(snapshot.ref);
+
+      this.profileForm.patchValue({
+        img: downloadURL,
+      });
+
+      console.log('File uploaded successfully:', downloadURL);
+    } catch (error) {
+      console.error('Error uploading file:', error);
+    }
+  }
+}
+
+  onImageError(event: Event) {
+    const element = event.target as HTMLImageElement;
+    element.src = 'home/profile.png';
   }
 }
 

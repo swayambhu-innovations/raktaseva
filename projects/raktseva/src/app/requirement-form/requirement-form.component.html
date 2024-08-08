@@ -128,7 +128,8 @@
         <div>
           <img
             class="profile_section"
-            [src]="this.requirementForm.value.report"
+            [src]="this.requirementForm.value.report "
+            (error)="onImageError($event)"
           />
         </div>
         <img class="download-img" src="RequirementForm/download.svg" />

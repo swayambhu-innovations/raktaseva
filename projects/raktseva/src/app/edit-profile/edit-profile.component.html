@@ -6,7 +6,30 @@
     <h2>Profile</h2>
   </div>
   <div class="profile-picture">
-    <img src="editProfile-img/Ellipse 31.png" alt="Profile Picture">
+    <!-- <img src="editProfile-img/Ellipse 31.png" alt="Profile Picture"> -->
+    <div class="report-container" (click)="fileInput.click()">
+      <input
+        type="file"
+        #fileInput
+        style="display: none"
+        (change)="changePhoto($event)"
+        accept="image/*"
+      />
+      <div class="report-btn">
+ 
+        <div>
+          <img
+            class="profile_section"
+            [src]="this.profileForm.value.img "
+            (error)="onImageError($event)"
+          />
+        </div>
+        <!-- <img class="download-img" src="RequirementForm/download.svg" /> -->
+      </div>
+    </div>
+    <p *ngIf="isImgSizeValid">*Image size should be</p>
+    <p *ngIf="isImgSizeValid">less than 500kb</p>
+
     <button class="edit-picture-button">
       <span class="material-icons">camera_alt</span>
     </button>
