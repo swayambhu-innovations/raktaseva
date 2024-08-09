@@ -1,3 +1,4 @@
+
 .profile-card {
   background-color: #e0f7fa;
   height: 100vh;
@@ -41,30 +42,30 @@
     }
   }
 
-  .edit-list {
-    padding-left: 13px;
-    background-color: white;
-    width: auto;
-    height: 900px;
-    padding-top: 90px;
-    gap: 0px;
-    border-radius: 50px 50px 0px 0px;
-    opacity: 1;
-    mat-list {
-      margin-top: 20px;
+    .edit-list {
+        background-color: white;
+        width: auto;
+        height: 900px;
+        padding-top: 100px; 
+        gap: 0px;
+        border-radius: 50px 50px 0px 0px;
+        opacity: 1; 
+        mat-list {
+            margin-top: 10px;
+            padding-left: 10px;
 
-      mat-list-item {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 10px;
+            mat-list-item {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 8px ;
 
         text-align: left;
 
         .profile-icon {
           position: relative;
           top: 21px;
-          margin-right: 5px;
+          margin-right: 7px;
           width: auto;
           height: 18px;
         }
@@ -88,13 +89,20 @@
       text-align: left;
     //   padding-left: 15px;
 
-      .span-profile-icon {
-        position: relative;
-        top: 10px;
-        margin-bottom: 4px;
-        width: auto;
-        height: 30px;
-      }
+    .span-profile-icon{
+      position: relative;
+      top: 10px;
+      margin-right: 4px; 
+      width: auto; 
+      height: 30px;
+       
+
     }
+
   }
+
+    }
 }
+
+
+
