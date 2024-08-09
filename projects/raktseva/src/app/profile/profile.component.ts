@@ -6,16 +6,13 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatDialog } from '@angular/material/dialog';
-import { InviteFriendModalComponent } from '../invite-friend-modal/invite-friend-modal.component';
-import { MatBottomSheet } from '@angular/material/bottom-sheet';
+// import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { AuthPermissionService } from '../auth/auth-permission.service';
 import { HeaderWithBackComponent } from '../shared/header-with-back/header-with-back/header-with-back.component';
 import { BottomNavbarComponent } from "../shared/bottom-navbar/bottom-navbar.component";
-
-
-
-
-
+import { MatBottomSheet, MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { BrowserModule } from '@angular/platform-browser';
+import { InviteFriendModalComponent } from '../invite-friend-modal/invite-friend-modal.component';
 @Component({
   selector: 'app-profile',
   standalone: true,
@@ -26,15 +23,21 @@ import { BottomNavbarComponent } from "../shared/bottom-navbar/bottom-navbar.com
   styleUrl: './profile.component.scss'
 })
 export class ProfileComponent {
-  constructor(private router: Router, private location: Location,private dialog: MatDialog,private authService: AuthPermissionService){}
-
+  constructor(private router: Router,private dialog: MatDialog , private location: Location,private authService: AuthPermissionService){}
+ 
+  // openInviteFriendBottomSheet() {
+  //   this.bottomSheet.open(InviteFriendModalComponent);
+  // }
   openInviteFriendModal() {
-    this.dialog.open(InviteFriendModalComponent, {
-      width: '100%', 
-      height:' 100vh',
-      panelClass: 'custom-dialog-container',
-      disableClose: true
-    });
+      const dialogRef = this.dialog.open(InviteFriendModalComponent, {
+    
+        width: '85vw',  
+        maxWidth: '100vw',  
+        height: 'auto',  
+        maxHeight: '100vh',  
+        position: { top: '-50vh',left: '30px' }, 
+        panelClass: 'full-screen-dialog' 
+      });
   }
   routing(){
     this.router.navigate(['editprofile'])
