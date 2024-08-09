@@ -100,6 +100,9 @@ input {
   border-radius: 10px;
   position: relative;
   left: 20px;
+  border-color: red;
+  outline: none;
+  border: 1px solid grey;
   // right:50px;
 
 }
@@ -120,14 +123,14 @@ select {
 
 .form-actions {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-top: 20px;
 }
 
 .cancel-button,
 .save-button {
- 
-  padding: 10px 70px;
+
+  padding: 10px 50px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -144,9 +147,9 @@ select {
   background-color: #4caf50;
   color: #fff;
 }
-.form-actions button{
-  width:5px;
-  height: 40px;
+// .form-actions button{
+//   width:5px;
+//   height: 40px;
 
-}
+// }
 

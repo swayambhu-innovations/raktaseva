@@ -30,6 +30,7 @@ export class UserdetailComponent implements OnInit {
       cityname: [''],
       email: ['', Validators.email],
       timestamp: [''],
+      phone: [''],
     });
   }
 
@@ -44,6 +45,18 @@ export class UserdetailComponent implements OnInit {
           timestamp: new Date().toISOString(),
         });
 
+        // Retrieve phone number from local storage
+        const storedData = localStorage.getItem('loginFormData');
+        if (storedData) {
+          const loginFormData = JSON.parse(storedData);
+          const phoneNumber = loginFormData.mobileNumber;
+
+          // Add phone number to the form data
+          this.detailForm.patchValue({
+            phone: phoneNumber
+          });
+        }
+
         await this.userDetailService.saveFormData(this.detailForm.value);
         this.detailForm.reset();
       } catch (error) {
@@ -53,4 +66,6 @@ export class UserdetailComponent implements OnInit {
       console.log('Form is invalid');
     }
   }
+  
+  
 }

@@ -1,22 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
-
 import { AmaService } from '../../services/ama.service';
 import { collection, getDocs } from 'firebase/firestore';
-// import { FirebaseApp } from '@angular/fire/app';
 import { Firestore } from '@angular/fire/firestore';
-import { PatientDetailsComponent } from "./patient-details/patient-details.component";
+import { PatientDetailsComponent } from './patient-details/patient-details.component';
 import { Patient } from '../patient.structure';
 import { Router } from '@angular/router';
 import { AuthService } from '../../auth/auth.service';
-import { ImageContainerComponent } from "../image-container/image-container.component";
+import { ImageContainerComponent } from '../image-container/image-container.component';
 
 @Component({
   selector: 'app-pending',
   standalone: true,
   imports: [CommonModule, PatientDetailsComponent, ImageContainerComponent],
   templateUrl: './pending.component.html',
-  styleUrls: ['./pending.component.scss']
+  styleUrls: ['./pending.component.scss'],
 })
 export class PendingComponent implements OnInit {
   name: string = '';
@@ -24,33 +22,37 @@ export class PendingComponent implements OnInit {
   contact: number = 0;
   status: string = '';
   imageURL: string = '';
-  patientData: Patient;
-  unit:number=0;
-  city:string='';
-  hospital_name:string;
-  bed_no:string='';
-
+  patientData!: Patient;
+  unit: number = 0;
+  city: string = '';
+  hospital_name: string = '';
+  bed_no: string = '';
+  bloodGroup: string = '';
   pendingSummary: Patient[] = [];
-
 
   isOpen = false;
 
   openModal(id: string) {
     this.isOpen = true;
     this.pendingSummary.map((patient) => {
-      if (patient.id == id) {
-        this.patientData = patient
-        this.imageURL = patient.imageURL
+      if (patient.id === id) {
+        this.patientData = patient;
+        this.imageURL = patient.imageURL;
+        console.log('Opened patient data:', this.patientData); // Log patient data when modal is opened
       }
-    })
-
+    });
   }
 
   closeModal() {
     this.isOpen = false;
   }
 
-  constructor(private amaService: AmaService, private firestore: Firestore,private router: Router,private authService: AuthService,) { }
+  constructor(
+    private amaService: AmaService,
+    private firestore: Firestore,
+    private router: Router,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.getPatientDetail();
@@ -59,32 +61,32 @@ export class PendingComponent implements OnInit {
   async getPatientDetail() {
     try {
       const usersSnapshot = await this.amaService.getRequirement();
-      const patientSnapshot = await getDocs(collection(this.firestore, 'requirement'));
+      const patientSnapshot = await getDocs(
+        collection(this.firestore, 'requirement')
+      );
       const patientDocs = patientSnapshot.docs;
 
       for (const patient of patientDocs) {
         const patientData = patient.data();
-        console.log(patientData)
+        console.log('Fetched patient data:', patientData); // Log the entire data object
 
-
-        if (patientData['status'] == 'pending') {
-
+        if (patientData['status'] === 'pending') {
+          console.log('Patient blood group:', patientData['bloodgroup']); // Log the specific field
           this.pendingSummary.push({
-            id: patientData['id'],
-            name: patientData['patientname'],
-            aadharNumber: patientData['aadharnumber'],
-            contact: '9987565848',
-            status: patientData['status'],
-            imageURL: patientData['report'],
-            unit: patientData['bloodcount'],
-            city: patientData['cityname'],
-            hospital_name: patientData['hospitalname'],
-            bed_no: patientData['bednumber'],
-            bloodGroup:'',
-            availableDonor:0,
-            assignedDonor:0,
-            date:'',
-
+            id: patientData['id'] || '',
+            name: patientData['patientname'] || '',
+            aadharNumber: patientData['aadharnumber'] || '',
+            contact: patientData['phone'] || '',
+            status: patientData['status'] || '',
+            imageURL: patientData['report'] || '',
+            unit: patientData['bloodcount'] || 0,
+            city: patientData['cityname'] || '',
+            hospital_name: patientData['hospitalname'] || '',
+            bed_no: patientData['bednumber'] || '',
+            bloodGroup: patientData['bloodgroup'] || '', // Updated field name
+            availableDonor: patientData['availableDonor'] || 0,
+            assignedDonor: patientData['assignedDonor'] || 0,
+            date: patientData['timestamp'] || '', // Updated field name
           });
         }
       }
@@ -93,39 +95,35 @@ export class PendingComponent implements OnInit {
     }
   }
 
-    //Routing
-    userpermission() {
-      this.router.navigate(['userpermission']);
-    }
-    dashboard() {
-      this.router.navigate(['dashboard']);
-    }
-    pendingpage() {
-      this.router.navigate(['pending']);
-    }
-    approvepage() {
-      this.router.navigate(['approve']);
-    }
-    cancelpage() {
-      this.router.navigate(['cancel']);
-    }
-    readydonor() {
-      this.router.navigate(['readydonor']);
-    }
+  // Routing
+  userpermission() {
+    this.router.navigate(['userpermission']);
+  }
+  dashboard() {
+    this.router.navigate(['dashboard']);
+  }
+  pendingpage() {
+    this.router.navigate(['pending']);
+  }
+  approvepage() {
+    this.router.navigate(['approve']);
+  }
+  cancelpage() {
+    this.router.navigate(['cancel']);
+  }
+  readydonor() {
+    this.router.navigate(['readydonor']);
+  }
 
-    triggerSignout() {
-      console.log('hello');
-      this.authService
-        .signout()
-        .then(() => {
-          console.log('User signed out');
-        })
-        .catch((error) => {
-          console.error('Error signing out: ', error);
-        });
-    }
+  triggerSignout() {
+    console.log('hello');
+    this.authService
+      .signout()
+      .then(() => {
+        console.log('User signed out');
+      })
+      .catch((error) => {
+        console.error('Error signing out: ', error);
+      });
+  }
 }
-
-
-
-

@@ -1,10 +1,11 @@
+
 <mat-card class="profile-card">
-  <app-header-with-back class="header"></app-header-with-back>
+  <app-header-with-back [title]="'Account'"></app-header-with-back>
   <div class="profile-header">
       <div class="profile-image-container" (click)="editprofile()">
-          <img class="prof" src="editProfile-img/Ellipse 31.png" alt="Profile Picture" />
+          <img class="prof" [src]="userData.img " (error)="onImageError($event)" alt="Profile Picture" />
       </div>
-      <h2>Kriti Prasad</h2>
+      <h2>{{userData.name}}</h2>
   </div>
   <div class="edit-list">
       <mat-list>

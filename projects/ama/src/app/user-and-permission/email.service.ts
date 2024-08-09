@@ -10,8 +10,7 @@ export class EmailService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*', // Allow requests from all origins
-      Accept: '*/*',
+      'Access-Control-Allow-Origin': '*', // Allow requests from all origins      Accept: '*/*',
       'Access-Control-Allow-Methods': 'HEAD, GET, POST, PUT, PATCH, DELETE',
        'Access-Control-Allow-Headers': 'Content-Type,X-API-KEY,X-Requested-With,Accept,  X-Auth-Token, Origin, Authorization,Access-Control-Request-Method,Access-Control-Request-Headers',
        
