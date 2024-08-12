@@ -1,35 +1,38 @@
-<body>
-  
-    <div class="container">
-
-      <div class="header">
-        <app-header-with-back [title]="'Testimonial'"></app-header-with-back>
-        <!-- <h3 class="head">Testimonial</h3> -->
-      </div>
-      <div class="top">
-        <div class="image-container">
-          <img src="editProfile-img/Feedback-amico 1.png" alt="feedback" />
-        </div>
-      </div>
-      <form (ngSubmit)="submitFeedback()">
-        <!-- <div class="question-container"> -->
-            <div class="feed">
-            <input
-            id="name"
-            [(ngModel)]="userName"
-            name="name"
-            placeholder="Enter Your Name"
-            required
-          />
-            <label class="feedback">Share Your Experience:</label>
-            <textarea id="feedback" [(ngModel)]="feedbackText" name="feedback" placeholder="Write your feedback here" required></textarea>
-            <div *ngIf="showErrorMessage" class="error-message">Please input your feedback</div>
-          </div>
-          <div class="button-container">
-            <button type="submit" class="yes-button">Submit</button>
-          </div>
-        <!-- </div> -->
-      </form>
+<div class="container">
+  <div class="header">
+    <app-header-with-back class='back' [title]="'Testimonial'"></app-header-with-back>
+    <!-- <h3 class="head">Testimonial</h3> -->
+  </div>
+  <div class="top">
+    <div class="image-container">
+      <img src="editProfile-img/Feedback-amico 1.png" alt="feedback" />
     </div>
-  </body>
-  
+  </div>
+  <form (ngSubmit)="submitFeedback()">
+    <!-- <div class="question-container"> -->
+    <div class="feed">
+      <input
+        id="name"
+        [(ngModel)]="userName"
+        name="name"
+        placeholder="Enter Your Name"
+        required
+      />
+      <label class="feedback">Share Your Experience:</label>
+      <textarea
+        id="feedback"
+        [(ngModel)]="feedbackText"
+        name="feedback"
+        placeholder="Write your feedback here"
+        required
+      ></textarea>
+      <div *ngIf="showErrorMessage" class="error-message">
+        Please input your feedback
+      </div>
+    </div>
+    <div class="button-container">
+      <button type="submit" class="yes-button">Submit</button>
+    </div>
+    <!-- </div> -->
+  </form>
+</div>
