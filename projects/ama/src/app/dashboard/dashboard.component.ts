@@ -15,11 +15,12 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 import { collection, getDocs } from '@firebase/firestore';
 import { Firestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
+import { LoaderComponent } from "../loader/loader.component";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [
+  imports: [CommonModule,
     TotalRequestComponent,
     ChartContainerComponent,
     ApprovedRequestComponent,
@@ -27,7 +28,8 @@ import { Router } from '@angular/router';
     RequestRejectedComponent,
     StatisticsComponent,
     SidebarComponent,
-  ],
+    LoaderComponent
+],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
   providers: [provideAnimations()],
@@ -37,6 +39,7 @@ export class DashboardComponent implements OnInit {
   approved: number = 0;
   rejected: number = 0;
   pending: number = 0;
+  loading:boolean=true;
 
   constructor(
     private authService: AuthService,
@@ -61,6 +64,9 @@ export class DashboardComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
+    setTimeout(()=>{
+      this.loading=false;
+     },500);
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 

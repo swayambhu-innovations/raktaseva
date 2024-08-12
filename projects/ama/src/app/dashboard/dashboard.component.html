@@ -1,3 +1,4 @@
+<app-loader [isLoading]="loading"></app-loader>
 <main>
   <aside class="sidebar">
     <header class="user-block">
@@ -57,7 +58,7 @@
       <h1 class="page-title">Allahabad Medical Association</h1>
       <img src="Group (1).svg" class="notification" />
     </header>
-
+   <div *ngIf="!loading">
     <app-statistics
       [totalRequest]="totalRequest"
       [approved]="approved"
@@ -82,4 +83,5 @@
       ></app-chart-container>
     </section>
   </div>
+</div>
 </main>

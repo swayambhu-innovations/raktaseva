@@ -8,11 +8,12 @@ import { Patient } from '../patient.structure';
 import { Router } from '@angular/router';
 import { AuthService } from '../../auth/auth.service';
 import { ImageContainerComponent } from '../image-container/image-container.component';
+import { LoaderComponent } from "../../loader/loader.component";
 
 @Component({
   selector: 'app-pending',
   standalone: true,
-  imports: [CommonModule, PatientDetailsComponent, ImageContainerComponent],
+  imports: [CommonModule, PatientDetailsComponent, ImageContainerComponent, LoaderComponent],
   templateUrl: './pending.component.html',
   styleUrls: ['./pending.component.scss'],
 })
@@ -29,6 +30,7 @@ export class PendingComponent implements OnInit {
   bed_no: string = '';
   bloodGroup: string = '';
   pendingSummary: Patient[] = [];
+  loading:boolean=true;
 
   isOpen = false;
 
@@ -55,6 +57,9 @@ export class PendingComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    setTimeout(()=>{
+      this.loading=false;
+     },2000);
     this.getPatientDetail();
   }
 
