@@ -253,11 +253,12 @@ import { BottomNavbarComponent } from '../shared/bottom-navbar/bottom-navbar.com
 import { NavbarComponent } from '../shared/navbar/navbar.component';
 import { Firestore, collection, getDocs } from '@angular/fire/firestore';
 import { CommonModule } from '@angular/common';
+import { LoaderComponent } from "../../../../ama/src/app/loader/loader.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [BottomNavbarComponent, NavbarComponent, CommonModule],
+  imports: [BottomNavbarComponent, NavbarComponent, CommonModule, LoaderComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
@@ -267,6 +268,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   testimonialIndex = 0;
   testimonialAutoSlideInterval: any;
   feedbacks: any[] = [];
+  loading:boolean=true;
 
   constructor(private router: Router, private firestore: Firestore) {}
 
@@ -284,6 +286,11 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     await this.fetchFeedback();
     this.initializeTestimonialSlider();
   }
+  // ngOnInit(){
+  //   setTimeout(()=>{
+  //     this.loading=false;
+  //   },500)
+  // }
 
   ngOnDestroy() {
     if (this.autoSlideInterval) {

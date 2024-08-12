@@ -1,3 +1,4 @@
+<app-loader [isLoading]="loading"></app-loader>
 <body>
   <main>
     <aside class="sidebar">
@@ -95,7 +96,7 @@
       </div>
     </div>
     <div class="modal-background" *ngIf="isOpen">
-      <div *ngIf="!isLoading">
+      <div>
       <div class="modal">
         <span class="close" (click)="closeModal()">×</span>
         <h2>Donor List</h2>
@@ -112,7 +113,7 @@
                     <th class="report-cell">Action</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody *ngIf="!loading">
                   <tr *ngFor="let donor of donorSummary">
                     <td>{{ donor && donor.donorName ? donor.donorName : "-" }}</td>
                     <td>{{ donor && donor.aadharNumber ? donor.aadharNumber : "-" }}</td>
@@ -129,10 +130,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div *ngIf="isLoading" class="loader">
-      <div class="spinner"></div>
-      Loading...
     </div>
   </main>
 </body>

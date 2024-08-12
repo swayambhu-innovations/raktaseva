@@ -23,14 +23,16 @@ import { Firestore } from '@angular/fire/firestore';
 import { Patient } from '../patient.structure';
 import { Router } from '@angular/router';
 import { AuthService } from '../../auth/auth.service';
+import { LoaderComponent } from "../../loader/loader.component";
 @Component({
   selector: 'app-approved',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, LoaderComponent],
   templateUrl: './approved.component.html',
   styleUrl: './approved.component.scss'
 })
 export class ApprovedComponent implements OnInit {
+  loading:boolean=true;
   name: string = '';
   aadharNumber: number = 0;
   contact: number = 0;
@@ -66,6 +68,9 @@ export class ApprovedComponent implements OnInit {
   constructor(private amaService: AmaService, private firestore: Firestore,private router: Router,private authService: AuthService,) { }
 
   ngOnInit(): void {
+    setTimeout(()=>{
+      this.loading=false;
+     },2000);
     this.getPatientDetail();
   }
 

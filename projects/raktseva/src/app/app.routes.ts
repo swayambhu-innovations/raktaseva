@@ -17,7 +17,7 @@ import { HelpFaqComponent } from './help-faq/help-faq.component';
 export const routes: Routes = [
   // { path: '', component: ProfileComponent },
   { path: 'editprofile', component: EditProfileComponent },
-  // { path: '', component: LoginWithPhoneComponent },
+   { path: '', component: LoginWithPhoneComponent },
   { path: 'otp', component: OtpComponent },
   { path: 'home', component: HomeComponent },
   { path: 'requirement', component: RequirementFormComponent },

@@ -9,17 +9,19 @@ import { AuthService } from "../auth/auth.service";
 import { CommonModule } from "@angular/common";
 import { BbsidebarComponent } from "../shared/bbsidebar/bbsidebar.component";
 import { SidebarComponent } from "../sidebar/sidebar.component";
+import { LoaderComponent } from "../loader/loader.component";
 
 
 
 @Component({
   selector: 'app-user-permission',
   standalone: true,
-  imports: [CommonModule, BbsidebarComponent, SidebarComponent],
+  imports: [CommonModule, BbsidebarComponent, SidebarComponent, LoaderComponent],
   templateUrl: './user-permission.component.html',
   styleUrl: './user-permission.component.scss'
 })
 export class UserPermissionComponent {
+  loading:boolean=true;
   constructor(
     private dialog: MatDialog,
     private UserPermissionService: UserPermissionService,
@@ -33,6 +35,9 @@ export class UserPermissionComponent {
 
 
   ngOnInit() {
+      setTimeout(() => {
+        this.loading = false;
+      }, 2000); // Loading for 1 seconds
     this.getRole();
     this.getUsers();
   }

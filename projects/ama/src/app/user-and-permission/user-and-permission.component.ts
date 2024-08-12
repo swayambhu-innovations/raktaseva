@@ -8,15 +8,17 @@ import { UserPermissionService } from "./service/user-permission.service";
 import { AuthService } from "../auth/auth.service";
 import { CommonModule } from "@angular/common";
 import { Router } from "@angular/router";
+import { LoaderComponent } from "../loader/loader.component";
 
 @Component({
   selector: 'app-user-and-permission',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, LoaderComponent],
   templateUrl: './user-and-permission.component.html',
   styleUrls: ['./user-and-permission.component.scss'],
 })
 export class UserAndPermissionComponent{
+  loading:boolean=true;
   constructor(
     private dialog: MatDialog,
     private UserPermissionService: UserPermissionService,
@@ -30,6 +32,9 @@ export class UserAndPermissionComponent{
   private componentRef: ComponentRef<UserAndPermissionComponent>;
 
   ngOnInit() {
+    setTimeout(()=>{
+      this.loading=false;
+     },500);
     this.getRole();
     this.getUsers();
   }

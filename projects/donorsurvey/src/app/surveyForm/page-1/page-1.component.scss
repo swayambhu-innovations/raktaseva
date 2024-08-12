@@ -1,169 +1,191 @@
-.input-container {
-    display: flex;
-    width: 31 5px;
-    height: 48px;
-    border-radius: 13px;
-  }
-  .input-container .icon {
-    position: absolute;
-    top: 50%;
-    right: 38px;
-    transform: translateY(-50%);
-    height: 20px;
-    width: 20px;
-    position: relative;
-  }
-  .img {
-    display: flex;
-    justify-content: center;
-    width: 371px;
-    height: 146px;
-    top: 53px;
-    gap: 0px;
-    opacity: 0px;
-  }
-  .container {
-    // background-color: ;
-    height: 100%;
-    font-family: Arial, sans-serif;
-    padding: 0 20px 0 25px;
-    position: absolute;
-  }
-  .Address {
-    display: flex;
-    justify-content: center;
-    justify-content: space-between;
-    gap: 10px;
-  }
-  .report-btn {
-    margin-top: 45px;
-    width: 315px;
-    height: 48px;
-    padding: 16px 30px 16px 20px;
-    gap: 10px;
-    background: linear-gradient(180deg, #D62828 0%, rgba(188, 35, 35, 0.9492) 30.57%, rgba(165, 31, 31, 0.9032) 53.9%, rgba(138, 26, 26, 0.8502) 80.19%, rgba(112, 21, 21, 0.8) 100%);
-    border-radius: 10px;
-    border-color: #FFFFFF;
-    color: #FFFFFF;
-  }
-  .footer {
-    width: 316px;
-    height: 137px;
-    top: 714px;
-    left: 13px;
-  }
-  #value1 {
-    accent-color: #003049;
-  }
-  .input-container2 {
-    display: flex;
-    justify-content: center;
-    width: 315px;
-    height: 48px;
-    border-radius: 13px;
-    position: relative;
-  }
-  .input-container2 .icon2 {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    height: 20px;
-    width: 20px;
-    padding-right: 10px;
-  }
 
-  .field {
-    margin: 10px 0;
-  }
-  label {
-    line-height: 16px;
-    margin-bottom: 10px;
-  }
-  label.field-label {
+.container {
+  max-width: 500px;
+  margin: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.img {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+// .progress-bar {
+//   display: flex;
+//   justify-content: center;
+//   margin-bottom: 20px;
+// }
+// .progress-step.active {
+//   background-color: #d62828;
+// }
+
+// .progress-step.active .step-number {
+//   color: #fff;
+// }
+
+// .progress-step {
+//   background-color: #003049;
+//   width: 40px;
+//   height: 40px;
+//   border-radius: 50%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   color: #fff;
+//   margin: 0 10px;
+// }
+
+.progress-bar {
     display: flex;
-    color: var(--Schemes-Shadow, #000);
-    font-feature-settings: 'clig' off, 'liga' off;
-    font-family: Lato;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 16px;
+    justify-content: space-between;
+    margin-bottom: 20px;
   }
-  input[type="text"] {
-    display: flex;
-    width: 315px;
-    height: 48px;
-    border-radius: 13px;
-    border-color: #003049;
-    outline-color: #003049;
+  
+  .progress-step {
+    flex: 1;
+    text-align: center;
+    position: relative;
   }
-  input[type="date"] {
-    /* display: flex; */
-    width: 200px;
+  
+  .progress-step::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 4px;
+    background-color: #e0e0e0;
+    z-index: -1;
+  }
+  
+  .progress-step.active::before {
+    background-color: #003049;
+  }
+  
+  .step-number {
+    background-color: #e0e0e0;
+    width: 30px;
     height: 30px;
-    padding: 10px;
-    border-radius: 13px;
-    border-color: #003049;
-    outline-color: #003049;
-  }
-  input.sm {
-    width: 143px;
-  }
-  ::-ms-input-placeholder {
+    line-height: 30px;
+    border-radius: 50%;
+    display: inline-block;
     color: #003049;
+    font-weight: bold;
   }
-  ::placeholder {
-    color: #003049;
-    font-family: Arial;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 16.1px;
-    position: relative;
-    left: 5px;
-  }
-  /* .radio {
-        display: flex;
-        justify-content: space-between;
-        position: relative;
-    }
-   */
-  .radio {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px;
-    gap: 10px;
-    border-color: #003049;
-  }
-  .radio-item {
-    display: flex;
-    position: relative;
-    right: 3px;
-    gap: 10px;
-    vertical-align: baseline;
-  }
-  #male,#female,#other{
-    position: relative;
-    top:5.4px;
-  }
-  input.dob{
-    width:298.9px;
+  
+  .progress-step.active .step-number {
+    background-color: #003049;
+    color: white;
   }
 
-  // Disable Button Styling
-.blue-button {
-  border-radius: var(--CR-10, 10px);
-  opacity: 0.4;
-  background: var(
-    --Red-linear,
-    linear-gradient(
-      180deg,
-      #d62828 0%,
-      rgba(188, 35, 35, 0.95) 30.57%,
-      rgba(165, 31, 31, 0.9) 53.9%,
-      rgba(138, 26, 26, 0.85) 80.19%,
-      rgba(112, 21, 21, 0.8) 100%
-    )
+
+
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field-label {
+  display: block;
+  font-family: Lato;
+  // font-size: 32px;
+  font-weight: 600;
+  margin: 0px 0px 8px 4px ;
+  font-size: 16px;
+  // font-weight: 600px;
+  color: #003049;
+}
+
+.input1 {
+  width: 93%;
+  height: 25px;
+  padding: 10px;
+  border: 1px solid #003049;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.input-container,
+.input-container2 {
+  position: relative;
+}
+
+.input-container .icon,
+.input-container2 .icon2 {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: row;
+  gap: 45px;
+
+  // justify-content: space-between;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+}
+.radio-group label input {
+  margin-right: 10px;
+}
+
+.input1.sm {
+  margin-top: 8%;
+  // gap: 10px;
+  width: 90%;
+  margin-right: 3%;
+}
+
+.address-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.report-btn {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(
+    180deg,
+    #d62828 0%,
+    #bc2323 30.57%,
+    #a51f1f 53.9%,
+    #8a1a1a 80.19%,
+    #701515 100%
   );
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.report-btn:disabled {
+  opacity: 0.5;
+}
+
+.blue-button {
+  opacity: 0.4;
+  background: linear-gradient(
+    180deg,
+    #d62828 0%,
+    #bc2323 30.57%,
+    #a51f1f 53.9%,
+    #8a1a1a 80.19%,
+    #701515 100%
+  );
+  border-radius: 10px;
+  color: white;
 }

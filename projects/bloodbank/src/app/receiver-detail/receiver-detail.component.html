@@ -1,3 +1,4 @@
+<app-loader [isLoading]="loading"></app-loader>
 <body>
   <div class="main">
     <!-- <app-bbsidebar></app-bbsidebar> -->
@@ -35,7 +36,7 @@
                   <th>Donor Details</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody *ngIf="!loading">
                 <tr *ngFor="let patient of patient">
                   <td>{{patient.patientname}}</td>
                   <td>{{patient.aadharnumber}}</td>

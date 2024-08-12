@@ -16,11 +16,12 @@ import { collection, getDocs } from '@firebase/firestore';
 import { Firestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { BbsidebarComponent } from "../shared/bbsidebar/bbsidebar.component";
+import { LoaderComponent } from "../loader/loader.component";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [
+  imports: [ CommonModule,
     TotalRequestComponent,
     ChartContainerComponent,
     ApprovedRequestComponent,
@@ -28,7 +29,8 @@ import { BbsidebarComponent } from "../shared/bbsidebar/bbsidebar.component";
     RequestRejectedComponent,
     StatisticsComponent,
     SidebarComponent,
-    BbsidebarComponent
+    BbsidebarComponent,
+    LoaderComponent
 ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
@@ -39,6 +41,7 @@ export class DashboardComponent implements OnInit {
   approved: number = 0;
   rejected: number = 0;
   pending: number = 0;
+  loading: boolean = true;
 
   constructor(
     private authService: AuthService,
@@ -63,6 +66,9 @@ export class DashboardComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
+    setTimeout(() => {
+      this.loading = false;
+    }, 100); // Loading for 1 seconds
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     let donorCount=0
@@ -98,6 +104,11 @@ export class DashboardComponent implements OnInit {
     // console.log('Rejected:', this.rejected);
     // console.log('Pending:', this.pending);
   }
+
+   // Simulate loading or use actual logic
+  //  ngOnInit() {
+   
+  // }
 
   //Routing
   userpermission() {

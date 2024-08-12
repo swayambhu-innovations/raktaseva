@@ -1,3 +1,4 @@
+<app-loader [isLoading]="loading"></app-loader>
 <div class="user-permission-container">
   <aside class="sidebar">
     <header class="user-block">
@@ -54,7 +55,7 @@
         <h2>User and Permission</h2>
         <button class="button" (click)="openAddUserModal()">Add New</button>
       </div>
-      <div class="user-cards">
+      <div class="user-cards" *ngIf="!loading">
         <div *ngFor="let user of users" class="user-card">
           <div class="user-detail">
             <img [src]="user?.['userDetail'].img" alt="User Image" class="user-img">

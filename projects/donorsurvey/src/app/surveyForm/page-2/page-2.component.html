@@ -1,176 +1,140 @@
 <div class="container">
-  <form [formGroup]="surveyForm">
+ <form [formGroup]="surveyForm">
     <div class="img">
       <img src="surveyForm/1.svg" />
     </div>
+
+    <div class="progress-bar">
+      <div
+        *ngFor="let step of progressSteps; let i = index"
+        [class.active]="i <= currentStep"
+        class="progress-step"
+      >
+        <span class="step-number">{{ i + 1 }}</span>
+      </div>
+    </div>
+
+    <!-- Blood Type Section -->
     <div class="field bloodtype">
-      <label class="text1">What is Your Blood Type</label>
+      <label class="text1">What is Your Blood Type?</label>
       <div class="radio radio-group">
         <div class="first">
           <div>
-            <input
-              type="radio"
-              id="value1-A"
-              name="bloodgroup"
-              value="A+"
-              formControlName="bloodgroup"
-              required
-              checked
-
-            />
-            <label for="value1-A" id="bg">A+</label>
+            <input type="radio" id="value1-A" class='bg' name="bloodgroup" value="A+" formControlName="bloodgroup" required checked/>
+            <label for="value1-A" class="radio-label">A+</label>
           </div>
           <div>
-            <input
-              type="radio"
-              id="value2-B"
-              name="bloodgroup"
-              value="B+"
-              required
-              formControlName="bloodgroup"
-            />
-            <label for="value2-B" id="bg">B+</label>
+            <input type="radio" id="value2-B" class='bg' name="bloodgroup" value="B+" formControlName="bloodgroup" required/>
+            <label for="value2-B" class="radio-label">B+</label>
           </div>
           <div>
-            <input
-              type="radio"
-              id="value3-AB"
-              name="bloodgroup"
-              value="AB+"
-              required
-              formControlName="bloodgroup"
-            />
-            <label for="value3-AB" id="bg">AB+</label>
+            <input type="radio" id="value4-O" class='bg' name="bloodgroup" value="O+" formControlName="bloodgroup" required/>
+            <label for="value4-O" class="radio-label">O+</label>
           </div>
           <div>
-            <input
-              type="radio"
-              id="value4-O"
-              name="bloodgroup"
-              value="O+"
-              required
-              formControlName="bloodgroup"
-            />
-            <label for="value4-O" id="bg">O+</label>
+            <input type="radio" id="value3-AB" class='bg' name="bloodgroup" value="AB+" formControlName="bloodgroup" required/>
+            <label for="value3-AB" class="radio-label">AB+</label>
           </div>
         </div>
         <div class="second">
-          <input
-            type="radio"
-            id="value5-a"
-            value="A-"
-            required
-            name="bloodgroup"
-            class="A"
-            formControlName="bloodgroup"
-          />
-          <label for="value5-a" id="bg">A-</label>
           <div>
-            <input
-              type="radio"
-              id="value6-b"
-              name="bloodgroup"
-              required
-              value="B-"
-              formControlName="bloodgroup"
-            />
-            <label for="value6-b" id="bg">B-</label>
+            <input type="radio" id="value5-a" class='bg' name="bloodgroup" value="A-" formControlName="bloodgroup" required/>
+            <label for="value5-a" class="radio-label">A-</label>
           </div>
           <div>
-            <input
-              type="radio"
-              id="value7-ab"
-              name="bloodgroup"
-              required
-              value="AB-"
-              formControlName="bloodgroup"
-            />
-            <label for="value7-ab" id="bg">AB-</label>
+            <input type="radio" id="value6-b" class='bg' name="bloodgroup" value="B-" formControlName="bloodgroup" required/>
+            <label for="value6-b" class="radio-label">B-</label>
           </div>
           <div>
-            <input
-              type="radio"
-              id="value8-o"
-              name="bloodgroup"
-              required
-              value="O-"
-              formControlName="bloodgroup"
-            />
-            <label for="value8-o" id="bg">O-</label>
+            <input type="radio" id="value8-o" class='bg' name="bloodgroup" value="O-" formControlName="bloodgroup" required/>
+            <label for="value8-o" class="radio-label">O-</label>
+          </div>
+          <div>
+            <input type="radio" id="value7-ab" class='bg' name="bloodgroup" value="AB-" formControlName="bloodgroup" required/>
+            <label for="value7-ab" class="radio-label">AB-</label>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Donation Section -->
     <div class="donate field">
-      <label class="text2">Have You Donated Previously</label>
+      <label class="text2">Have You Donated Previously?</label>
       <div class="Donated">
         <div>
-          <input type="radio" id="value1" name="donated" value="Yes" required checked formControlName="donated"/>
-          <label for="value1" id="bg">Yes</label>
+          <input type="radio" id="value1" name="donated" value="Yes" formControlName="donated" required checked/>
+          <label for="value1" class="radio-label">Yes</label>
         </div>
         <div>
-          <input type="radio" id="value2" name="donated" value="No" required formControlName="donated"/>
-          <label for="value2" id="bg">No</label>
+          <input type="radio" id="value2" name="donated" value="No" formControlName="donated" required/>
+          <label for="value2" class="radio-label">No</label>
         </div>
       </div>
     </div>
+
+    <!-- Last Donation Date Section -->
     <div class="field">
-      <label id="calender">When did you last donate blood?</label>
+      <label class="field-label">When did you last donate blood?</label>
       <div>
         <input type="date" class="datepick" formControlName="lastdonation" required/>
       </div>
     </div>
-    <div class="field condition>">
-      <div class="text3">Have you taken any of these in the past 72 hours?</div>
-      <div class="box">
-        <div class="check1">
-          <div>
-            <input type="checkbox" required id="value7" value="Antibiotics" (change)="onCheckboxChange($event)"/>
-            <label for="value7" id="correct">Antibiotics </label><br />
+
+    <!-- Medication Section -->
+    <div class="field condition">
+      <label class="field-label">Have you taken any of these in the past 72 hours?</label>
+      <div class="checkbox-container">
+        <div class="checkbox-group">
+          <div class="checkbox-item">
+            <input type="checkbox" class="ch" value="Antibiotics" id="antibiotics" (change)="onCheckboxChange($event)" required />
+            <label for="antibiotics" class="lab">Antibiotics</label>
           </div>
-          <div>
-            <input type="checkbox" required id="value8" value="Aspirin" (change)="onCheckboxChange($event)"/>
-            <label for="value8" id="correct">Aspirin </label><br />
+          <div class="checkbox-item">
+            <input type="checkbox" class="ch" value="Aspirin" id="aspirin" (change)="onCheckboxChange($event)" required />
+            <label for="aspirin" class="lab">Aspirin</label>
           </div>
-          <div>
-            <input type="checkbox" required id="value3" value="Alcohol" (change)="onCheckboxChange($event)"/>
-            <label for="value3" id="correct">Alcohol</label><br />
+          <div class="checkbox-item">
+            <input type="checkbox" class="ch" value="Alcohol" id="alcohol" (change)="onCheckboxChange($event)" required/>
+            <label for="alcohol" class="lab">Alcohol</label>
           </div>
         </div>
-        <div class="check2">
-          <div>
-            <input type="checkbox" required id="value4" value="Steriods" (change)="onCheckboxChange($event)"/>
-            <label for="value4" id="correct">Steriods </label><br />
+        <div class="checkbox-group">
+          <div class="checkbox-item">
+            <input type="checkbox" class="ch" value="Steroids" id="steroids" (change)="onCheckboxChange($event)" required />
+            <label for="steroids" class="lab">Steroids</label>
           </div>
-          <div>
-            <input type="checkbox" id="value5" required value="Vaccination" (change)="onCheckboxChange($event)"/>
-            <label for="value5" id="correct">Vaccination </label><br />
+          <div class="checkbox-item">
+            <input type="checkbox" class="ch" value="Vaccination" id="vaccination" (change)="onCheckboxChange($event)" required/>
+            <label for="vaccination" class="lab">Vaccination</label>
           </div>
-          <div>
-            <input type="checkbox" id="value6" value="Drugs" required (change)="onCheckboxChange($event)"/>
-            <label for="value6" id="correct">Drugs</label><br />
+          <div class="checkbox-item">
+            <input type="checkbox" class="ch" value="Drugs" id="drugs" (change)="onCheckboxChange($event)" required />
+            <label for="drugs" class="lab">Drugs</label>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Surgery Section -->
     <div class="field">
-      <div class="text4">
-        Any history of surgery or blood transfusion in the past six months?
-      </div>
+      <label class="text4">Any history of surgery or blood transfusion in the past six months?</label>
       <div class="Sa">
         <div>
-          <input type="radio" id="yes" required name="surgery" value="yes" checked formControlName="surgery"/>
-          <label for="yes" id="bg">Yes</label>
+          <input type="radio" id="yes" name="surgery" value="yes" formControlName="surgery" required checked/>
+          <label for="yes" class="radio-label">Yes</label>
         </div>
         <div>
-          <input type="radio" id="no" required name="surgery" value="No" formControlName="surgery"/>
-          <label for="no" id="bg">No</label>
+          <input type="radio" id="no" name="surgery" value="No" formControlName="surgery" required/>
+          <label for="no" class="radio-label">No</label>
         </div>
       </div>
     </div>
+
+    <!-- Submit Button -->
     <div class="btn">
-      <button class="report-btn" (click)="onSubmit()" [disabled]="!surveyForm.valid"
-      [ngClass]="{ 'blue-button': !surveyForm.valid }" >Submit</button>
+      <button class="report-btn" (click)="onSubmit()" [disabled]="!surveyForm.valid" [ngClass]="{ 'blue-button': !surveyForm.valid }">
+        Submit
+      </button>
     </div>
   </form>
 </div>

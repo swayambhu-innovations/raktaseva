@@ -222,11 +222,14 @@ export class DonorReadyDonationComponent implements OnInit {
   isOpen = false;
   donorSummary: donor[] = [];
   selectedPatientId: string = '';
-  isLoading: boolean = false; 
+  loading: boolean = true; 
 
   constructor(private firestore: Firestore,private router: Router,) {}
 
   ngOnInit(): void {
+    setTimeout(()=>{
+      this.loading=false;
+    },2000);
     this.getPatientDetail();
   }
 
@@ -243,7 +246,6 @@ export class DonorReadyDonationComponent implements OnInit {
   }
 
   async getPatientDetail() {
-    this.isLoading = true;
     try {
       const patientSnapshot = await getDocs(collection(this.firestore, 'requirement'));
       const patientDocs = patientSnapshot.docs;
@@ -279,13 +281,10 @@ export class DonorReadyDonationComponent implements OnInit {
       await Promise.all(patientDetailsPromises);
     } catch (error) {
       console.error("Error fetching patients' booking data:", error);
-    }finally {
-      this.isLoading = false;
     }
   }
 
   async getDonorDetail(patientId: string) {
-    this.isLoading = true;
     try {
       const donorSnapshot = await getDocs(collection(this.firestore, `requirement/${patientId}/donor-acknowledge`));
       const donorDocs = donorSnapshot.docs;
@@ -319,13 +318,10 @@ export class DonorReadyDonationComponent implements OnInit {
       }
     } catch (error) {
       console.error('Error fetching donor data:', error);
-    }finally {
-      this.isLoading = false; 
     }
   }
 
   async assignDonor(patientId: string, donorId: string) {
-    this.isLoading = true;
     try {
       const donorCollectionRef = collection(this.firestore, `requirement/${patientId}/donor-acknowledge`);
       const donorSnapshot = await getDocs(donorCollectionRef);
@@ -352,8 +348,6 @@ export class DonorReadyDonationComponent implements OnInit {
       }
     } catch (error) {
       console.error('Error updating donor status:', error);
-    }finally {
-      this.isLoading = false; 
     }
   }
    //Routing

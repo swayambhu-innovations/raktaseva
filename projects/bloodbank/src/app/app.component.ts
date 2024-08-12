@@ -19,6 +19,7 @@ import { CommonModule } from '@angular/common';
 
 import { UserPermissionComponent } from "./user-permission/user-permission.component";
 import { ConfirmationDialogComponent } from "../../../ama/src/app/user-and-permission/dialog/dialog.component";
+import { LoaderComponent } from './loader/loader.component';
 
 @Component({
   selector: 'app-root',
@@ -36,7 +37,7 @@ import { ConfirmationDialogComponent } from "../../../ama/src/app/user-and-permi
     CheckupFormDialogComponent,
     DashboardComponent, TotalRequestComponent,
     ApprovedRequestComponent, ChartContainerComponent,
-    OverallReportComponent, StatisticsComponent, UserPermissionComponent, ConfirmationDialogComponent],
+    OverallReportComponent, StatisticsComponent, UserPermissionComponent, ConfirmationDialogComponent,LoaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
