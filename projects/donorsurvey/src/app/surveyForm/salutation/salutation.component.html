@@ -1,7 +1,19 @@
+  <div class="content">
+  <div class="progress-bar">
+        <div
+          *ngFor="let step of progressSteps; let i = index"
+          [class.active]="i <= currentStep"
+          class="progress-step"
+        >
+          <span class="step-number">{{ i + 1 }}</span>
+        </div>
+      </div>
 <div class="container">
+  
     <div class="image-container">
         <img src="surveyForm/logo.svg">
     </div>
+  
     <div class="heading">
         <h2>Donor Survey Form</h2>
     </div>
@@ -10,4 +22,5 @@
             Thank you for taking the time to fill out our donor survey form. We will review your details and follow up with you regarding your blood donation. We appreciate your willingness to help! 
         </p>
     </div>
+</div>
 </div>

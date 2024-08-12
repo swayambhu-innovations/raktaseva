@@ -3,116 +3,136 @@
     <div class="img">
       <img src="surveyForm/1.svg" />
     </div>
+    <div class="progress-bar">
+      <div
+        *ngFor="let step of progressSteps; let i = index"
+        [class.active]="i <= currentStep"
+        class="progress-step"
+      >
+        <span class="step-number">{{ i + 1 }}</span>
+      </div>
+    </div>
     <div class="field">
       <label class="field-label para11">Full Name</label>
-      <div class="fullname">
-        <input
-          type="text"
-          placeholder=" Full Name"
-          class="input1"
-          formControlName="name"
-          required
-        />
-      </div>
+      <input
+        type="text"
+        placeholder="Full Name"
+        class="input1"
+        formControlName="name"
+        required
+      />
     </div>
     <div class="field">
       <label class="field-label para21">Date of Birth</label>
-      <div class="birth">
-        <input type="date" class="dob" formControlName="dob" required/>
-      </div>
+      <input
+        type="date"
+        class="input1"
+        formControlName="dob"
+        required
+      />
     </div>
-    <div class="radiobtn field">
-      <label class="field-label para31">Gender</label>
-      <div class="radio">
-        <div class="radio-item">
+    <div class="field">
+      <label class="field-label para21">Gender</label>
+      <div class="radio-group">
+        <label>
           <input
             name="gender"
             type="radio"
-            id="value1"
             value="male"
-            checked
             formControlName="gender"
             required
           />
-          <label for="value1" id="male">Male</label>
-        </div>
-        <div class="radio-item">
+          Male
+        </label>
+        <label>
           <input
             name="gender"
             type="radio"
-            id="value1"
             value="female"
             formControlName="gender"
             required
           />
-          <label for="value1" id="female">Female</label>
-        </div>
-        <div class="radio-item">
+          Female
+        </label>
+        <label>
           <input
             name="gender"
             type="radio"
-            id="value1"
             value="other"
             formControlName="gender"
           />
-          <label for="value1" id="other">Other</label>
-        </div>
+          Other
+        </label>
       </div>
     </div>
     <div class="field">
-      <label class="para41 field-label">Mobile Number</label>
+      <label class="field-label para41">Aadhar Number</label>
+      <input
+        type="text"
+        class="input1"
+        placeholder="Aadhar Number"
+        formControlName="aadhar"
+        minlength="12"
+        maxlength="12"
+        required
+      />
+    </div>
+    <div class="field">
+      <label class="field-label para41">Mobile Number</label>
       <div class="input-container">
         <input
           type="text"
-          class="mobile"
-          placeholder="mobile no "
-          formControlName="phone"
+          class="input1"
+          placeholder="Mobile Number"
           minlength="10"
           maxlength="10"
-          oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)"
+          formControlName="phone"
           required
         />
         <img src="surveyForm/mobile.svg" class="icon" />
       </div>
     </div>
     <div class="field">
-      <label class="para51 field-label">Email</label>
+      <label class="field-label para51">Email</label>
       <div class="input-container2">
-        <input type="text" class="mobile2" formControlName="email" required />
+        <input
+          type="email"
+          class="input1"
+          placeholder="Email"
+          formControlName="email"
+          required
+        />
         <img src="surveyForm/email.svg" class="icon2" />
       </div>
     </div>
-    <div class="footer">
-      <label class="para11 field-label">Address</label>
-      <div class="fullname">
+    <div class="field">
+      <label class="field-label para11">Address</label>
+      <input
+        type="text"
+        class="input1"
+        placeholder="Street"
+        formControlName="street"
+        required
+      />
+      <div class="address-container">
         <input
           type="text"
-          class="input2"
-          placeholder="street"
-          formControlName="street"
-          required
-        />
-      </div>
-      <div class="Address field">
-        <input
-          type="text"
-          class="adres1 sm"
-          placeholder="city"
+          class="input1 sm"
+          placeholder="City"
           formControlName="city"
           required
         />
         <input
           type="text"
-          class="adres2 sm"
-          placeholder="state"
+          class="input1 sm"
+          placeholder="State"
           formControlName="state"
           required
         />
       </div>
     </div>
-    <div class="btn field1">
-      <button class="report-btn" [disabled]="!surveyForm.valid"
-      [ngClass]="{ 'blue-button': !surveyForm.valid }" (click)="submit()">Next</button>
+    <div class="btn">
+      <button class="report-btn" [disabled]="!surveyForm.valid" (click)="submit()">Next</button>
     </div>
   </form>
 </div>

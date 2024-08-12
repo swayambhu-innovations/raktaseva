@@ -23,6 +23,8 @@ import { Page2Service } from './service/page-2.service';
 })
 export class Page2Component implements OnInit {
   surveyForm: FormGroup;
+  progressSteps = ['Step 1', 'Step 2', 'Step 3'];
+  currentStep = 1;  
 
   constructor(
     private fb: FormBuilder,
