@@ -7,21 +7,28 @@ import { CommonModule } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { AssignDonorDialogComponent } from './assign-donor-dialog/assign-donor-dialog.component';
 import { SidebarComponent } from "../sidebar/sidebar.component";
+import { LoaderComponent } from "../loader/loader.component";
 
 
 @Component({
   selector: 'app-receiver-detail',
   standalone: true,
-  imports: [BbsidebarComponent, CommonModule, SidebarComponent],
+  imports: [BbsidebarComponent, CommonModule, SidebarComponent, LoaderComponent],
   templateUrl: './receiver-detail.component.html',
   styleUrl: './receiver-detail.component.scss'
 })
 export class ReceiverDetailComponent implements OnDestroy {
   patient: any[] = [];
   private patientSubscription: Subscription | null = null;
+  loading: boolean = true;
 
   constructor(private firestore: Firestore,public dialog: MatDialog) {
     this.listenToPatientChanges();
+  }
+  ngOnInit() {
+    setTimeout(() => {
+      this.loading = false;
+    }, 1000); // Loading for 1 seconds
   }
 
   listenToPatientChanges() {
