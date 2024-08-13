@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ReceiverDetailComponent } from './receiver-detail/receiver-detail.component';
 import { DonorDetailComponent } from './donor-detail/donor-detail.component';
 import { UserPermissionComponent } from './user-permission/user-permission.component';
+import { CheckupFormDialogComponent } from './receiver-detail/checkup-form-dialog/checkup-form-dialog.component';
 
 export const routes: Routes = [
   {
@@ -23,5 +24,6 @@ export const routes: Routes = [
        { path: 'receiverDetail', component: ReceiverDetailComponent},
        {path: 'donorDetail', component: DonorDetailComponent},
        {path: 'userPermission', component: UserPermissionComponent},
+       {path: 'checkupform', component: CheckupFormDialogComponent}
        
 ];

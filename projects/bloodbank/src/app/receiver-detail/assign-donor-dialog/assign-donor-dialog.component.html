@@ -4,7 +4,7 @@
       <div class="content-block">
         <div class="cancel-btn">
             <div class="cancel-img">
-                <img src="close.svg">
+                <img src="close.svg" >
             </div>
         </div>
         <div class="header">
@@ -19,7 +19,7 @@
                     <p>Total Donor</p>
                   </div>
                   <div class="count">
-                    <p>{{ userData[0]?.donorIDSum }}</p>
+                    <p>0</p>
                   </div>
                 </div>
               </div>
@@ -71,7 +71,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let survey of userData[0]?.matchedSurveyDocs">
+                <tr *ngFor="let survey of acceptedDonor">
                   <td>{{survey.name}}</td>
                   <td>{{survey.aadharnumber}}</td>
                   <td>{{survey.gender}}</td>
@@ -79,7 +79,7 @@
                   <td>{{survey.bloodgroup}}</td>
                
                   <td>
-                    <button class="btn-approved">Checkup Form</button>
+                    <button class="btn-approved" (click)="checkupform()" >Checkup Form</button>
                   </td>
                 </tr>
 

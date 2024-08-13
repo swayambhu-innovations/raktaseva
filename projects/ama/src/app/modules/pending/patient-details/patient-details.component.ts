@@ -129,7 +129,7 @@ export class PatientDetailsComponent implements OnInit {
     const recipients = donors.map(donor => donor.email);
     const subject = 'Matching Donor Notification';
     const text = 'There is a matching patient requiring your blood group in your city.';
-    const html = '<p>Dear Donor,</p><p>There is a matching patient requiring your blood group in your city.</p>';
+    const html = '<p>Dear Donor,</p><p>There is a matching patient requiring your blood group in your city.</p><a href="http://localhost:53580/">http://localhost:53580/</a>';
 
     this.emailService.sendEmail(recipients, subject, text, html).subscribe(
       response => {

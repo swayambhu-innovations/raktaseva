@@ -1,0 +1,26 @@
+{
+  "projects": {
+    "default": "raktaseva-16678"
+  },
+  "targets": {
+    "your-firebase-project-id": {
+      "hosting": {
+        "raktseva": [
+          "raktseva"
+        ],
+        "ama": [
+          "ama"
+        ],
+        "bloodbank": [
+          "bloodbank"
+        ],
+        "response": [
+          "response"
+        ],
+        "donorsurvey": [
+          "donorsurvey"
+        ]
+      }
+    }
+  }
+}

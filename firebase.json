@@ -1,1 +1,95 @@
-{}
+{
+    "hosting": [
+      {
+        "site": "raktseva",
+        "public": "dist/raktseva/browser",
+        "ignore": [
+          "firebase.json",
+          "**/.*",
+          "**/node_modules/**"
+        ],
+        "frameworksBackend": {
+          "region": "us-east1"
+        },
+        "rewrites": [
+          {
+            "source": "**",
+            "destination": "/index.html"
+          }
+        ]
+      },
+      {
+        "site": "ama-raktaseva",
+        "public": "dist/ama/browser",
+        "ignore": [
+          "firebase.json",
+          "**/.*",
+          "**/node_modules/**"
+        ],
+        "frameworksBackend": {
+          "region": "us-east1"
+        },
+        "rewrites": [
+          {
+            "source": "**",
+            "destination": "/index.html"
+          }
+        ]
+      },
+      {
+        "site": "bloodbank-raktaseva",
+        "public": "dist/bloodbank/browser",
+        "ignore": [
+          "firebase.json",
+          "**/.*",
+          "**/node_modules/**"
+        ],
+        "frameworksBackend": {
+          "region": "us-east1"
+        },
+        "rewrites": [
+          {
+            "source": "**",
+            "destination": "/index.html"
+          }
+        ]
+      },
+      {
+        "site": "response-raktaseva",
+        "public": "dist/response/browser",
+        "ignore": [
+          "firebase.json",
+          "**/.*",
+          "**/node_modules/**"
+        ],
+        "frameworksBackend": {
+          "region": "us-east1"
+        },
+        "rewrites": [
+          {
+            "source": "**",
+            "destination": "/index.html"
+          }
+        ]
+      },
+      {
+        "site": "donorsurvey",
+        "public": "dist/donorsurvey/browser",
+        "ignore": [
+          "firebase.json",
+          "**/.*",
+          "**/node_modules/**"
+        ],
+        "frameworksBackend": {
+          "region": "us-east1"
+        },
+        "rewrites": [
+          {
+            "source": "**",
+            "destination": "/index.html"
+          }
+        ]
+      }
+    ]
+  }
+  
