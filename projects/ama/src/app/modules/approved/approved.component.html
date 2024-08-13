@@ -1,4 +1,4 @@
-
+<app-loader [isLoading]="loading"></app-loader>
 <body>
   <main>
       <aside class="sidebar">
@@ -76,8 +76,8 @@
                               <th>Required blood unit</th>
                               <th>Date And Time</th>
                           </tr>
-                          </thead>
-                          <tbody>
+                          </thead >
+                          <tbody *ngIf="!loading">
                             <tr *ngFor="let pending of pendingSummary">
                               <td>{{ pending && pending.name ? pending.name: '-' }}</td>
                               <td>{{ pending && pending.aadharNumber ? pending.aadharNumber : '-' }}</td>

@@ -25,6 +25,8 @@
           id="phoneNumber"
           formControlName="phoneNumber"
           placeholder="Phone number"required
+          minlength="10"
+          maxlength="10"
         />
         <div *ngIf="showErrorMessage" class="error-message">Please input valid phone number</div>
         <div class="button-container">
@@ -32,6 +34,7 @@
             type="submit"
             class="yes-button"
             (click)="handleResponse('yes')"
+            href="yes-thank"
           >
             Yes
           </button>
@@ -39,6 +42,7 @@
             type="submit"
             class="no-button"
             (click)="handleResponse('no')"
+            href="no-thank"
           >
             No
           </button>

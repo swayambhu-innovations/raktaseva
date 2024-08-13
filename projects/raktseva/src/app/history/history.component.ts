@@ -29,19 +29,24 @@ import {
 import { collection, query, where } from 'firebase/firestore';
 import { Subscription } from 'rxjs';
 import { BottomNavbarComponent } from "../shared/bottom-navbar/bottom-navbar.component";
+import { LoaderComponent } from "../loader/loader.component";
 
 @Component({
   selector: 'app-history',
   standalone: true,
-  imports: [HeaderWithBackComponent, HeaderWithBackComponent, CommonModule, BottomNavbarComponent],
+  imports: [HeaderWithBackComponent, HeaderWithBackComponent, CommonModule, BottomNavbarComponent, LoaderComponent],
   templateUrl: './history.component.html',
   styleUrl: './history.component.scss'
 })
 export class HistoryComponent  {
+  loading:boolean=true;
 
   constructor(private router: Router, private firestore: Firestore) {}
 
   ngOnInit(): void {
+    setTimeout(()=>{
+      this.loading=false;
+    },500);
     const storedUserData = localStorage.getItem('loginFormData');
     if (storedUserData) {
       const storedData = JSON.parse(storedUserData);

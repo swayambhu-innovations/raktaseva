@@ -13,15 +13,14 @@ export class InviteFriendModalComponent {
   constructor(public dialogRef: MatDialogRef<InviteFriendModalComponent>) { }
 
   openWhatsApp() {
-    const url = 'https://api.whatsapp.com/send?text=Check%20out%20this%20awesome%20app!';
+    const message = encodeURIComponent('Hello');
+    const url = `https://api.whatsapp.com/send?text=${message}`;
     window.open(url, '_blank');
   }
 
   openTelegram() {
-    const url = 'https://t.me/share/url?url=Check%20out%20this%20awesome%20app!';
+    const message = encodeURIComponent('Hello');
+    const url = `https://t.me/share/url?url=&text=${message}`;
     window.open(url, '_blank');
   }
-
 }
-
-

@@ -17,15 +17,16 @@ import { NotificationComponent } from "./notification/notification.component";
 import { StatusComponent } from "./status/status.component";
 import { ContactComponent } from "./contact/contact.component";
 import { HelpFaqComponent } from "./help-faq/help-faq.component";
-import { InviteFriendModalComponent } from './invite-friend-modal/invite-friend-modal.component';
 import { HistoryComponent } from "./history/history.component";
-
+import { InviteFriendModalComponent } from "./invite-friend-modal/invite-friend-modal.component";
+import { CommonModule } from '@angular/common';
+import { LoaderComponent } from './loader/loader.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ProfileComponent, RequirementFormComponent, UserdetailComponent, InviteFriendModalComponent, OtpComponent, LoginWithPhoneComponent, EditProfileComponent, HeaderWithBackComponent, HomeComponent, BottomNavbarComponent, NavbarComponent, NotificationComponent, TestimonialComponent, StatusComponent, ContactComponent, HelpFaqComponent, HistoryComponent],
+  imports: [RouterOutlet, ProfileComponent,LoaderComponent, RequirementFormComponent, UserdetailComponent, OtpComponent, LoginWithPhoneComponent, EditProfileComponent, HeaderWithBackComponent, HomeComponent, BottomNavbarComponent, NavbarComponent, NotificationComponent, TestimonialComponent, StatusComponent, ContactComponent, HelpFaqComponent, HistoryComponent, InviteFriendModalComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

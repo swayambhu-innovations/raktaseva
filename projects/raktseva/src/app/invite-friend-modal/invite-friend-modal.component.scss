@@ -1,49 +1,5 @@
-// ::ng-deep .custom-dialog-container {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     padding: 20px;
-//     border-radius: 100px;
-//     max-width: 100vh;
-//     justify-content: space-between;
-//   }
-  
-//   h2 {
-//     text-align: center;
-//     margin-bottom: 20px;
-//     font-family: Arial, sans-serif;
-//   }
-  
-//   .invite-options {
-//     display: flex;
-//     flex-direction: row;
-//     align-items: center;
-//     padding-left: 20px;
-    
-//     .whatsapp {
-//       height: 30px;
-//       width: auto;
-//     }
-    
-//     .telegram {
-//       margin-left: 20px;
-//       height: 30px;
-//       width: auto;
-//     }
-//   }
-  
-//   button {
-//     margin: 10px 0;
-//   }
-  
-//   .mat-dialog-actions {
-//     display: flex;
-//     justify-content: center;
-//     margin-top: 20px;
-//   }
-  
 ::ng-deep .custom-bottom-sheet-container {
-    height: 50vh; // Half the screen height
+    height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -55,6 +11,7 @@
   h2 {
     text-align: center;
     margin-bottom: 20px;
+    color:#f3efef;
     font-family: Arial, sans-serif;
   }
   
@@ -85,4 +42,66 @@
     justify-content: center;
     margin-top: 20px;
   }
-  
+
+
+.card {
+ 
+  overflow: hidden; 
+  padding: 20px; 
+  background: linear-gradient(180deg, #eaefef 15%, #49a3ae  90%);
+  // background-color: #ffffff; 
+  box-shadow: 0px 5px 15px rgba(0, 0.5, 0.5, 0.1); 
+}
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  color: #f3efef;
+}
+
+
+.invite-options {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; 
+}
+
+
+.whatsapp,
+.telegram {
+  height: 40px;
+  width: auto;
+  border-radius: 20px;
+  cursor: pointer; 
+}
+
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: center;
+  // margin-top: 20px;
+}
+
+
+button {
+  margin: 10px 0; 
+  background-color: #f5f8fa;
+  color: rgb(78, 19, 19);
+  padding: 10px 20px; 
+  border: 1px solid black; 
+  border-radius: 5px; 
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s; 
+}
+
+button:hover {
+  background-color: #0056b3; 
+}
+
+
+
+

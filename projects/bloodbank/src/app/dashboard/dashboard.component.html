@@ -1,3 +1,4 @@
+<app-loader [isLoading]="loading"></app-loader>
 <main>
   <app-sidebar  class="sidebar"></app-sidebar>
 <div class="main-container">
@@ -5,7 +6,7 @@
       <h1 class="page-title">Blood Bank Management</h1>
       <img src="Group (1).svg" class="notification" />
     </header>
-
+    <div *ngIf="!loading">
     <app-statistics
       [totalDonor]="totalDonor"
       [approved]="approved"
@@ -30,4 +31,6 @@
       ></app-chart-container>
     </section>
   </div>
+  </div>
 </main>
+
