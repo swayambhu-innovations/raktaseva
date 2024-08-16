@@ -116,7 +116,7 @@ export class OtpComponent {
       const otpValue = this.otp.value;
       const otpCode = Object.values(otpValue).join('');
       // console.log('Entered OTP:', otpCode);
-      this.authService.verifyCode(otpCode); 
+      this.authService.verifyOTP(otpCode); 
     }
   }
 }

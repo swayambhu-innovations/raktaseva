@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { UserDetailService } from './service/user-detail.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-userdetail',
@@ -20,6 +21,8 @@ export class UserdetailComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private route: Router,
+
     private userDetailService: UserDetailService
   ) {
     this.detailForm = this.fb.group({
@@ -53,11 +56,15 @@ export class UserdetailComponent implements OnInit {
 
           // Add phone number to the form data
           this.detailForm.patchValue({
-            phone: phoneNumber
+            phone: phoneNumber,
           });
         }
 
         await this.userDetailService.saveFormData(this.detailForm.value);
+
+        localStorage.setItem('detailFormData', JSON.stringify(this.detailForm.value));
+
+        this.route.navigate(['home']);
         this.detailForm.reset();
       } catch (error) {
         console.error('Error saving data: ', error);
@@ -66,6 +73,4 @@ export class UserdetailComponent implements OnInit {
       console.log('Form is invalid');
     }
   }
-  
-  
 }
