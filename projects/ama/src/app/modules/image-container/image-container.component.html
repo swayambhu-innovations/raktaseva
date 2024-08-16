@@ -1,0 +1,8 @@
+<div class="container" [ngClass]="{ center: center }">
+    <p>{{ title }}</p>
+    <div class="img-container">
+      <img [src]="imageSrc" [style.width.px]="width" [style.height.px]="height" alt="image" />
+    </div>
+    <ng-content></ng-content>
+  </div>
+  

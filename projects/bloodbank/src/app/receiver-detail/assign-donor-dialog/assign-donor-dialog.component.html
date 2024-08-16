@@ -4,7 +4,7 @@
       <div class="content-block">
         <div class="cancel-btn">
             <div class="cancel-img">
-                <img src="close.svg">
+                <img src="close.svg" >
             </div>
         </div>
         <div class="header">
@@ -19,7 +19,7 @@
                     <p>Total Donor</p>
                   </div>
                   <div class="count">
-                    <p>4</p>
+                    <p>0</p>
                   </div>
                 </div>
               </div>
@@ -66,22 +66,24 @@
                   <th>Gender</th>
                   <th>Contact</th>
                   <th>Blood Group</th>
-                  <th>Status</th>
+                
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>x</td>
-                  <td>x</td>
-                  <td>x</td>
-                  <td>x</td>
-                  <td>x</td>
-                  <td>x</td>
+                <tr *ngFor="let survey of acceptedDonor">
+                  <td>{{survey.name}}</td>
+                  <td>{{survey.aadharnumber}}</td>
+                  <td>{{survey.gender}}</td>
+                  <td>{{survey.phone}}</td>
+                  <td>{{survey.bloodgroup}}</td>
+               
                   <td>
-                    <button class="btn-approved">Checkup Form</button>
+                    <button class="btn-approved" (click)="checkupform()" >Checkup Form</button>
                   </td>
                 </tr>
+
+                
               </tbody>
             </table>
           </div>

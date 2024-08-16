@@ -1,10 +1,11 @@
-<app-header-with-back></app-header-with-back>
+
 <mat-card class="profile-card">
+  <app-header-with-back [title]="'Account'"></app-header-with-back>
   <div class="profile-header">
       <div class="profile-image-container" (click)="editprofile()">
-          <img class="prof" src="editProfile-img/Ellipse 31.png" alt="Profile Picture" />
+          <img class="prof" [src]="userData.img " (error)="onImageError($event)" alt="Profile Picture" />
       </div>
-      <h2>Kriti Prasad</h2>
+      <h2>{{userData.name}}</h2>
   </div>
   <div class="edit-list">
       <mat-list>
@@ -14,15 +15,15 @@
           </mat-list-item>
           <mat-list-item>
             <img src="editProfile-img/Call.png" class="profile-icon" alt="Edit Profile Icon">
-              <h4 >Contact Us</h4>
+              <h4 (click)="contact()">Contact Us </h4>
           </mat-list-item>
           <mat-list-item>
             <img src="editProfile-img/Vector (3).png" class="profile-icon" alt="Edit Profile Icon">
-              <h4>Help & FAQ</h4>
+              <h4 (click)="help()">Help & FAQ</h4>
           </mat-list-item>
           <mat-list-item>
             <img src="editProfile-img/profile-2user.png" class="profile-icon" alt="Edit Profile Icon">
-              <h4  (click)="openInviteFriendModal()">Invite Friend</h4>
+              <h4 (click)="openInviteFriendModal()">Invite Friend</h4>
           </mat-list-item>
           <mat-list-item>
             <img src="editProfile-img/Frame (1).png" class="profile-icon" alt="Edit Profile Icon" (click)="testimonial()">

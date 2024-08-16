@@ -37,14 +37,16 @@ export class RequirementFormComponent implements OnInit {
       aadharnumber: [''],
       hospitalname: [''],
       cityname: [''],
+      bloodgroup: [''],
       bloodcount: [''],
       bednumber: [''],
       report: ['', Validators.required],
       timestamp: [''],
+      phone: [''],
     });
   }
   isImgSizeValid: boolean = false;
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   //Function for interacting with service file
   async onSubmit(): Promise<void> {
@@ -55,9 +57,22 @@ export class RequirementFormComponent implements OnInit {
           timestamp: new Date().toISOString(),
         });
 
-        await this.requirementFormService.saveFormData(
-          { ...this.requirementForm.value, status: 'pending' }
-        );
+        // Retrieve phone number from local storage
+        const storedData = localStorage.getItem('loginFormData');
+        if (storedData) {
+          const loginFormData = JSON.parse(storedData);
+          const phoneNumber = loginFormData.mobileNumber;
+
+          // Add phone number to the form data
+          this.requirementForm.patchValue({
+            phone: phoneNumber,
+          });
+        }
+
+        await this.requirementFormService.saveFormData({
+          ...this.requirementForm.value,
+          status: 'pending',
+        });
         this.requirementForm.reset();
       } catch (error) {
         console.error('Error saving data: ', error);
@@ -101,5 +116,10 @@ export class RequirementFormComponent implements OnInit {
         console.error('Error uploading file:', error);
       }
     }
+  }
+
+  onImageError(event: Event) {
+    const element = event.target as HTMLImageElement;
+    element.src = 'report.png'; // Path to your default image
   }
 }

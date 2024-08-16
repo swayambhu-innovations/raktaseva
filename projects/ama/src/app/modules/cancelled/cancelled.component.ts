@@ -9,11 +9,13 @@ import { Firestore } from '@angular/fire/firestore';
 import { Patient } from '../patient.structure';
 import { Router } from '@angular/router';
 import { AuthService } from '../../auth/auth.service';
+import { ImageContainerComponent } from "../image-container/image-container.component";
+import { LoaderComponent } from "../../loader/loader.component";
 
 @Component({
   selector: 'app-cancelled',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ImageContainerComponent, LoaderComponent],
   templateUrl: './cancelled.component.html',
   styleUrl: './cancelled.component.scss'
 })
@@ -28,6 +30,7 @@ export class CancelledComponent implements OnInit {
   city:string='';
   hospital_name:string;
   bed_no:string='';
+  loading:boolean=true;
 
   pendingSummary: Patient[] = [];
 
@@ -53,6 +56,9 @@ export class CancelledComponent implements OnInit {
   constructor(private amaService: AmaService, private firestore: Firestore,private router: Router,private authService: AuthService,) { }
 
   ngOnInit(): void {
+    setTimeout(()=>{
+      this.loading=false;
+     },2000);
     this.getPatientDetail();
   }
 
@@ -82,7 +88,8 @@ export class CancelledComponent implements OnInit {
             bed_no: patientData['bednumber'],
             bloodGroup:'',
             availableDonor:0,
-            assignedDonor:'',
+            assignedDonor:0,
+            date:'',
 
 
           });

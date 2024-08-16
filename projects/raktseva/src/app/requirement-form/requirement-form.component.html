@@ -69,6 +69,22 @@
       />
     </div>
 
+    <div class="bloodgroup-container">
+      <div class="select-container">
+        <select class="bloodgroup" name="bloodgroup" id="bloodgroup" formControlName="bloodgroup">
+          <option value="" disabled selected>Select Blood Group</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+        </select>
+      </div>
+    </div>
+
     <!-- Unit of Blood Required -->
     <div class="blood-container">
       <input
@@ -112,7 +128,8 @@
         <div>
           <img
             class="profile_section"
-            [src]="this.requirementForm.value.report"
+            [src]="this.requirementForm.value.report "
+            (error)="onImageError($event)"
           />
         </div>
         <img class="download-img" src="RequirementForm/download.svg" />

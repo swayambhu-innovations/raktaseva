@@ -1,6 +1,8 @@
+<app-loader [isLoading]="loading"></app-loader>
 <body>
   <div class="main">
-    <app-bbsidebar></app-bbsidebar>
+    <!-- <app-bbsidebar></app-bbsidebar> -->
+    <app-sidebar></app-sidebar>
 
     <div class="main-container">
       <header class="header">
@@ -37,7 +39,7 @@
                   <th>Action</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody *ngIf="!loading">
                 <tr *ngFor="let donor of donor">
                   <td>{{ donor.donorname }}</td>
                   <td>{{ donor.age }}</td>

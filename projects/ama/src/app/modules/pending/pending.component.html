@@ -1,3 +1,4 @@
+<app-loader [isLoading]="loading"></app-loader>
 <body>
   <main>
     <aside class="sidebar">
@@ -84,7 +85,7 @@
                   <th class="report-cell">Report</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody *ngIf="!loading">
                 <tr *ngFor="let pending of pendingSummary">
                   <td>{{ pending && pending.name ? pending.name : "-" }}</td>
                   <td>
@@ -115,36 +116,23 @@
         </div>
       </div>
     </div>
-
-    <!-- <div class="modal-background" *ngIf="isOpen">
-            <div class="modal">
-                <span class="close" (click)="closeModal()">×</span>
-                <h2>Patient Report</h2>
-                <div class="divset">
-                  <div>
-                    <app-patient-details></app-patient-details>
-                  </div>
-                  <div class="img">
-                    <img src="Rectangle 3464156.png"alt="report-img">
-                  </div>  
-                </div>
-            
-            </div>
-        </div> -->
-
-    <div class="modal-background" *ngIf="isOpen">
+ <div class="modal-background" *ngIf="isOpen" >
       <div class="modal">
         <span class="close" (click)="closeModal()">×</span>
-        <h2>Patient Report</h2>
-        <div class="divset">
+        <h2 class="pat-head">Patient Report</h2>
+        <div class="divset"*ngIf="!loading">
           <div class="patient-details">
-            <app-patient-details
+            <app-patient-details class="patDetail"
               [patientData]="patientData"
             ></app-patient-details>
           </div>
-          <div class="img">
-            <!-- <img [src]="imageURL" alt="report-img"> -->
-          </div>
+         
+          <app-image-container class="i-container"
+          [imageSrc]="imageURL"
+          [width]="500"
+          [height]="600"
+        ></app-image-container>
+          
         </div>
       </div>
     </div>

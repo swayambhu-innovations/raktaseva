@@ -1,0 +1,51 @@
+// .spinner {
+//     border: 4px solid rgba(0, 0, 0, 0.1); /* Light background color */
+//     border-left-color: #007bff; /* Spinner color */
+//     border-radius: 50%;
+//     width: 30px; /* Adjust size */
+//     height: 30px; /* Adjust size */
+//     animation: spin 1s linear infinite; /* Animation for spinning */
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     margin: 0 auto; /* Center the spinner */
+//   }
+  
+//   @keyframes spin {
+//     to {
+//       transform: rotate(360deg); /* Full rotation */
+//     }
+//   }
+  
+
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // background-color: rgba(0, 0, 0, 0.5);
+  color: #461a9e;
+  font-size: 18px;
+  z-index: 9999;
+}
+
+.spinner {
+  border: 15px solid #dbd6d6;
+  border-radius: 50%;
+  border-top: 16px solid #003049;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

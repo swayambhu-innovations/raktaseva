@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-raktseva-dev-967fb-authRole",
+      "UnauthRoleArn": "arn:aws:iam::024848442485:role/amplify-raktseva-dev-967fb-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::024848442485:role/amplify-raktseva-dev-967fb-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-raktseva-dev-967fb-deployment",
+      "UnauthRoleName": "amplify-raktseva-dev-967fb-unauthRole",
+      "StackName": "amplify-raktseva-dev-967fb",
+      "StackId": "arn:aws:cloudformation:ap-south-1:024848442485:stack/amplify-raktseva-dev-967fb/d1340db0-5a14-11ef-9788-02f528706791",
+      "AmplifyAppId": "d2z43n5rixaxcm"
+    },
+    "categories": {
+      "auth": {
+        "raktseva352677bc": {}
+      }
+    }
+  }
+}

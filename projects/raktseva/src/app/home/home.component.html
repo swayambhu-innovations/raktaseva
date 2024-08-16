@@ -1,6 +1,8 @@
-<div class="wrapper">
+<!-- <app-loader [isLoading]="loading"></app-loader> -->
+<div class="wrapper" >
   <app-navbar></app-navbar>
   <!-- Image Slider Start-->
+  <!-- <div *ngIf="!loading"> -->
   <div class="slider">
     <div class="slides">
       <div class="slide">
@@ -42,23 +44,33 @@
   <!-- Interaction Section End -->
 
   <!-- Testimonial Section Start -->
-  <div class="testmonial-wrapper">
-    <div class="testimonial-container">
-      <div class="profile">
-        <img src="home/profile.png" />
-      </div>
-      <div class="info">
-        <div class="name">
-          <p>Ambar Mishra</p>
-        </div>
-        <div class="comment">
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, voluptatem! Praesentium id rem saepe modi suscipit fuga. Sunt ad voluptas dolorum modi nostrum et, illum dolorem voluptates ab quibusdam saepe.
-          </p>
+  <div class="testimonial-slider">
+    <div class="testimonial-slides">
+      <div class="testimonial-slide" *ngFor="let feedback of feedbacks">
+        <div class="testimonial-container">
+         
+          <div class="info">
+            <div class="heading">Gratitude from Blood Recipients</div>
+            <div class="name">
+              <div class="img">
+                <div class="initials">{{ feedback.name[0] }}{{ feedback.name.split(' ')[1][0] }}</div>
+              </div>
+              <p>{{ feedback.name }}</p>
+            </div>
+            <div class="comment">
+              <p>{{ feedback.text }}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+    <div class="navigation">
+      <button class="testimonial-prev">&#10094;</button>
+      <button class="testimonial-next">&#10095;</button>
+    </div>
+  <!-- </div> -->
+</div>
   <!-- Testimonial Section End -->
-   <app-bottom-navbar></app-bottom-navbar>
+
+  <app-bottom-navbar></app-bottom-navbar>
 </div>

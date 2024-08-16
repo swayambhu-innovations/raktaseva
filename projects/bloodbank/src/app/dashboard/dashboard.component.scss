@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.4;
+    background-color: #f2f2f2;
+    color: #000;
+}
+
+main {
+    display: flex;
+    // flex-direction:row;
+    height: 100vh;
+}
+
+// .sidebar {
+//     display: flex;
+//     flex-direction: row;
+//     flex-grow: 1;
+//    height: 100vh;
+//     // width: 20px;
+//     // background-color: #003049;
+//     border-radius: 0px 15px 15px 0px;
+// }
+
+.main-container {
+    //  width: 90px;
+    margin-left: 270px;
+    flex-basis: 100%;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    background-color: #fff;
+    padding: 20px;
+    justify-content: center;
+}
+
+.page-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: #D5294D;;
+}
+
+.content-block {
+    display: flex;
+    padding: 0 50px 50px;
+    flex-direction: column;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    column-gap: 20px;
+}
+
+.search h2 {
+    font-size: 30px;
+    flex-basis: 30%;
+}
+
+.search .search-block {
+    display: flex;
+    flex-basis: 100%;
+    column-gap: 20px;
+    justify-content: flex-end;
+}
+
+.search .search-block .filter {
+    display: flex;
+    flex-basis: 30%;
+}
+
+.search .search-block .form-control {
+    flex-basis: 70%;
+}
+
+
+.chartsSection {
+    height: 90vh;
+    display: grid;
+    grid-template-areas: "chart1 chart1 chart2 chart2" "chart3 chart3 chart4 chart4";
+    gap: 20px;
+    padding: 20px;
+}
+
+.chartsSection app-chart-container:nth-child(1) {
+    grid-area: chart1;
+}
+
+.chartsSection app-chart-container:nth-child(2) {
+    grid-area: chart2;
+}
+
+.chartsSection app-chart-container:nth-child(3) {
+    grid-area: chart3;
+}
+
+.chartsSection app-chart-container:nth-child(4) {
+    grid-area: chart4;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .chartsSection {
+        grid-template-areas: 
+            "chart1"
+            "chart2"
+            "chart3"
+            "chart4";
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: static;
+        border-radius: 0;
+    }
+    
+    .main-container {
+        margin-left: 0;
+    }
+
+    .header {
+        flex-direction: column;
+    }
+
+    .page-title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px;
+    }
+
+    .page-title {
+        font-size: 20px;
+    }
+    
+    .search h2 {
+        font-size: 20px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding-left: 15px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

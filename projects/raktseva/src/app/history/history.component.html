@@ -1,3 +1,68 @@
-<app-header-with-back></app-header-with-back>
-<p>history works!</p>
-<app-bottom-navbar></app-bottom-navbar>
+<app-loader [isLoading]="loading"></app-loader>
+
+<div class="header">
+    <app-header-with-back class="head" [title]="'History'"></app-header-with-back>
+</div>
+  <!-- <div class="ama-details" *ngFor="let user of userData"> -->
+    <div *ngIf="!loading">
+  <div class="ama-details" *ngFor="let user of userData">
+    <div class="info-container">
+      <div class="detail-row">
+        <div class="field-1">
+          <p>Patient Name</p>
+        </div>
+        <div class="field-0">
+          <p>:</p>
+        </div>
+        <div class="field-2">
+          <p>{{user.patientname}}</p>
+        </div>
+      </div>
+      <!-- <div class="detail-row">
+        <div class="field-1">
+          <p>Status</p>
+        </div>
+        <div class="field-0">
+          <p>:</p>
+        </div>
+        <div class="field-2">
+          <button class="status-btn" [ngClass]="getButtonClass(user.status)">
+            <img src="clock.svg">
+            {{user.status}}</button>
+        </div>
+      </div> -->
+      <div class="detail-row">
+        <div class="field-1">
+          <p>Receiving Date</p>
+        </div>
+        <div class="field-0">
+          <p>:</p>
+        </div>
+        <div class="field-2">
+          <p>15/09/2024</p>
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="field-1">
+          <p>Available Units</p>
+        </div>
+        <div class="field-0">
+          <p>:</p>
+        </div>
+        <div class="field-2">
+          <p>3 / 5</p>
+         
+        </div>
+        
+      </div>
+     
+    </div>
+ 
+  </div>
+    </div>
+  <app-bottom-navbar></app-bottom-navbar>
+<!-- </div> -->
+
+
+
+

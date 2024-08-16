@@ -34,6 +34,7 @@ export class AuthService {
   user$: Observable<User | null> = user(this._auth);
   userDetails: any | null = null;
   showLoginIn = true;
+  userPermissions: any;
   // userPermissions: any;
   constructor(private router: Router) {
     this.user$.subscribe(async (user) => {
@@ -88,11 +89,20 @@ export class AuthService {
     return this.updateUserData(credential.user);
   }
 
+  // async signout() {
+  //   await signOut(this._auth);
+  //   localStorage.removeItem('token');
+  //   this.showLoginIn = true;
+  //   return this.router.navigate(['login']);
+  // }
+
   async signout() {
+    console.log("hello 2")
     await signOut(this._auth);
     localStorage.removeItem('token');
+    localStorage.removeItem('userEmail');
     this.showLoginIn = true;
-    return this.router.navigate(['login']);
+    return this.router.navigate(['/']);
   }
 
   private updateUserData(user: any) {
@@ -113,5 +123,22 @@ export class AuthService {
         where(documentId(), '==', email)
       )
     );
+  }
+  async getUserPermissions() {
+    const email = localStorage.getItem("userEmail") as string;
+    const userRef = doc(this._firestore, "admin-user", email);
+    const userSnapshot = await getDoc(userRef);
+
+    if (userSnapshot.exists()) {
+      const userDetail = userSnapshot.data();
+
+      const roleRef = doc(this._firestore, "roles", userDetail?.["role"]);
+
+      const roleSnapshot = await getDoc(roleRef);
+      this.userPermissions = roleSnapshot.data();
+      return roleSnapshot.data();
+    } else {
+      return null;
+    }
   }
 }

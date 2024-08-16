@@ -16,16 +16,19 @@ import { StatisticsComponent } from "./dashboard/charts/statistics/statistics.co
 import { EditProfileComponent } from "../../../raktseva/src/app/edit-profile/edit-profile.component";
 import { NotAdminComponent } from "./auth/not-admin/not-admin.component";
 import { SidebarComponent } from "./sidebar/sidebar.component";
-import { MailgunComponent } from "./mailgun/mailgun.component";
+// import { MailgunComponent } from "./mailgun/mailgun.component";
 import { ConfirmationDialogComponent } from './user-and-permission/dialog/dialog.component';
 import { DonorReadyDonationComponent } from "./modules/donor-ready-donation/donor-ready-donation.component";
+import { ImageContainerComponent } from "./modules/image-container/image-container.component";
+import { HttpClientModule } from '@angular/common/http';
+import { LoaderComponent } from './loader/loader.component';
 // import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CancelledComponent, UserAndPermissionComponent, PendingComponent, LoginComponent, ApprovedComponent, DashboardComponent, TotalRequestComponent, ApprovedRequestComponent, ChartContainerComponent, OverallReportComponent, StatisticsComponent, ConfirmationDialogComponent, EditProfileComponent, NotAdminComponent, SidebarComponent, MailgunComponent, DonorReadyDonationComponent],
+  imports: [RouterOutlet, CancelledComponent, UserAndPermissionComponent, PendingComponent, LoginComponent, ApprovedComponent, DashboardComponent, TotalRequestComponent, ApprovedRequestComponent, ChartContainerComponent, OverallReportComponent, StatisticsComponent, ConfirmationDialogComponent, EditProfileComponent, NotAdminComponent, SidebarComponent, DonorReadyDonationComponent, ImageContainerComponent,HttpClientModule,LoaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

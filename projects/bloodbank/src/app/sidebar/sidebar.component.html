@@ -11,30 +11,36 @@
     <nav>
         <ul class="nav-list">
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="home()" class="nav-link">
                     <img src="Vector (2).svg" class="nav-icon"> Dashboard
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <img src="Frame (5).svg" class="nav-icon"> Blood Inventory
+                <a class="nav-link" href="bloodInventory()">
+                    <img src="Vector (4).png" class="nav-icon"> Blood Inventory
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="receiverDetail()" class="nav-link">
                     <img src="noun-approved-7018854 1.svg" class="nav-icon"> Receiver Details
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="donorDetail()" class="nav-link">
                     <img src="1.svg" class="nav-icon"> Donor Details
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="userPermission()" class="nav-link">
                     <img src="noun-permission-6109283 1.svg" class="nav-icon"> User and Permission
                 </a>
             </li>
+            <li class="nav-item" >
+                <a href="#" class="nav-link" (click)="triggerSignout()">
+                  <img src="noun-permission-6109283 1.svg" class="nav-icon" />
+                  Logout
+                </a>
+              </li>
         </ul>
     </nav>
 </aside>

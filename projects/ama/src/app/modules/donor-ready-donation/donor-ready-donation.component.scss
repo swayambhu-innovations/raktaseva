@@ -12,10 +12,22 @@
     color: #000;
   }
   
-  a {
-    text-decoration: none;
-    cursor: pointer;
+  .nav-link{
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    transition: .5s;
   }
+  .nav-link:hover{
+  
+    background-color: #f2f2f2;
+    color: #000;
+    transition: .5s;
+    }
+    .nav-link {
+        text-decoration: none;
+        cursor: pointer;
+    }
   
   .btn {
     display: inline-block;
@@ -316,4 +328,29 @@
     object-fit: contain; 
     border-radius: 5px;
   }
+
+  
+  .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    right:40%
+  }
+  
+  .spinner {
+    border: 16px solid #adacac; 
+    border-top: 16px solid #3498db; 
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
  

@@ -4,20 +4,28 @@ import { collection, query, where } from 'firebase/firestore';
 import { Subscription } from 'rxjs';
 import { BbsidebarComponent } from '../shared/bbsidebar/bbsidebar.component';
 import { CommonModule } from '@angular/common';
+import { SidebarComponent } from '../sidebar/sidebar.component';
+import { LoaderComponent } from "../loader/loader.component";
 
 @Component({
   selector: 'app-donor-detail',
   standalone: true,
-  imports: [BbsidebarComponent, CommonModule],
+  imports: [BbsidebarComponent, CommonModule, SidebarComponent, LoaderComponent],
   templateUrl: './donor-detail.component.html',
   styleUrl: './donor-detail.component.scss',
 })
 export class DonorDetailComponent implements OnDestroy {
   donor: any[] = [];
+  loading: boolean = true;
   private donorSubscription: Subscription | null = null;
 
   constructor(private firestore: Firestore) {
     this.listenToDonorChanges();
+  }
+  ngOnInit() {
+    setTimeout(() => {
+      this.loading = false;
+    }, 1000); // Loading for 3 seconds
   }
 
   listenToDonorChanges() {

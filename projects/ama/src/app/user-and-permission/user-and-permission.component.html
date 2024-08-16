@@ -1,64 +1,53 @@
-<!-- <div class="wrapper">
-  <div class="container"> -->
-     <!-- Header Start -->
-    <!-- <div class="header">
-      <div class="heading"><h1>User and Permission</h1></div>
-      <div class="add-new">
-        <button class="btn">Add New</button>
-      </div>
-    </div> -->
-     <!-- Header End -->
-
-    <!-- <div class="user-container"> -->
-      <!-- Card Start -->
-      <!-- <div class="user">
-        <div class="img">
-          <img src="person.svg" alt="" />
-        </div>
-        <div class="user-info-container">
-          <div class="user-info">
-            <div class="para">
-              <p>Ambar Mishra</p>
-            </div>
-            <div class="img-btn">
-              <div class="img-wrapper-1"><img src="edit-img.svg" /></div>
-              <div class="img-wrapper-2"><img src="delete-img.svg" /></div>
-            </div>
-          </div>
-          <div class="mail-container">
-            <p>ambarmishra740</p>
-          </div>
-        </div>
-      </div> -->
-      <!-- Card End -->
-    <!-- </div>
-  </div>
-</div> -->
-
-
-
-
-
+<app-loader [isLoading]="loading"></app-loader>
 <div class="user-permission-container">
   <aside class="sidebar">
-    <div class="admin-info">
-      <img src="Rectangle 3464151 (1).svg" alt="Admin" class="admin-img">
-      <div class="user-info">
-        <h4>Shreeva</h4>
-        <h6>Project</h6>
-      </div>
-    </div>
-    <nav class="menu">
-      <a href="#" class="menu-item">Dashboard</a>
-      <a href="#" class="menu-item">Pending</a>
-      <a href="#" class="menu-item">Approved</a>
-      <a href="#" class="menu-item">Cancelled</a>
-      <a href="#" class="menu-item">Ready Donor</a>
-      <a href="#" class="menu-item active">User and Permission</a>
+    <header class="user-block">
+        <figure class="user-img">
+            <img src="Rectangle 3464151 (1).svg" />
+        </figure>
+        <div class="user-info">
+            <h4>Shreeva</h4>
+            <h6>Project</h6>
+        </div>
+    </header>
+    <nav>
+      <ul class="nav-list">
+        <li class="nav-item">
+          <div (click)="dashboard()" class="nav-link">
+            <img src="Vector (2).svg" class="nav-icon" /> Dashboard
+          </div>
+        </li>
+        <li class="nav-item">
+          <div (click)="pendingpage()" class="nav-link">
+            <img src="Frame (5).svg" class="nav-icon" /> Pending
+          </div>
+        </li>
+        <li class="nav-item">
+          <div (click)="approvepage()" class="nav-link">
+            <img src="noun-approved-7018854 1.svg" class="nav-icon" /> Approved
+          </div>
+        </li>
+        <li class="nav-item">
+          <div (click)="cancelpage()" class="nav-link">
+            <img src="1.svg" class="nav-icon" /> Cancelled
+          </div>
+        </li>
+        <li class="nav-item">
+          <div (click)="readydonor()" class="nav-link">
+            <img src="Group (1).svg" class="nav-icon" /> Ready Donor
+          </div>
+        </li>
+        <li class="nav-item">
+          <div (click)="userpermission()" class="nav-link">
+            <img src="noun-permission-6109283 1.svg" class="nav-icon" /> User
+            and Permission
+          </div>
+        </li>
+      </ul>
     </nav>
-  </aside>
+</aside>
   <main class="content">
-    <header class="header">
+    <header class="header1">
       <h1>Allahabad Medical Association</h1>
     </header>
     <section class="user-permission">
@@ -66,7 +55,7 @@
         <h2>User and Permission</h2>
         <button class="button" (click)="openAddUserModal()">Add New</button>
       </div>
-      <div class="user-cards">
+      <div class="user-cards" *ngIf="!loading">
         <div *ngFor="let user of users" class="user-card">
           <div class="user-detail">
             <img [src]="user?.['userDetail'].img" alt="User Image" class="user-img">

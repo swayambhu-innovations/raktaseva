@@ -23,14 +23,16 @@ import { Firestore } from '@angular/fire/firestore';
 import { Patient } from '../patient.structure';
 import { Router } from '@angular/router';
 import { AuthService } from '../../auth/auth.service';
+import { LoaderComponent } from "../../loader/loader.component";
 @Component({
   selector: 'app-approved',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, LoaderComponent],
   templateUrl: './approved.component.html',
   styleUrl: './approved.component.scss'
 })
 export class ApprovedComponent implements OnInit {
+  loading:boolean=true;
   name: string = '';
   aadharNumber: number = 0;
   contact: number = 0;
@@ -66,6 +68,9 @@ export class ApprovedComponent implements OnInit {
   constructor(private amaService: AmaService, private firestore: Firestore,private router: Router,private authService: AuthService,) { }
 
   ngOnInit(): void {
+    setTimeout(()=>{
+      this.loading=false;
+     },2000);
     this.getPatientDetail();
   }
 
@@ -95,16 +100,17 @@ export class ApprovedComponent implements OnInit {
             id: patientData['id'],
             name: patientData['patientname'],
             aadharNumber: patientData['aadharnumber'],
-            contact: '9987565848',
+            contact: patientData['phone'],
             status: patientData['status'],
             imageURL: patientData['report'],
             unit: patientData['bloodcount'],
             city: patientData['cityname'],
             hospital_name: patientData['hospitalname'],
             bed_no: patientData['bednumber'],
-            bloodGroup:'AB+',
+            bloodGroup:patientData['bloodgroup'],
             availableDonor:0,
-            assignedDonor:'',
+            assignedDonor:0,
+            date:this.formatDate(patientData['patientTime']),
 
           });
         }
@@ -145,6 +151,19 @@ export class ApprovedComponent implements OnInit {
         .catch((error) => {
           console.error('Error signing out: ', error);
         });
+    }
+    formatDate(timestamp: string): string {
+      const date = new Date(timestamp);
+      const formattedDate = date.toLocaleString('en-GB', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true,
+      });
+      return formattedDate;
     }
 }
 
