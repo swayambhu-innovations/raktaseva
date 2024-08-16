@@ -37,7 +37,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom:23px
+  margin-bottom:23px;
+  // gap: 10px;
+}
+
+.rejected-card {
+  // Increase height when status is "Rejected"
+  // padding-top: 10px;
+  // margin-top: 10px;
+  min-height: 25vh; // Adjust the height as per your design needs
 }
 
 .detail-row {
@@ -66,6 +74,9 @@
   justify-content: flex-start;
   padding-left: 8%;
 }
+// .field-2{
+//   gap: 10px;
+// }
 
 .info-container {
   // background-color: black;

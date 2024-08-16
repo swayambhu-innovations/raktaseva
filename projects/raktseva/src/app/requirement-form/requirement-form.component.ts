@@ -25,6 +25,7 @@ import { HeaderWithBackComponent } from '../shared/header-with-back/header-with-
 })
 export class RequirementFormComponent implements OnInit {
   requirementForm: FormGroup;
+  cities: any[] = [];
 
   constructor(
     private fb: FormBuilder,
@@ -46,7 +47,17 @@ export class RequirementFormComponent implements OnInit {
     });
   }
   isImgSizeValid: boolean = false;
-  ngOnInit(): void {}
+   ngOnInit(): void {
+    this.loadCities();  // Call the method to load city names on component initialization
+  }
+
+  async loadCities() {
+    try {
+      this.cities = await this.requirementFormService.getCityNames();
+    } catch (error) {
+      console.error('Error loading cities:', error);
+    }
+  }
 
   //Function for interacting with service file
   async onSubmit(): Promise<void> {

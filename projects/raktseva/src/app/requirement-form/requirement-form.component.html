@@ -31,7 +31,7 @@
     <div class="aadhar-container">
       <input
         class="aadhar-number"
-        type="number"
+        type="tel"
         id="aadharnumber"
         name="aadharnumber"
         placeholder="Aadhar Number"
@@ -56,18 +56,16 @@
       />
     </div>
 
+  
     <!-- City -->
-    <div class="city-container">
-      <input
-        class="city-name"
-        type="text"
-        id="cityname"
-        name="cityname"
-        formControlName="cityname"
-        placeholder="City Name"
-        required
-      />
-    </div>
+<div class="city-container">
+  <div class="select-container">
+    <select class="city-name" name="cityname" id="cityname" formControlName="cityname" required>
+      <option value="" disabled selected>Select City</option>
+      <option *ngFor="let city of cities" [value]="city.name">{{ city.name }}</option>
+    </select>
+  </div>
+</div>
 
     <div class="bloodgroup-container">
       <div class="select-container">
@@ -89,7 +87,7 @@
     <div class="blood-container">
       <input
         class="blood-count"
-        type="number"
+        type="tel"
         id="bloodcount"
         name="bloodcount"
         formControlName="bloodcount"
@@ -105,7 +103,7 @@
     <div class="bed-container">
       <input
         class="bed-number"
-        type="text"
+        type="tel"
         id="bednumber"
         formControlName="bednumber"
         name="bednumber"

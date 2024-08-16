@@ -15,6 +15,14 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+h1 {
+  font-family: Lato;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 38.4px;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
 
 .card {
   width: 94%;
@@ -39,6 +47,12 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 16px;
+  //styleName: lato semibold;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 16px;
+  // text-align: left;
 }
 
 .card-content {
@@ -58,6 +72,11 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14.4px;
+  // text-align: left;
 }
 
 .card-container {
