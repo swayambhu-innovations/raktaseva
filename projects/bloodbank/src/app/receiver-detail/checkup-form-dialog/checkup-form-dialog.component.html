@@ -13,7 +13,7 @@
             <p>Donor Name</p>
           </div>
           <div class="input-container">
-            <input class="input" type="text" formControlName="donorname" placeholder="Kriti Prasad" />
+            <input class="input" type="text" formControlName="donorname" placeholder="Enter Name" />
           </div>
 
           <div class="box-info">
@@ -55,7 +55,7 @@
             <p>Aadhar Number</p>
           </div>
           <div class="input-container">
-            <input class="input" type="text" formControlName="aadharnumber" placeholder="1234 1234 1234" />
+            <input class="input" type="text" formControlName="aadharnumber" minlength="12" maxlength="12" placeholder="1234 1234 1234" />
           </div>
 
           <div class="box-info">
@@ -86,7 +86,7 @@
             <input class="input" type="number" formControlName="unitdonated" placeholder="1" />
           </div>
 
-          <div class="medical-info-wrapper">
+          <!-- <div class="medical-info-wrapper">
             <div class="medical-heading-1">
               <p>Blood Pressure</p>
             </div>
@@ -97,18 +97,39 @@
               <p>Height (in cm)</p>
             </div>
            
-          </div>
+          </div> -->
+
+         
+          
           <div class="medical-container">
             <div class="medical-info-1">
-              <input class="medical-input" type="text" formControlName="bp" placeholder="180" />
+              <input class="medical-input" type="text" formControlName="bp" placeholder="Blood Pressure" />
             </div>
             <div class="medical-info">
-              <input class="medical-input" type="text" formControlName="weight" placeholder="70" />
+              <input class="medical-input" type="text" formControlName="weight" placeholder="Weight (kg)" />
             </div>
             <div class="medical-info">
-              <input class="medical-input" type="text" formControlName="height" placeholder="160" />
+              <input class="medical-input" type="text" formControlName="height" placeholder="Height (cm)" />
             </div>
           </div>
+          <!-- <div class="medical-info-wrapper">
+            <div class="medical-heading-1">
+              <p>Haemoglobin</p>
+            </div>
+            <div class="medical-heading-1">
+              <p>Temperature</p>
+            </div>
+          </div> -->
+
+          <div class="medical-container">
+            <div class="medical-info-1">
+              <input class="medical-input" type="text"formControlName="hg" placeholder="Haemoglobin" />
+            </div>
+            <div class="medical-info">
+              <input class="medical-input" type="text" formControlName="tp" placeholder="Temperature" />
+            </div>
+          </div>
+
           <div class="footer">
             <div class="btn-container"> 
               <div class="button">
