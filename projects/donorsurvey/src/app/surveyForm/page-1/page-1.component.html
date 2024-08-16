@@ -115,13 +115,14 @@
         required
       />
       <div class="address-container">
-        <input
-          type="text"
-          class="input1 sm"
-          placeholder="City"
+        <select
+          class="input1 sm prob"
           formControlName="city"
           required
-        />
+        >
+          <option value="" disabled selected>Select City</option>
+          <option *ngFor="let city of cities$ | async" [value]="city.name">{{ city.name }}</option>
+        </select>
         <input
           type="text"
           class="input1 sm"
