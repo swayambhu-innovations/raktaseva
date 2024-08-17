@@ -30,7 +30,17 @@ export class LoginWithPhoneComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const storedData = localStorage.getItem('detailFormData');
+  
+  if (storedData) {
+    // If there is data in localStorage, stay on this page.
+    this.route.navigate(['home']);
+
+  } else {
+    // If no data is found, navigate to the home page.
     this.authService.initializeRecaptcha('recaptcha-container');
+
+  }
   }
 
   onSubmit() {

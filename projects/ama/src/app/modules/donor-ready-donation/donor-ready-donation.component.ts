@@ -233,6 +233,18 @@ export class DonorReadyDonationComponent implements OnInit {
     this.getPatientDetail();
   }
 
+  handleCloseAndRefresh() {
+    this.closeModal(); 
+    this.router.navigate([this.router.url]); 
+  }
+  closeAndReload() {
+    this.isOpen = false;
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      window.location.reload();
+      this.router.navigate([this.router.url]);
+    });
+  }
+
   openModal(id: string) {
     this.isOpen = true;
     this.donorSummary = [];
@@ -342,6 +354,8 @@ export class DonorReadyDonationComponent implements OnInit {
         const donorIndex = this.donorSummary.findIndex(d => d.id === donorId);
         if (donorIndex !== -1) {
           this.donorSummary[donorIndex].status = 'assigned';
+          this.closeModal(); 
+          this.closeAndReload();
         }
       } else {
         console.error('No matching donor document found for donor ID:', donorId);

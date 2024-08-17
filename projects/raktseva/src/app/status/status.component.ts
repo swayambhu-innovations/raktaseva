@@ -55,7 +55,10 @@ export class StatusComponent {
               id: user.id,
               patientname: user.patientname,
               status: this.capitalizeFirstLetter(user.status),
+             
               aadharnumber: user.aadharnumber,
+              reason:user.reason,
+              
             }));
 
             console.log('Fetched User Data:', this.userData);
