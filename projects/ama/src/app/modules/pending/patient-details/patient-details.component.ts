@@ -1,6 +1,7 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
+import { Component, Input, OnInit, inject,EventEmitter ,Output} from '@angular/core';
 import { Patient } from '../../patient.structure';
 import { EmailService } from './email.service';
+import { Router } from '@angular/router'; 
 import { Firestore, doc, updateDoc, collection, getDocs } from '@angular/fire/firestore';
 
 @Component({
@@ -10,6 +11,7 @@ import { Firestore, doc, updateDoc, collection, getDocs } from '@angular/fire/fi
   styleUrls: ['./patient-details.component.scss']
 })
 export class PatientDetailsComponent implements OnInit {
+  
   @Input() patientData: Patient = {
     name: '',
     id: '',
@@ -26,19 +28,24 @@ export class PatientDetailsComponent implements OnInit {
     assignedDonor: 0,
     date: '',
   };
+  @Output() closeModal = new EventEmitter<void>(); 
+  @Output() closeAndReload= new EventEmitter<void>();
+
   patientTime: string = '';
   firestore: Firestore = inject(Firestore);
 
   sos: { bloodGroup: string, city: string }[] = [];
   matchingDonors: { name: string, email: string }[] = [];
 
-  constructor(private emailService: EmailService) {}
+  constructor(private emailService: EmailService, private router: Router, ) {}
 
   ngOnInit(): void {
     console.log('Initial patientData:', this.patientData);
     this.populateSosArray();
     console.log('Sos after populateSosArray:', this.sos);
   }
+
+ 
 
   async updateStatus(status: string): Promise<void> {
     if (!this.patientData.id) {
@@ -49,11 +56,21 @@ export class PatientDetailsComponent implements OnInit {
     try {
       const timestamp = new Date().toISOString();
       const docRef = doc(this.firestore, `requirement/${this.patientData.id}`);
-      await updateDoc(docRef, { status, patientTime: timestamp });
+      // await updateDoc(docRef, { status, patientTime: timestamp });
+      const updateData: any = { status, patientTime: timestamp };
+      console.log(`Status updated to ${status} at ${timestamp}`);
+      
+      if (status === 'rejected') {
+        updateData.reason = 'Mismatched Information'; 
+      }
+      await updateDoc(docRef, updateData);
       console.log(`Status updated to ${status} at ${timestamp}`);
 
       // Fetch matching donors after updating status
       await this.fetchMatchingDonors();
+       // Emit the event to close the modal and refresh the page
+       this.closeModal.emit();
+       this.closeAndReload.emit();
     } catch (error) {
       console.error('Error updating status: ', error);
     }

@@ -45,12 +45,12 @@
 
   <form [formGroup]="otp" (ngSubmit)="onSubmit()">
     <div class="input-text" id="otpInputContainer">
-      <input type="text" maxlength="1" class="otp-input" formControlName="otp1" (input)="moveToNext($event, 0)" (keydown)="moveToPrevious($event, 0)" />
-      <input type="text" maxlength="1" class="otp-input" formControlName="otp2" (input)="moveToNext($event, 1)" (keydown)="moveToPrevious($event, 1)" />
-      <input type="text" maxlength="1" class="otp-input" formControlName="otp3" (input)="moveToNext($event, 2)" (keydown)="moveToPrevious($event, 2)" />
-      <input type="text" maxlength="1" class="otp-input" formControlName="otp4" (input)="moveToNext($event, 3)" (keydown)="moveToPrevious($event, 3)" />
-      <input type="text" maxlength="1" class="otp-input" formControlName="otp5" (input)="moveToNext($event, 4)" (keydown)="moveToPrevious($event, 4)" />
-      <input type="text" maxlength="1" class="otp-input" formControlName="otp6" (input)="moveToNext($event, 5)" (keydown)="moveToPrevious($event, 5)" />
+      <input type="tel" maxlength="1" class="otp-input" formControlName="otp1" (input)="moveToNext($event, 0)" (keydown)="moveToPrevious($event, 0)" />
+      <input type="tel" maxlength="1" class="otp-input" formControlName="otp2" (input)="moveToNext($event, 1)" (keydown)="moveToPrevious($event, 1)" />
+      <input type="tel" maxlength="1" class="otp-input" formControlName="otp3" (input)="moveToNext($event, 2)" (keydown)="moveToPrevious($event, 2)" />
+      <input type="tel" maxlength="1" class="otp-input" formControlName="otp4" (input)="moveToNext($event, 3)" (keydown)="moveToPrevious($event, 3)" />
+      <input type="tel" maxlength="1" class="otp-input" formControlName="otp5" (input)="moveToNext($event, 4)" (keydown)="moveToPrevious($event, 4)" />
+      <input type="tel" maxlength="1" class="otp-input" formControlName="otp6" (input)="moveToNext($event, 5)" (keydown)="moveToPrevious($event, 5)" />
     </div>
     
     <div class="receive">

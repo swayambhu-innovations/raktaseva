@@ -111,6 +111,8 @@ export class CheckupFormDialogComponent implements OnInit {
       unitdonated: ['', [Validators.required, Validators.min(0)]],
       bp: ['', Validators.required],
       weight: ['', [Validators.required, Validators.min(0)]],
+      hg: ['', Validators.required],
+      tp: ['', Validators.required],
       height: ['', [Validators.required, Validators.min(0)]],
       timestamp: [''],
       age: [''],

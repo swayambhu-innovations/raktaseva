@@ -92,16 +92,38 @@
   color: linear-gradient(180deg, #003049 0%, #005079 99.99%);
 }
 
-// City
+// City Dropdown
 .city-name {
-  width: 80%;
+  width: 80vw;
   height: 48px;
+  margin-right: 25px;
   flex-shrink: 0;
   padding-left: 23px;
   border-radius: var(--CR-10, 10px);
-  border: 1px solid var(--Blue-linear, #003049);
+  border:none;
   color: linear-gradient(180deg, #003049 0%, #005079 99.99%);
+  background: linear-gradient(180deg, #003049 0%, #005079 99.99%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-left: 9px;
 }
+
+// Adjust for consistent dropdown styling
+// .select-container {
+//   width: 80%;
+//   height: 48px;
+//   display: flex;
+//   justify-content: center;
+//   flex-shrink: 0;
+//   padding-left: 23px;
+//   border-radius: var(--CR-10, 10px);
+//   border: 1px solid var(--Blue-linear, #003049);
+//   // background: linear-gradient(180deg, #003049 0%, #005079 99.99%);
+//   color: transparent;
+//   display: flex;
+//   align-items: center;
+// }
+
 
 // Unit of Blood Required
 .blood-count {
@@ -208,5 +230,5 @@
   padding-left: 23px;
   border-radius: var(--CR-10, 10px);
   border: 1px solid var(--Blue-linear, #003049);
-  color: linear-gradient(180deg, #003049 0%, #005079 99.99%);
+  color: #003049;
 }

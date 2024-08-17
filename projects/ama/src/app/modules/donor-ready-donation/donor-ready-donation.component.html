@@ -121,7 +121,7 @@
                     <td>{{ donor && donor.contact ? donor.contact : "-" }}</td>
                     <td>{{ donor && donor.status ? donor.status : "-" }}</td>
                     <td>
-                      <button class="btn btn-danger"  (click)="assignDonor(selectedPatientId, donor.id)">Assign</button>
+                      <button class="btn btn-danger"  (click)="assignDonor(selectedPatientId, donor.id)" (closeModal)="handleCloseAndRefresh()">Assign</button>
                     </td>
                   </tr>
                 </tbody>

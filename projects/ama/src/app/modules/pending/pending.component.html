@@ -124,6 +124,7 @@
           <div class="patient-details">
             <app-patient-details class="patDetail"
               [patientData]="patientData"
+              (closeModal)="handleCloseAndRefresh()"
             ></app-patient-details>
           </div>
          
