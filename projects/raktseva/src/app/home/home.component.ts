@@ -336,8 +336,14 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   async fetchFeedback() {
     const feedbackSnapshot = await getDocs(collection(this.firestore, 'feedback'));
     const feedbackDocs = feedbackSnapshot.docs;
+    // for (const feedback of feedbackDocs) {
+    //   const feedbackData = feedback.data();
 
-    this.feedbacks = feedbackDocs.map(doc => doc.data());
+    // }
+    // Limit to top 10 feedbacks
+  this.feedbacks = feedbackDocs.slice(0, 10).map(doc => doc.data());
+
+    // this.feedbacks = feedbackDocs.map(doc => doc.data());
   }
 
   // Initialize testimonial slider

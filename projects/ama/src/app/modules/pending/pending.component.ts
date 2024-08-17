@@ -5,7 +5,7 @@ import { collection, getDocs } from 'firebase/firestore';
 import { Firestore } from '@angular/fire/firestore';
 import { PatientDetailsComponent } from './patient-details/patient-details.component';
 import { Patient } from '../patient.structure';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../auth/auth.service';
 import { ImageContainerComponent } from '../image-container/image-container.component';
 import { LoaderComponent } from "../../loader/loader.component";
@@ -45,22 +45,45 @@ export class PendingComponent implements OnInit {
     });
   }
 
+
   closeModal() {
     this.isOpen = false;
+   this.closeAndReload();
+    // this.router.navigate(['/pending']);
+  }
+  handleCloseAndRefresh() {
+    this.closeModal(); 
+    this.router.navigate([this.router.url]); 
+  }
+  closeAndReload() {
+    this.isOpen = false;
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      window.location.reload();
+      this.router.navigate([this.router.url]);
+    });
   }
 
   constructor(
     private amaService: AmaService,
     private firestore: Firestore,
     private router: Router,
+    private activatedRoute: ActivatedRoute,
     private authService: AuthService
   ) {}
 
   ngOnInit(): void {
+    // this.activatedRoute.params.subscribe(() => {
+    //   // Force a reload of the entire page when the component is activated
+    //   window.location.reload();
+    // });
     setTimeout(()=>{
       this.loading=false;
      },2000);
     this.getPatientDetail();
+    // setInterval(() => {
+    //   this.getPatientDetail();
+    // }, 5000);
+   
   }
 
   async getPatientDetail() {
@@ -73,10 +96,10 @@ export class PendingComponent implements OnInit {
 
       for (const patient of patientDocs) {
         const patientData = patient.data();
-        console.log('Fetched patient data:', patientData); // Log the entire data object
+        console.log('Fetched patient data:', patientData); 
 
         if (patientData['status'] === 'pending') {
-          console.log('Patient blood group:', patientData['bloodgroup']); // Log the specific field
+          console.log('Patient blood group:', patientData['bloodgroup']);
           this.pendingSummary.push({
             id: patientData['id'] || '',
             name: patientData['patientname'] || '',
@@ -88,10 +111,10 @@ export class PendingComponent implements OnInit {
             city: patientData['cityname'] || '',
             hospital_name: patientData['hospitalname'] || '',
             bed_no: patientData['bednumber'] || '',
-            bloodGroup: patientData['bloodgroup'] || '', // Updated field name
+            bloodGroup: patientData['bloodgroup'] || '', 
             availableDonor: patientData['availableDonor'] || 0,
             assignedDonor: patientData['assignedDonor'] || 0,
-            date: patientData['timestamp'] || '', // Updated field name
+            date: patientData['timestamp'] || '', 
           });
         }
       }

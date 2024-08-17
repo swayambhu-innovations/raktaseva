@@ -24,7 +24,7 @@
 
 <div *ngIf="btn1Active">
   <!-- Content for AMA Verification -->
-  <div class="ama-details" *ngFor="let user of userData">
+  <div class="ama-details" *ngFor="let user of userData"[ngClass]="{'rejected-card': user.status === 'Rejected'}">
     <div class="info-container">
       <div class="detail-row">
         <div class="field-1">
@@ -59,6 +59,18 @@
           <button class="status-btn" [ngClass]="getButtonClass(user.status)">
             <img src="clock.svg">
             {{user.status}}</button>
+        </div>
+      </div>
+
+      <div class="detail-row" *ngIf="user.status === 'Rejected'">
+        <div class="field-1">
+          <p>Reason</p>
+        </div>
+        <div class="field-0">
+          <p>:</p>
+        </div>
+        <div class="field-2">
+          <p>{{user.reason}}</p>
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@
   align-items: center;
 }
 .middle-container {
-  height: 95%;
+  height: 97%;
   width: 45%;
   border-radius: 15px;
   background: #dce6f6;
@@ -127,7 +127,7 @@
 
 .medical-container {
   // background-color: brown;
-  height: 65%;
+  // height: 65%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -206,7 +206,7 @@
   display: flex;
   width: 143px;
   height: 40px;
-  padding: 10px 17px;
+  padding: 5px 17px;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -214,7 +214,7 @@
   color: white;
 }
 .button {
-  margin-top: 3%;
+  margin-top: 1%;
   // background-color: red;
   height: 100%;
   width: 100%;
@@ -226,10 +226,10 @@
   display: flex;
   width: 143px;
   height: 40px;
-  padding: 10px 17px;
+  padding: 5px 17px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  // gap: 10px;
   flex-shrink: 0;
   border-radius: var(--CR-10, 10px);
   background: var(
