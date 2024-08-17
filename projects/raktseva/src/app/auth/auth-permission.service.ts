@@ -196,10 +196,12 @@
 
 
 import { Injectable } from '@angular/core';
-import { Auth, signInWithPhoneNumber, ConfirmationResult, getAuth, RecaptchaVerifier, signOut } from '@angular/fire/auth';
+import { Auth, signInWithPhoneNumber, ConfirmationResult, getAuth, RecaptchaVerifier } from '@angular/fire/auth';
 import { FirebaseApp } from '@angular/fire/app';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { confirmSignIn, confirmSignUp, signOut } from 'aws-amplify/auth';
+
 
 @Injectable({
   providedIn: 'root'
@@ -271,12 +273,86 @@ export class AuthPermissionService {
   // get phoneNumber(): string | null {
   //   return this.currentPhoneNumber;
   // }
-  logout(): void {
-    signOut(this.auth).then(() => {
-      console.log('User signed out');
-      this.router.navigate(['/']); 
-    }).catch((error) => {
-      console.error('Error during sign out:', error);
-    });
+ async logout() {
+
+    try {
+      await signOut();
+      localStorage.clear();
+      setTimeout(() => {
+        this.router.navigate(['/']);
+      }, 3000);
+
+    } catch (error) {
+      console.log('error signing out: ', error);
+    }
+  }
+
+  isUserExist:any=false;
+  phone:any;
+  uid:any=''
+  async verifyOTP(otp: string) {
+    if (this.isUserExist) {
+      console.log('handleSignInConfirmation')
+      return await this.handleSignInConfirmation(otp);
+    }
+    else{
+    console.log('confirmSignUp')
+      return await this.confirmSignUp(otp);
+    }
+  }
+  // async confirmSignUp(otp:any) {
+  //   try {
+  //     const { isSignUpComplete, nextStep } = await confirmSignUp({
+  //       username: `+91${this.phone}`,
+  //       confirmationCode: otp,
+  //     });
+  //     console.log(isSignUpComplete, nextStep);
+  //     console.log('Sign up confirmed');
+  //     console.log(this.uid)
+  //     // await this.setUserData(this.uid,this.phone);
+  //     this.router.navigate(['/','userdetail']);
+
+  //   } catch (error) {
+  //     console.error('Error confirming sign up:', error);
+  //   }
+  // }
+
+  async confirmSignUp(otp: any) {
+    try {
+      const { isSignUpComplete, nextStep } = await confirmSignUp({
+        username: `+91${this.phone}`,
+        confirmationCode: otp,
+      });
+      console.log(isSignUpComplete, nextStep);
+      console.log('Sign up confirmed');
+      console.log(this.uid);
+  
+      // Check if detailFormData exists in local storage
+      const detailFormData = localStorage.getItem('detailFormData');
+      
+      if (detailFormData) {
+        // Navigate to 'home' if detailFormData exists
+        this.router.navigate(['home']);
+      } else {
+        // Navigate to 'userdetail' if detailFormData does not exist
+        this.router.navigate(['userdetail']);
+      }
+  
+    } catch (error) {
+      console.error('Error confirming sign up:', error);
+    }
+  }
+
+
+  async handleSignInConfirmation(otp:any) {
+    try {
+      await confirmSignIn({ challengeResponse: otp }).then((res) => {
+        console.log(res);
+        this.router.navigate(['/','userdetail']);
+      
+      });
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
