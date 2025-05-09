@@ -24,7 +24,7 @@
     "@aws-amplify/ui-angular": "^5.0.18",
     "@ngx-pwa/local-storage": "^18.0.0",
     "aws-amplify": "^6.4.4",
-    "axios": "^1.7.2",
+    "axios": "^1.7.4",
     "body-parser": "^1.20.2",
     "chart.js": "^4.4.3",
     "cors": "^2.8.5",
